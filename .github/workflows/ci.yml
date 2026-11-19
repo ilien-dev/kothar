@@ -19,6 +19,8 @@ jobs:
           node-version: 20
           cache: npm
       - run: npm ci
+      # The tests render SVGs with the renderer that `kothar setup` installs into ~/.kothar.
+      - run: node skills/kothar/scripts/kothar.js setup
       - run: npm test
       # The compiled CLI and page are committed (a plugin installs by cloning): they must match src/.
       - name: Compiled files match the source
