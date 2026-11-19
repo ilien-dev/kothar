@@ -40,6 +40,7 @@
     "currentVersion": "0.1.0",
     "npmPrepare": [
       "npm ci",
+      "node skills/kothar/scripts/kothar.js setup",
       "npm test"
     ],
     "versionFiles": [
