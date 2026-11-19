@@ -1,5 +1,5 @@
 // Pixel-measured rules for a logo: does it survive small sizes, are its parts perceivable, is it balanced.
-import { renderAlpha, tighten, threshold, count, invert, pad, open, topology, bbox, type Tight } from './raster.js';
+import { renderAlpha, tighten, threshold, count, invert, pad, open, topology, bbox, type Tight, type Mask } from './raster.js';
 import { round, type Finding, type Level } from './util.js';
 
 const REF = 512;
@@ -21,14 +21,45 @@ export const LIMITS = {
   piecesWarn: 12, piecesFail: 24,
   aspectWarn: 2, aspectFail: 3,
   balanceInfo: 0.1, offCentreWarn: 0.04,
+  // House values, not from the literature: no study gives a cut-off for "almost symmetric".
+  nearSymmetryLow: 0.85, symmetryExact: 0.97,
 };
 
 export interface SizeResult { size: number; level: Level; inkLost: number; gapLost: number; iou: number; pieces: number; holes: number; topologyKept: boolean }
 export interface Metrics {
   role?: Role; sizes?: SizeResult[]; minCleanSize?: number | null; pieces?: number; holes?: number;
   aspect?: number; viewBoxFill?: number; smallestElementPx?: number; density?: number; balanceOffset?: number;
+  /** Width of the thin parts and of the narrow gaps, in pixels at the target size (1 is the least a screen can show). */
+  thinStrokePx?: number; narrowGapPx?: number;
+  /** Share of the shape that coincides with its mirror image, left-right and top-bottom (1 = exactly symmetric). */
+  symmetry?: { leftRight: number; topBottom: number };
 }
 export interface Measured { findings: Finding[]; metrics: Metrics; tight?: Tight }
+
+/** How much of a shape coincides with its mirror image (intersection over union). The axis is tried a pixel or two
+ *  either side of the centre, so a symmetric drawing is not marked down for how it fell on the pixel grid. */
+export function mirror(M: Mask, w: number, h: number, axis: 'leftRight' | 'topBottom'): number {
+  let best = 0;
+  for (let d = -2; d <= 2; d++) {
+    let inter = 0, union = 0;
+    for (let y = 0; y < h; y++) for (let x = 0; x < w; x++) {
+      const mx = axis === 'leftRight' ? w - 1 - x + d : x, my = axis === 'topBottom' ? h - 1 - y + d : y;
+      const a = M[y * w + x], b = mx >= 0 && mx < w && my >= 0 && my < h ? M[my * w + mx] : 0;
+      if (a && b) inter++;
+      if (a || b) union++;
+    }
+    if (union) best = Math.max(best, inter / union);
+  }
+  return best;
+}
+
+/** The widest erasing width (reference pixels, up to `max`) at which no more than the tolerated share is lost. */
+function holds(lost: (t: number) => number, max: number): number {
+  if (lost(max) <= LIMITS.lostWarn) return max;
+  let lo = 1, hi = max;
+  for (let i = 0; i < 7; i++) { const mid = (lo + hi) / 2; if (lost(mid) <= LIMITS.lostWarn) lo = mid; else hi = mid; }
+  return lo;
+}
 
 export function measure(src: string, role: Role = 'small'): Measured {
   const base = ROLES[role];
@@ -84,20 +115,28 @@ export function measure(src: string, role: Role = 'small'): Measured {
     s.iou < LIMITS.iouWarn && `only ${Math.round(s.iou * 100)}% of the shape survives the pixel grid`,
   ].filter(Boolean).join('; ');
   const atTarget = sizes.find((s) => s.size === R.target) as SizeResult;
+  // The same test as a number: how wide the thin parts and the narrow gaps are at the target size.
+  const tT = basisPx / R.target, gapMax = 2 * P - 2;
+  const strokeRef = holds((t) => 1 - count(open(M, ref.w, ref.h, t)) / ink, basisPx / 4);
+  const gapRef = holds((t) => (gapArea - count(open(G, pm.w, pm.h, t))) / ink, gapMax);
+  const thinStrokePx = round(strokeRef / tT, 2), narrowGapPx = round(gapRef / tT, 2);
+  const needs = [
+    thinStrokePx < 1 && `thin parts are ≈ ${thinStrokePx} px wide at ${R.target} ${R.label} and need 1: make them ${round(1 / thinStrokePx, 1)}× thicker`,
+    narrowGapPx < 1 && `narrow gaps are ≈ ${narrowGapPx} px and need 1: make them ${round(1 / narrowGapPx, 1)}× wider`,
+  ].filter(Boolean).join('; ');
   if (minClean !== null && minClean <= R.target) add('size', 'pass', `holds from ${R.target} ${R.label} up`);
   else {
     const level: Level = minClean !== null && minClean <= R.tolerate ? 'warn' : 'fail';
     const from = minClean === null ? `not even at ${R.sizes[R.sizes.length - 1]} ${R.label}` : `only from ${minClean} ${R.label}`;
     const fix = role === 'small' ? 'thicken or remove the thin parts, or add a compact variant for small sizes'
       : role === 'full' ? 'thicken strokes and widen gaps' : 'heavier strokes, wider gaps between letters, simpler letterforms';
-    add('size', level, `clean ${from} (needs ${R.target}). At ${R.target}: ${why(atTarget) || 'ok'}. Fix: ${fix}`);
+    add('size', level, `clean ${from} (needs ${R.target}). At ${R.target}: ${why(atTarget) || 'ok'}. Fix: ${fix}${needs ? ` (${needs})` : ''}`);
   }
 
   // Topology on its own does not fail a size, but the viewer does see a different drawing: say so.
   if (!atTarget.topologyKept) add('topology', 'warn', `at ${R.target} ${R.label} it reads as ${atTarget.pieces} piece(s) with ${atTarget.holes} hole(s) instead of ${refTopo.pieces} with ${refTopo.holes}: a gap closes or a thin join breaks; widen that gap or thicken that join`);
 
   // Elements: separate pieces must each be at least a pixel at the target size.
-  const tT = basisPx / R.target;
   const sides = refTopo.areas.map((a) => Math.sqrt(a) / tT).sort((a, b) => a - b);
   const smallest = sides[0];
   if (smallest < 1) add('elements', 'fail', `${sides.filter((s) => s < 1).length} separate element(s) are smaller than one pixel at ${R.target} ${R.label} (smallest ≈ ${round(smallest, 2)} px): the viewer cannot perceive them; enlarge, merge or drop them`);
@@ -107,6 +146,7 @@ export function measure(src: string, role: Role = 'small'): Measured {
   const metrics: Metrics = {
     role, sizes, minCleanSize: minClean, pieces: refTopo.pieces, holes: refTopo.holes,
     aspect: round(ref.w / ref.h, 2), viewBoxFill: round(tight.fill, 2), smallestElementPx: round(smallest, 2),
+    thinStrokePx, narrowGapPx,
   };
   if (role !== 'wordmark') {
     const density = ink / (ref.w * ref.h);
@@ -114,7 +154,7 @@ export function measure(src: string, role: Role = 'small'): Measured {
     if (density < LIMITS.densityLow) add('density', 'warn', `ink covers ${Math.round(density * 100)}% of its box: hairline artwork that fades on screens and photos`);
     else if (density > LIMITS.densityHigh) add('density', 'warn', `ink covers ${Math.round(density * 100)}% of its box: a plain block with no drawing in it`);
     if (refTopo.pieces > LIMITS.piecesFail) add('pieces', 'fail', `${refTopo.pieces} separate pieces: too fragmented to read as one sign`);
-    else if (refTopo.pieces > LIMITS.piecesWarn) add('pieces', 'warn', `${refTopo.pieces} separate pieces; fewer, bolder shapes are remembered better`);
+    else if (refTopo.pieces > LIMITS.piecesWarn) add('pieces', 'warn', `${refTopo.pieces} separate pieces; fewer, bolder shapes hold together as one sign`);
     const ar = Math.max(ref.w / ref.h, ref.h / ref.w);
     if (ar > LIMITS.aspectFail) add('aspect', 'fail', `proportion ${round(ar, 1)}:1 cannot sit in a square favicon or app icon`);
     else if (ar > LIMITS.aspectWarn) add('aspect', 'warn', `proportion ${round(ar, 1)}:1 wastes most of a square favicon`);
@@ -124,6 +164,11 @@ export function measure(src: string, role: Role = 'small'): Measured {
     if (bb) {
       const off = Math.max(Math.abs(cx / ink - (bb.x0 + bb.x1) / 2) / ref.w, Math.abs(cy / ink - (bb.y0 + bb.y1) / 2) / ref.h);
       metrics.balanceOffset = round(off);
+      // Symmetry is described, never scored: which one suits depends on the product. Only a near miss is worth a note.
+      const sym = { leftRight: round(mirror(M, ref.w, ref.h, 'leftRight'), 2), topBottom: round(mirror(M, ref.w, ref.h, 'topBottom'), 2) };
+      metrics.symmetry = sym;
+      const [axis, s] = sym.leftRight >= sym.topBottom ? ['left-right', sym.leftRight] : ['top-bottom', sym.topBottom];
+      if (s >= LIMITS.nearSymmetryLow && s < LIMITS.symmetryExact) add('symmetry', 'info', `almost mirror-symmetric ${axis} (${Math.round(s * 100)}% of the shape matches its reflection): a near miss tends to read as a mistake; make it exact, or break the symmetry clearly enough to look meant`);
       if (off > LIMITS.balanceInfo) add('balance', 'info', `visual weight sits ${Math.round(off * 100)}% away from the centre of the shape; fine if intended, otherwise it looks misaligned inside a circle or square`);
     }
   }

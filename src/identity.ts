@@ -25,7 +25,11 @@ export interface Identity {
   /** Language of the page: 'en' and 'es' are built in, any other code needs a saved translation. */
   locale: string;
   /** kind and traits choose the fonts offered for the name: see `kothar traits`. */
-  product: { summary: string; industry?: string; kind?: string; traits?: Record<string, number> };
+  product: {
+    summary: string; industry?: string; kind?: string; traits?: Record<string, number>;
+    /** Facts that decide which way a drawing rule points (see references/logo-rules.md, "What the evidence supports"). */
+    stage?: 'new' | 'known'; stakes?: 'high' | 'low'; category?: 'neutral' | 'negative';
+  };
   naming: { categories: string[]; preferences: Record<string, unknown>; taken: string[]; candidates: Candidate[]; given?: boolean };
   fonts: { options: FontChoice[] };
   fontPlan?: FontPlan;

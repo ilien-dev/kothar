@@ -38,6 +38,36 @@ Think about the person who meets this logo at 16 px in a browser tab, having nev
 - **Roughly square.** It has to sit in a favicon and an app icon. Keep the proportion under 2:1.
 - **Silhouette first.** Squint: if the outline alone does not say what it is, interior detail will not save it.
 
+### What the evidence supports, and what it does not
+
+Research on how logos are perceived is thin. Most findings come from a single paper that showed invented brands once to a few hundred people, and the two that were retested at scale did not hold. So the research sorts into three kinds, and each is used differently.
+
+**Holds up across studies. Design for it.**
+
+- People recognise a logo they know almost without error and still cannot reproduce its details (Blake et al. 2015; Iancu & Iancu 2017; Mayas et al. 2024). The sign lives in its overall silhouette: no interior detail will be remembered, which is why "silhouette first" comes before everything else.
+- Design explains much of whether an unknown symbol is liked and very little of whether it is recognised later (3-10% in a ten-country study, van der Lans et al. 2009). Memory comes from seeing the logo many times, which is the owner's work. Never promise "memorable" in a rationale.
+- Liking rises with repeated exposure and then falls (Montoya et al. 2017, 268 curves). A first look, yours or the user's or a judge's, predicts the long run poorly.
+- Curved contours are liked a little more than angular ones, mostly at a glance (Chuquichambi et al. 2022, 61 studies). It is a mild preference and carries no meaning about the product.
+
+**Depends on the product. A reason to choose one way, never a rule.** Each comes from one paper or one team, with a stated condition; `product.stage`, `product.stakes`, `product.category` and the traits say which way it points.
+
+- *Showing what the product does* helps a brand nobody knows yet, fades once the brand is known, and reverses when the category itself has bad associations (Luffarelli, Mukesh & Mahmood 2019). For `stage: new` with `category: neutral`, the `product` concept is the strongest place to start; for `category: negative`, do not depict the category.
+- *A symbol alone does not bring a new brand's name to mind*, while the name does bring the symbol (Dommer & Parker 2023; Morgan et al. 2021). For `stage: new` the mark is expected to travel with the name; do not lean on the mark to say who it is.
+- *Mirror symmetry* reads as familiar and easy; *asymmetry* reads as livelier and suits a product where `excitement` weighs (Luffarelli et al. 2019; Bajaj & Bond 2018). Neither is better. A shape that is almost symmetric is the one to avoid: it is read as a broken symmetric shape (Gartus & Leder 2017, on abstract patterns). The audit notes that case as `symmetry`.
+- *An enclosing frame* reads as protection when the stakes are high and as confinement when they are low (Fajardo et al. 2016). Enclose the sign for `stakes: high`, leave it open otherwise.
+- *Shapes with parts cut away or left open* read as inventive and as less trustworthy (Hagtvedt 2011, on lettering). Keep forms closed and complete when `trust` weighs or `stakes` is high; a cut is a fair move when `creativity` weighs.
+- *Clear space between the parts* of a pictorial mark improves how it is rated (Sharma & Varki 2018), and it is also what small sizes need.
+- *Recognisable, organic shapes* are liked more than abstract ones at first sight (van der Lans et al. 2009; Machado et al. 2015). It does not make them better recognised later.
+
+**Do not use as a reason**, in a rationale or to the user. These are common in design writing and are not supported.
+
+- "Round is warm or soft, angular is tough or durable", and "a logo that suggests movement is liked more": both failed a preregistered retest with 823 people (Motoki & Iseki 2022).
+- The golden ratio and construction on circle grids: no preference for either has been found (Höge 1997; McManus et al. 2010; Stieger & Swami 2015).
+- "Simpler is always better", "symmetry is quality", repeated elements or parallel lines as merits in themselves.
+- "A good logo raises sales": the evidence is correlational.
+
+A rationale says what the mark depicts and why that belongs to this product. It may name one of the conditional reasons above when it applies. It never argues from the last list.
+
 ### Look at it
 
 You cannot judge a drawing from its path data. After writing a file, run `kothar check <file.svg>` and open the two PNGs it writes: the drawing large, and its real pixels at 16 px, enlarged. If you cannot tell what the small one is, neither can anyone else. The same command prints the measurements and the four nearest known shapes for that one file, so you can try a variant without running the whole audit.
@@ -51,7 +81,7 @@ You cannot judge a drawing from its path data. After writing a file, run `kothar
 | `ink-fill`, `ink-stroke` | A colour other than `currentColor`/`none`, or a shape with no fill (renders black) | Put `fill="currentColor"` on the root; replace colours; cut holes instead of painting white |
 | `forbidden-*`, `style-block`, `external-ref` | Text, raster, gradients, filters, CSS, links | Redraw as plain shapes |
 | `viewbox`, `precision`, `filesize`, `complexity-nodes` | Missing viewBox, noisy decimals, too heavy, too many path nodes | Simplify; a logo is rarely more than 1–2 kB |
-| `size` | Rendered at each size: share of ink thinner than one pixel, share of gaps that close, and how much of the shape survives the pixel grid. Reports the smallest size from which it stays clean (needs 16 px, or 48 px for a full mark that has a compact variant) | Thicken thin parts, widen gaps, remove detail; or add a compact variant |
+| `size` | Rendered at each size: share of ink thinner than one pixel, share of gaps that close, and how much of the shape survives the pixel grid. Reports the smallest size from which it stays clean (needs 16 px, or 48 px for a full mark that has a compact variant) | Thicken thin parts, widen gaps, remove detail; or add a compact variant. The message gives the width of the thin parts and narrow gaps in pixels at that size and by how much to grow them |
 | `topology` | At the target size the number of separate pieces or holes changes: a gap closed or a thin join broke | Widen that gap or thicken that join |
 | `elements` | The smallest separate piece, in pixels at the target size. Under 1 px fails | Enlarge it, merge it into a larger shape, or remove it |
 | `density` | Ink under 12% of its box (hairline) or over 95% (a block) | Add weight, or add a cut that gives the block a drawing |
@@ -59,10 +89,13 @@ You cannot judge a drawing from its path data. After writing a file, run `kothar
 | `aspect` | Longer than 2:1 | Recompose towards a square |
 | `off-centre`, `clipped` | Artwork not centred in its viewBox, or touching its edge | Recentre; leave margin |
 | `balance` (info) | Visual weight far from the centre of the shape | Fine if intended |
+| `symmetry` (info) | 85-97% of the shape matches its mirror image: almost symmetric, not quite | Make it exact, or break it clearly enough to look meant |
 | `similarity` | Shape correlation against ~21,000 brand logos, UI icons and emoji. From 0.76 it warns, from 0.88 it fails, and names the nearest | See Originality |
 | `siblings` | Two of your options are nearly the same drawing | Make them different ideas, not variations |
 | `compact-kinship` | The compact variant no longer resembles the full mark | Simplify the same drawing |
 | `judge-*` | What the blind judges saw (see `judges.md`) | Redraw what they misread |
+
+`size`, `topology` and `elements` are facts about pixels: what is thinner than a pixel is lost for every viewer. The limits for `density`, `pieces`, `aspect` and the `symmetry` band are this tool's own; no study gives a cut-off for them. `complexity-nodes` is about how the file was written, not about how complex the drawing looks. `kothar check` also prints the mirror symmetry of the shape as a description: it is never scored, because which one suits depends on the product.
 
 Do not chase a number with tricks (padding the viewBox, adding a border to change the silhouette). The measurements exist to predict what a person sees; a drawing that games them still looks the way it looks.
 

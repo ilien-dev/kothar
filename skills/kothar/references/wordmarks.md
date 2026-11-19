@@ -28,6 +28,17 @@ Readers recognise words by a few stable features. Keep them and you can bend the
 - **Leave real gaps between letters**, at least half a stroke width, and keep stroke weight consistent. At small size, gaps close before strokes disappear.
 - **A new or foreign name needs more help than a common word.** Nobody can guess "Kothar" from context the way they would guess "Coffee".
 
+## What the evidence says about lettering
+
+Same caution as for marks (`logo-rules.md`, "What the evidence supports"): these are reasons to choose one way for this product, drawn from its traits, kind and stakes.
+
+- **Case.** Capitals read as stronger, more authoritative, more competent and more premium; lowercase reads as friendlier and warmer (Xu et al. 2017; Wen & Lurie 2018; Teng et al. 2021; Yu et al. 2022). Neither is liked more: choose by fit. Capitals when `competence`, `trust`, `sophistication` or `ruggedness` weigh; lowercase when `warmth`, `joy` or `sincerity` do. At the smallest sizes capitals stay legible slightly longer (Arditi & Cho 2007).
+- **A handwritten look** suggests a person behind the product. It helps a `sensory-social` product and works against a `functional` one (Schroll et al. 2018).
+- **Letters with parts removed** read as inventive and as less trustworthy (Hagtvedt 2011). When `trust` weighs or `stakes` is high, make your move something other than cutting letters open: a join, a shared stroke, a piece of the mark.
+- **Spacing.** Letters set close read as safer than letters spread wide (Gupta & Hagtvedt 2021), and letters that touch stop being legible. Compact without touching; a little more open for the small sizes.
+- **At small size** medium weights survive and both extremes fail, low stroke contrast beats high, and wide letters with open apertures beat condensed, closed ones (Beier & Oderkerk 2019, 2021; Oderkerk & Beier 2022). Serifs change nothing for legibility (Arditi & Cho 2005): have them or not for fit.
+- **Not reasons:** "serifs give trust, sans is modern", "thin is luxury", "slanted is fast" have no study behind them, and "harder to read is remembered better" failed when retested (Meyer et al. 2015; Taylor et al. 2020).
+
 ## The file
 
 Same contract as a mark (`references/logo-rules.md`): one ink through `currentColor`, optional `data-ink="accent"` (the second tone), no `<text>`, no hex colours, a `viewBox` that fits the artwork. Every letter is drawn as shapes or strokes by you. Do not paste font outlines.

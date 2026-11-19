@@ -1,0 +1,62 @@
+<!--palette
+bg       #0A1420 #F7F9FB
+ink      #F3F6FA #0B1622
+body     #AEB9C6 #3E4C5C
+accent   #4DA8F0 #0B7FD0
+acctext  #4DA8F0 #0A6AB0
+panel    #101C2A #FFFFFF
+line     #2A3E55 #CBD5E1
+deco     #14273C #DFE6EE
+mk       #F5F5F5 #111111
+mk2      #8C8C8C #767676
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 448" role="img" aria-label="Tres de las nueve opciones de logotipo dibujadas para este repositorio: El crisol sale del nombre, Escuadra y punto de lo que hace el proyecto y El lingote medido de ambos; un resaltado pasa de una tarjeta a otra y Escuadra y punto aparece como la elegida">
+<style>
+/* 9 s  frame   |card1======|card2======|card3======|
+        marks    pop as their card is lit, one after another */
+@keyframes rise{to{transform:translateY(-320px)}}
+@keyframes lit{0%,30%{opacity:1}36%,94%{opacity:0}100%{opacity:1}}
+@keyframes pop{0%{transform:scale(1)}6%{transform:scale(1.12)}14%,100%{transform:scale(1)}}
+.rise{animation:rise 40s linear infinite}
+.lit{animation:lit 9s ease-in-out infinite}
+.pop{animation:pop 9s cubic-bezier(.4,0,.2,1) infinite;transform-box:fill-box;transform-origin:center}
+</style>
+<defs>
+<pattern id="sq" width="320" height="320" patternUnits="userSpaceOnUse">
+<path d="M30 40h44v12H42v32H30z" fill="none" stroke="$deco" stroke-width="2"/>
+<circle cx="230" cy="70" r="12" fill="none" stroke="$deco" stroke-width="2"/>
+<path d="M190 200h30v8h-22v22h-8z" fill="none" stroke="$deco" stroke-width="2"/>
+<circle cx="80" cy="250" r="7" fill="none" stroke="$deco" stroke-width="2"/>
+</pattern>
+</defs>
+<rect width="1280" height="448" fill="$bg"/>
+<g id="backdrop"><rect class="rise" x="0" y="0" width="1280" height="768" fill="url(#sq)"/></g>
+<rect x="40" y="60" width="430" height="230" fill="$bg" opacity=".92"/>
+<text id="eyebrow" class="m" x="56" y="96" font-size="14" fill="$acctext" letter-spacing="2">IDEAS</text>
+<text id="title" class="b" font-size="40" fill="$ink"><tspan x="56" y="152">Del nombre, de lo</tspan><tspan x="56" y="198">que hace, o ambos</tspan></text>
+<text id="sub" class="s" font-size="18" fill="$body"><tspan x="56" y="244">Tres de las nueve opciones</tspan><tspan x="56" y="268">dibujadas para este repositorio.</tspan></text>
+<g id="stage">
+<rect class="lit" opacity="0" x="494" y="34" width="248" height="380" rx="16" fill="none" stroke="$accent" stroke-width="3"/>
+<rect class="lit" style="animation-delay:-3s" x="750" y="34" width="248" height="380" rx="16" fill="none" stroke="$accent" stroke-width="3"/>
+<rect class="lit" opacity="0" style="animation-delay:-6s" x="1006" y="34" width="240" height="380" rx="16" fill="none" stroke="$accent" stroke-width="3"/>
+<!-- by the name -->
+<rect x="500" y="40" width="236" height="368" rx="12" fill="$panel" stroke="$line" stroke-width="1.5"/>
+<text class="m" x="522" y="76" font-size="13" fill="$body" letter-spacing="1">POR EL NOMBRE</text>
+<g class="pop"><svg x="522" y="96" width="80" height="80" viewBox="2.88 4.88 58.24 54.24"><path d="M6 8h16v34h20V8h16v48H6z" fill="$mk"/><path d="M26 14h12v22H26z" fill="$mk2"/></svg></g><svg x="622" y="148" width="24" height="24" viewBox="2.88 4.88 58.24 54.24"><path d="M6 8h16v34h20V8h16v48H6z" fill="$mk"/><path d="M26 14h12v22H26z" fill="$mk2"/></svg><svg x="658" y="156" width="16" height="16" viewBox="2.88 4.88 58.24 54.24"><path d="M6 8h16v34h20V8h16v48H6z" fill="$mk"/><path d="M26 14h12v22H26z" fill="$mk2"/></svg>
+<text class="b" x="522" y="216" font-size="20" fill="$ink">El crisol</text>
+<text class="s" font-size="16" fill="$body"><tspan x="522" y="252">El crisol de Kothar,</tspan><tspan x="522" y="274">con el metal aún</tspan><tspan x="522" y="296">fundido dentro.</tspan></text>
+<!-- by what it does -->
+<rect x="756" y="40" width="236" height="368" rx="12" fill="$panel" stroke="$line" stroke-width="1.5"/>
+<text class="m" x="778" y="76" font-size="13" fill="$body" letter-spacing="1">POR LO QUE HACE</text>
+<g class="pop" style="animation-delay:-3s"><svg x="778" y="96" width="80" height="80" viewBox="5.12 5.12 53.76 53.76"><path d="M8 8h48v14H22v34H8z" fill="$mk"/><circle cx="43" cy="43" r="12" fill="$mk2"/></svg></g><svg x="878" y="148" width="24" height="24" viewBox="5.12 5.12 53.76 53.76"><path d="M8 8h48v14H22v34H8z" fill="$mk"/><circle cx="43" cy="43" r="12" fill="$mk2"/></svg><svg x="914" y="156" width="16" height="16" viewBox="5.12 5.12 53.76 53.76"><path d="M8 8h48v14H22v34H8z" fill="$mk"/><circle cx="43" cy="43" r="12" fill="$mk2"/></svg>
+<text class="b" x="778" y="216" font-size="20" fill="$ink">Escuadra y punto</text>
+<text class="s" font-size="16" fill="$body"><tspan x="778" y="252">Una forma medida</tspan><tspan x="778" y="274">contra la escuadra</tspan><tspan x="778" y="296">antes de aprobarla.</tspan></text>
+<path d="M780 370l5 5 9-10" fill="none" stroke="$acctext" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/><text class="s" x="802" y="376" font-size="16" fill="$acctext">la elegida</text>
+<!-- both -->
+<rect x="1012" y="40" width="228" height="368" rx="12" fill="$panel" stroke="$line" stroke-width="1.5"/>
+<text class="m" x="1034" y="76" font-size="13" fill="$body" letter-spacing="1">AMBOS</text>
+<g class="pop" style="animation-delay:-6s"><svg x="1034" y="96" width="80" height="80" viewBox="0.64 0.64 62.72 62.72"><path fill-rule="evenodd" d="M4 4l16 8h24l16-8-7 18v20l7 18-16-8H20L4 60l7-18V22zM32 20a12 12 0 1 0 0 24 12 12 0 0 0 0-24z" fill="$mk"/><circle cx="32" cy="32" r="6" fill="$mk2"/></svg></g><svg x="1134" y="148" width="24" height="24" viewBox="0.64 0.64 62.72 62.72"><path fill-rule="evenodd" d="M4 4l16 8h24l16-8-7 18v20l7 18-16-8H20L4 60l7-18V22zM32 20a12 12 0 1 0 0 24 12 12 0 0 0 0-24z" fill="$mk"/><circle cx="32" cy="32" r="6" fill="$mk2"/></svg><svg x="1170" y="156" width="16" height="16" viewBox="0.64 0.64 62.72 62.72"><path fill-rule="evenodd" d="M4 4l16 8h24l16-8-7 18v20l7 18-16-8H20L4 60l7-18V22zM32 20a12 12 0 1 0 0 24 12 12 0 0 0 0-24z" fill="$mk"/><circle cx="32" cy="32" r="6" fill="$mk2"/></svg>
+<text class="b" font-size="20" fill="$ink"><tspan x="1034" y="216">El lingote</tspan><tspan x="1034" y="240">medido</tspan></text>
+<text class="s" font-size="16" fill="$body"><tspan x="1034" y="276">Lingote del bronce</tspan><tspan x="1034" y="298">con el punto medido</tspan><tspan x="1034" y="320">en su centro.</tspan></text>
+</g>
+</svg>

@@ -12,6 +12,20 @@ Do not write `selection`, `flow` or `inbox` yourself: the page and the `flow` co
 
 Use `"noPreference": true` instead of `categories` when the user answered "I don't know". Saved in `~/.kothar`, shared by all their projects.
 
+## Product patch (before step 1)
+
+```json
+{ "product": { "kind": "functional", "traits": { "competence": 3, "technical": 2, "heritage": 1 },
+               "stage": "new", "stakes": "low", "category": "neutral" } }
+```
+
+- `kind` and `traits` come from `kothar traits`; the fonts offered for the name are chosen from them.
+- `stage`: `new` when the people it is for have not met the brand, `known` when they already use it.
+- `stakes`: `high` when using or buying it puts money, safety, health or data at risk; otherwise `low`.
+- `category`: `negative` when the field itself has bad associations for its audience; otherwise `neutral`.
+
+The last three decide which way several drawing rules point: see `logo-rules.md`, "What the evidence supports".
+
 ## Step 1 patch: names and fonts
 
 ```json

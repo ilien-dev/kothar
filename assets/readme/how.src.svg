@@ -1,0 +1,98 @@
+<!--palette
+bg       #0A1420 #F7F9FB
+ink      #F3F6FA #0B1622
+body     #AEB9C6 #3E4C5C
+accent   #4DA8F0 #0B7FD0
+acctext  #4DA8F0 #0A6AB0
+panel    #101C2A #FFFFFF
+line     #2A3E55 #CBD5E1
+skel     #22344A #DCE3EC
+deco     #14273C #DFE6EE
+btn      #F3F6FA #0B1622
+btntx    #0B1622 #F3F6FA
+term     #050B12 #0A1420
+termtx   #F3F6FA #F3F6FA
+termmut  #9AA6B4 #9AA6B4
+termacc  #4DA8F0 #4DA8F0
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 448" role="img" aria-label="In the browser you pick the name Kothar and press Confirm; your choice travels to your agent, which draws nine options, measures them and has three blind reviewers look at them, while the page shows Creating logos; then the new options travel back and the page moves to step 02">
+<style>
+/* 10 s  cursor  |rest|--go--|=press=|--home--|
+         page A  |==========shown==========|out            |in
+         page B                             |in|=====loading=====|out
+         choice                        |-- right --|
+         agent lines                          |l1| |l2| |l3|   |ready|
+         options                                                 |-- left --| */
+@keyframes rise{to{transform:translateY(-320px)}}
+@keyframes cur{0%,10%{transform:translate(770px,300px)}26%,40%{transform:translate(590px,290px)}52%,100%{transform:translate(770px,300px)}}
+@keyframes press{0%,33%{transform:scale(1)}35%{transform:scale(.92)}38%,100%{transform:scale(1)}}
+@keyframes pageA{0%,42%{opacity:1}46%,94%{opacity:0}100%{opacity:1}}
+@keyframes pageB{0%,42%{opacity:0}46%,94%{opacity:1}100%{opacity:0}}
+@keyframes hopR{0%,37%{transform:translateX(0);opacity:0}39%{opacity:1}47%{transform:translateX(110px);opacity:1}49%,100%{transform:translateX(110px);opacity:0}}
+@keyframes hopL{0%,83%{transform:translateX(0);opacity:0}85%{opacity:1}93%{transform:translateX(-110px);opacity:1}95%,100%{transform:translateX(-110px);opacity:0}}
+@keyframes l1{0%,48%{opacity:0}51%,95%{opacity:1}100%{opacity:0}}@keyframes l2{0%,58%{opacity:0}61%,95%{opacity:1}100%{opacity:0}}@keyframes l3{0%,68%{opacity:0}71%,95%{opacity:1}100%{opacity:0}}@keyframes l4{0%,81%{opacity:0}84%,95%{opacity:1}100%{opacity:0}}
+@keyframes spin{to{transform:rotate(360deg)}}
+@keyframes flow{to{stroke-dashoffset:-24}}
+.rise{animation:rise 40s linear infinite}
+.cur{animation:cur 10s cubic-bezier(.4,0,.2,1) infinite}
+.press{animation:press 10s ease-out infinite;transform-box:fill-box;transform-origin:center}
+.pageA{animation:pageA 10s ease-in-out infinite}
+.pageB{animation:pageB 10s ease-in-out infinite}
+.hopR{animation:hopR 10s cubic-bezier(.4,0,.2,1) infinite}
+.hopL{animation:hopL 10s cubic-bezier(.4,0,.2,1) infinite}
+.l1{animation:l1 10s ease-out infinite}.l2{animation:l2 10s ease-out infinite}.l3{animation:l3 10s ease-out infinite}.l4{animation:l4 10s ease-out infinite}
+.spin{animation:spin 1.6s linear infinite;transform-box:fill-box;transform-origin:center}
+.flow{animation:flow 1.2s linear infinite}
+</style>
+<defs>
+<pattern id="sq" width="320" height="320" patternUnits="userSpaceOnUse">
+<path d="M30 40h44v12H42v32H30z" fill="none" stroke="$deco" stroke-width="2"/>
+<circle cx="230" cy="70" r="12" fill="none" stroke="$deco" stroke-width="2"/>
+<path d="M190 200h30v8h-22v22h-8z" fill="none" stroke="$deco" stroke-width="2"/>
+<circle cx="80" cy="250" r="7" fill="none" stroke="$deco" stroke-width="2"/>
+</pattern>
+</defs>
+<rect width="1280" height="448" fill="$bg"/>
+<g id="backdrop"><rect class="rise" x="0" y="0" width="1280" height="768" fill="url(#sq)"/></g>
+<rect x="40" y="60" width="430" height="230" fill="$bg" opacity=".92"/>
+<text id="eyebrow" class="m" x="56" y="96" font-size="14" fill="$acctext" letter-spacing="2">HOW IT WORKS</text>
+<text id="title" class="b" font-size="40" fill="$ink"><tspan x="56" y="152">You choose, your</tspan><tspan x="56" y="198">agent draws</tspan></text>
+<text id="sub" class="s" font-size="18" fill="$body"><tspan x="56" y="244">The page moves on by itself</tspan><tspan x="56" y="268">when the options are ready.</tspan></text>
+<g id="stage">
+<!-- the page in the browser -->
+<rect x="500" y="50" width="360" height="340" rx="12" fill="$panel" stroke="$line" stroke-width="1.5"/>
+<path d="M500 86h360" stroke="$line" stroke-width="1.5"/>
+<circle cx="522" cy="68" r="5" fill="$skel"/><circle cx="540" cy="68" r="5" fill="$skel"/><circle cx="558" cy="68" r="5" fill="$skel"/>
+<text class="m" x="584" y="73" font-size="13" fill="$body">localhost</text>
+<g class="pageA" opacity="0">
+<text class="b" x="524" y="124" font-size="18" fill="$ink">01 · Name</text>
+<rect x="524" y="140" width="312" height="56" rx="8" fill="$panel" stroke="$accent" stroke-width="2.5"/>
+<text class="b" x="544" y="175" font-size="18" fill="$ink">Kothar</text>
+<path d="M806 168l6 6 11-12" fill="none" stroke="$acctext" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<rect x="524" y="208" width="312" height="44" rx="8" fill="none" stroke="$line"/><rect x="544" y="226" width="120" height="8" rx="4" fill="$skel"/>
+<g class="press"><rect x="524" y="268" width="132" height="44" rx="8" fill="$btn"/><text class="s" x="590" y="296" font-size="16" fill="$btntx" text-anchor="middle">Confirm</text></g>
+</g>
+<g class="pageB">
+<text class="b" x="524" y="124" font-size="18" fill="$ink">Creating logos</text>
+<circle class="spin" cx="680" cy="206" r="36" fill="none" stroke="$accent" stroke-width="6" stroke-dasharray="70 157" stroke-linecap="round"/>
+<text class="s" x="524" y="356" font-size="16" fill="$body">draw · measure · review</text>
+</g>
+<!-- the two ways between page and agent -->
+<text class="s" x="874" y="138" font-size="16" fill="$body">your choice</text>
+<path class="flow" d="M872 154H986" fill="none" stroke="$accent" stroke-width="2.5" stroke-dasharray="8 16"/>
+<path d="M984 146l10 8-10 8" fill="none" stroke="$accent" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="flow" d="M994 300H880" fill="none" stroke="$accent" stroke-width="2.5" stroke-dasharray="8 16"/>
+<path d="M882 292l-10 8 10 8" fill="none" stroke="$accent" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+<text class="s" x="874" y="332" font-size="16" fill="$body">new options</text>
+<g transform="translate(872 141)"><rect class="hopR" opacity="0" width="26" height="26" rx="6" fill="$accent"/></g>
+<g transform="translate(968 287)"><rect class="hopL" opacity="0" width="26" height="26" rx="6" fill="$accent"/></g>
+<!-- the agent -->
+<rect x="1006" y="50" width="234" height="340" rx="12" fill="$term"/>
+<text class="m" x="1026" y="82" font-size="13" fill="$termmut">your agent</text>
+<text class="m l1" x="1026" y="134" font-size="16" fill="$termtx">› draws 9 options</text>
+<text class="m l2" x="1026" y="166" font-size="16" fill="$termtx">› measures them</text>
+<text class="m l3" x="1026" y="198" font-size="16" fill="$termtx">› 3 blind reviews</text>
+<text class="m l4" x="1026" y="352" font-size="16" fill="$termacc">ready → step 02</text>
+<g class="cur" data-kit="cursor" data-cursor="arrow"><path d="M0 0l0 35 10-8 6 16 6-3-6-14 13 0z" fill="$ink" stroke="$bg" stroke-width="2"/></g>
+</g>
+</svg>
