@@ -8,11 +8,6 @@
     ".claude-plugin/**",
     ".codex-plugin/**"
   ],
-  "visual": [
-    "skills/kothar/assets/**",
-    "src/web/**",
-    "assets/logo/**"
-  ],
   "issueFirst": false,
   "measured": {
     "enabled": true,
