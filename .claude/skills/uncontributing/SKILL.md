@@ -69,8 +69,9 @@ sentences: what changed, not how hard it was. No other headings, no summary at t
 - **Evidence** (300 of text): how you checked it and how the reviewer can, in a minute.
 - **Checklist**: tick only what is true; if one is not, say why instead of ticking it.
 
-**Screenshots.** Recommend them for every PR and offer to take them; they are required for a
-visual change (anything in `skills/kothar/assets/**`, `src/web/**` or `assets/logo/**`), before and after. Capture only that window or page (a headless
+**Screenshots** are optional. Never take them unasked: ask the user "Do you want screenshots
+for this PR?" and take them only on a yes; for a visual change, propose before and after. On a
+no, take none. Capture only that window or page (a headless
 browser screenshot of the URL, or the window by its handle), never the whole screen. Save them
 in a temporary folder, not the repository. GitHub has no API to attach images to a PR: open the
 PR, give the user the absolute paths and ask them to drag the files into the description; put
