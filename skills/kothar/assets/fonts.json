@@ -1,0 +1,713 @@
+{
+  "note": "Families published on Google Fonts under the SIL Open Font License (or Apache 2.0 where noted): free for commercial logos. Not exhaustive; `kothar font check` verifies any other family online.",
+  "families": [
+    {
+      "family": "Inter",
+      "style": "neutral sans",
+      "class": "neutral-sans",
+      "weight": 800
+    },
+    {
+      "family": "Inter Tight",
+      "style": "tight neutral sans",
+      "class": "neutral-sans",
+      "weight": 800
+    },
+    {
+      "family": "Space Grotesk",
+      "style": "technical sans",
+      "class": "techno",
+      "weight": 700
+    },
+    {
+      "family": "Archivo",
+      "style": "grotesque sans",
+      "class": "neutral-sans",
+      "weight": 800
+    },
+    {
+      "family": "Archivo Black",
+      "style": "heavy grotesque",
+      "class": "heavy-display",
+      "weight": 400
+    },
+    {
+      "family": "Manrope",
+      "style": "geometric sans",
+      "class": "geometric-sans",
+      "weight": 800
+    },
+    {
+      "family": "DM Sans",
+      "style": "geometric sans",
+      "class": "geometric-sans",
+      "weight": 700
+    },
+    {
+      "family": "Outfit",
+      "style": "geometric sans",
+      "class": "geometric-sans",
+      "weight": 800
+    },
+    {
+      "family": "Sora",
+      "style": "geometric sans",
+      "class": "geometric-sans",
+      "weight": 800
+    },
+    {
+      "family": "Plus Jakarta Sans",
+      "style": "friendly sans",
+      "class": "friendly-sans",
+      "weight": 800
+    },
+    {
+      "family": "Figtree",
+      "style": "friendly sans",
+      "class": "friendly-sans",
+      "weight": 700
+    },
+    {
+      "family": "Onest",
+      "style": "neutral sans",
+      "class": "neutral-sans",
+      "weight": 800
+    },
+    {
+      "family": "Geologica",
+      "style": "wide sans",
+      "class": "geometric-sans",
+      "weight": 800
+    },
+    {
+      "family": "Unbounded",
+      "style": "wide display",
+      "class": "expressive",
+      "weight": 800
+    },
+    {
+      "family": "Syne",
+      "style": "expressive display",
+      "class": "expressive",
+      "weight": 800
+    },
+    {
+      "family": "Bricolage Grotesque",
+      "style": "expressive grotesque",
+      "class": "expressive",
+      "weight": 800
+    },
+    {
+      "family": "Schibsted Grotesk",
+      "style": "editorial grotesque",
+      "class": "neutral-sans",
+      "weight": 800
+    },
+    {
+      "family": "Hanken Grotesk",
+      "style": "neutral grotesque",
+      "class": "neutral-sans",
+      "weight": 800
+    },
+    {
+      "family": "Work Sans",
+      "style": "grotesque sans",
+      "class": "neutral-sans",
+      "weight": 800
+    },
+    {
+      "family": "Public Sans",
+      "style": "neutral sans",
+      "class": "neutral-sans",
+      "weight": 800
+    },
+    {
+      "family": "IBM Plex Sans",
+      "style": "engineered sans",
+      "class": "neutral-sans",
+      "weight": 700
+    },
+    {
+      "family": "IBM Plex Sans Condensed",
+      "style": "condensed sans",
+      "class": "neutral-sans",
+      "weight": 700
+    },
+    {
+      "family": "IBM Plex Mono",
+      "style": "monospace",
+      "class": "mono",
+      "weight": 700
+    },
+    {
+      "family": "IBM Plex Serif",
+      "style": "engineered serif",
+      "class": "serif-classic",
+      "weight": 700
+    },
+    {
+      "family": "JetBrains Mono",
+      "style": "monospace",
+      "class": "mono",
+      "weight": 800
+    },
+    {
+      "family": "Space Mono",
+      "style": "monospace",
+      "class": "mono",
+      "weight": 700
+    },
+    {
+      "family": "DM Mono",
+      "style": "monospace",
+      "class": "mono",
+      "weight": 500
+    },
+    {
+      "family": "Fira Code",
+      "style": "monospace",
+      "class": "mono",
+      "weight": 700
+    },
+    {
+      "family": "Red Hat Display",
+      "style": "display sans",
+      "class": "geometric-sans",
+      "weight": 800
+    },
+    {
+      "family": "Red Hat Mono",
+      "style": "monospace",
+      "class": "mono",
+      "weight": 700
+    },
+    {
+      "family": "Lexend",
+      "style": "wide readable sans",
+      "class": "geometric-sans",
+      "weight": 800
+    },
+    {
+      "family": "Montserrat",
+      "style": "geometric sans",
+      "class": "geometric-sans",
+      "weight": 800
+    },
+    {
+      "family": "Poppins",
+      "style": "geometric sans",
+      "class": "geometric-sans",
+      "weight": 800
+    },
+    {
+      "family": "Raleway",
+      "style": "elegant sans",
+      "class": "geometric-sans",
+      "weight": 800
+    },
+    {
+      "family": "Barlow",
+      "style": "condensed-leaning sans",
+      "class": "heavy-display",
+      "weight": 800
+    },
+    {
+      "family": "Barlow Condensed",
+      "style": "condensed sans",
+      "class": "heavy-display",
+      "weight": 800
+    },
+    {
+      "family": "Oswald",
+      "style": "condensed display",
+      "class": "heavy-display",
+      "weight": 700
+    },
+    {
+      "family": "Bebas Neue",
+      "style": "condensed caps",
+      "class": "heavy-display",
+      "weight": 400
+    },
+    {
+      "family": "Anton",
+      "style": "condensed heavy",
+      "class": "heavy-display",
+      "weight": 400
+    },
+    {
+      "family": "Big Shoulders Display",
+      "style": "condensed display",
+      "class": "heavy-display",
+      "weight": 800
+    },
+    {
+      "family": "Chakra Petch",
+      "style": "angular technical",
+      "class": "techno",
+      "weight": 700
+    },
+    {
+      "family": "Rajdhani",
+      "style": "angular technical",
+      "class": "techno",
+      "weight": 700
+    },
+    {
+      "family": "Orbitron",
+      "style": "futuristic",
+      "class": "techno",
+      "weight": 800
+    },
+    {
+      "family": "Exo 2",
+      "style": "futuristic sans",
+      "class": "techno",
+      "weight": 800
+    },
+    {
+      "family": "Josefin Sans",
+      "style": "geometric vintage",
+      "class": "geometric-sans",
+      "weight": 700
+    },
+    {
+      "family": "Comfortaa",
+      "style": "rounded",
+      "class": "rounded",
+      "weight": 700
+    },
+    {
+      "family": "Nunito",
+      "style": "rounded sans",
+      "class": "rounded",
+      "weight": 800
+    },
+    {
+      "family": "Quicksand",
+      "style": "rounded sans",
+      "class": "rounded",
+      "weight": 700
+    },
+    {
+      "family": "Fredoka",
+      "style": "rounded friendly",
+      "class": "rounded",
+      "weight": 700
+    },
+    {
+      "family": "Baloo 2",
+      "style": "rounded heavy",
+      "class": "rounded",
+      "weight": 800
+    },
+    {
+      "family": "Fraunces",
+      "style": "soft serif",
+      "class": "serif-soft",
+      "weight": 700
+    },
+    {
+      "family": "Playfair Display",
+      "style": "high-contrast serif",
+      "class": "serif-elegant",
+      "weight": 800
+    },
+    {
+      "family": "DM Serif Display",
+      "style": "display serif",
+      "class": "serif-elegant",
+      "weight": 400
+    },
+    {
+      "family": "Cormorant Garamond",
+      "style": "elegant serif",
+      "class": "serif-elegant",
+      "weight": 700
+    },
+    {
+      "family": "EB Garamond",
+      "style": "classical serif",
+      "class": "serif-classic",
+      "weight": 800
+    },
+    {
+      "family": "Libre Baskerville",
+      "style": "classical serif",
+      "class": "serif-classic",
+      "weight": 700
+    },
+    {
+      "family": "Lora",
+      "style": "calligraphic serif",
+      "class": "serif-classic",
+      "weight": 700
+    },
+    {
+      "family": "Newsreader",
+      "style": "editorial serif",
+      "class": "serif-classic",
+      "weight": 800
+    },
+    {
+      "family": "Instrument Serif",
+      "style": "condensed serif",
+      "class": "serif-elegant",
+      "weight": 400
+    },
+    {
+      "family": "Young Serif",
+      "style": "sturdy serif",
+      "class": "serif-soft",
+      "weight": 400
+    },
+    {
+      "family": "Bitter",
+      "style": "slab serif",
+      "class": "slab",
+      "weight": 800
+    },
+    {
+      "family": "Zilla Slab",
+      "style": "slab serif",
+      "class": "slab",
+      "weight": 700
+    },
+    {
+      "family": "Roboto Slab",
+      "style": "slab serif",
+      "license": "Apache-2.0",
+      "class": "slab",
+      "weight": 800
+    },
+    {
+      "family": "Roboto",
+      "style": "neutral sans",
+      "license": "Apache-2.0",
+      "class": "neutral-sans",
+      "weight": 800
+    },
+    {
+      "family": "Roboto Mono",
+      "style": "monospace",
+      "license": "Apache-2.0",
+      "class": "mono",
+      "weight": 700
+    },
+    {
+      "family": "Cinzel",
+      "style": "roman capitals",
+      "class": "inscriptional",
+      "weight": 800
+    },
+    {
+      "family": "Marcellus",
+      "style": "roman inscription",
+      "class": "inscriptional",
+      "weight": 400
+    },
+    {
+      "family": "Uncial Antiqua",
+      "style": "uncial",
+      "class": "inscriptional",
+      "weight": 400
+    },
+    {
+      "family": "Major Mono Display",
+      "style": "mono display",
+      "class": "mono",
+      "weight": 400
+    },
+    {
+      "family": "Rubik",
+      "style": "soft-corner sans",
+      "class": "friendly-sans",
+      "weight": 800
+    },
+    {
+      "family": "Righteous",
+      "style": "retro display",
+      "class": "expressive",
+      "weight": 400
+    },
+    {
+      "family": "Dela Gothic One",
+      "style": "heavy display",
+      "class": "heavy-display",
+      "weight": 400
+    }
+  ],
+  "paidNote": "Well-known commercial or platform-restricted families. Google's CSS endpoint answers for some of these names, so being served there is not proof of a free licence; these are always treated as paid.",
+  "paid": [
+    "Helvetica",
+    "Helvetica Neue",
+    "Neue Haas Grotesk",
+    "Neue Haas Unica",
+    "Futura",
+    "Futura PT",
+    "Gotham",
+    "Gotham Rounded",
+    "Proxima Nova",
+    "Avenir",
+    "Avenir Next",
+    "Akzidenz-Grotesk",
+    "Akzidenz Grotesk",
+    "Univers",
+    "Frutiger",
+    "Gill Sans",
+    "Circular",
+    "Circular Std",
+    "Graphik",
+    "GT Walsheim",
+    "GT America",
+    "GT Pressura",
+    "Söhne",
+    "Sohne",
+    "Brandon Grotesque",
+    "DIN",
+    "DIN Next",
+    "FF DIN",
+    "DIN 2014",
+    "Aktiv Grotesk",
+    "Apercu",
+    "Maison Neue",
+    "Sofia Pro",
+    "Museo",
+    "Museo Sans",
+    "Gilroy",
+    "TT Norms",
+    "TT Commons",
+    "SF Pro",
+    "SF Pro Display",
+    "SF Pro Text",
+    "San Francisco",
+    "New York",
+    "Segoe UI",
+    "Calibri",
+    "Cambria",
+    "Arial",
+    "Arial Black",
+    "Times New Roman",
+    "Georgia",
+    "Verdana",
+    "Trebuchet MS",
+    "Tahoma",
+    "Impact",
+    "Myriad",
+    "Myriad Pro",
+    "Minion",
+    "Minion Pro",
+    "Optima",
+    "Didot",
+    "Bodoni",
+    "Trajan",
+    "Trajan Pro",
+    "Copperplate",
+    "Eurostile",
+    "Bank Gothic",
+    "Cooper Black",
+    "Rockwell",
+    "Century Gothic",
+    "Franklin Gothic",
+    "Lucida Grande",
+    "Palatino",
+    "Baskerville",
+    "Adobe Caslon",
+    "Adobe Garamond",
+    "Garamond Premier",
+    "ITC Avant Garde Gothic",
+    "Avant Garde",
+    "Knockout",
+    "Whitney",
+    "Mercury",
+    "Archer",
+    "Sentinel",
+    "Tiempos",
+    "Canela",
+    "Druk",
+    "Styrene",
+    "Untitled Sans",
+    "Founders Grotesk",
+    "National",
+    "Suisse Int'l",
+    "Suisse",
+    "Euclid Circular",
+    "Cera Pro",
+    "Recoleta",
+    "Larsseit",
+    "Basis Grotesque",
+    "Roobert",
+    "Monument Grotesk",
+    "Neue Montreal",
+    "Eina",
+    "Nexa",
+    "Mont",
+    "Product Sans",
+    "Google Sans"
+  ],
+  "psychology": {
+    "note": "How a typeface class tends to be read, as weights against the product traits (same vocabulary as traits.json). Research on type personality is thin and most of it used a handful of fonts, so these decide where to start, never what the user must choose.",
+    "sources": {
+      "S2006": "Shaikh, Chaparro & Fox (2006). Perception of fonts: perceived personality traits and uses. Usability News 8(1). 561 participants, 20 fonts: serif fonts scored highest on stable, practical, mature, formal; script/fun fonts on youthful, happy, creative, casual, cuddly; display fonts (Impact, Rockwell Extra Bold) on masculine, assertive, coarse; monospaced fonts on dull, plain, unimaginative, conforming; sans serif fonts on nothing in particular.",
+      "H2004": "Henderson, Giese & Cote (2004). Impression management using typeface design. Journal of Marketing 68(4), 60-72. Design dimensions of a typeface (elaborate, harmony, natural, flourish, weight, compressed) drive whether it is read as pleasing, engaging, reassuring or prominent.",
+      "G2013": "Grohmann, Giese & Parkman (2013). Using type font characteristics to communicate brand personality of new brands. Journal of Brand Management 20, 389-403. The font a brand name is set in shifts the brand's perceived personality, independently of colour.",
+      "convention": "Design convention without a study behind it in this file. Weighted lower."
+    },
+    "classes": {
+      "neutral-sans": {
+        "means": "plain modern sans: says little, gets out of the way",
+        "traits": {
+          "competence": 0.8,
+          "trust": 0.8,
+          "technical": 0.5,
+          "calm": 0.5
+        },
+        "source": "S2006"
+      },
+      "geometric-sans": {
+        "means": "circles and straight lines: clean, contemporary",
+        "traits": {
+          "competence": 0.6,
+          "calm": 0.6,
+          "trust": 0.5,
+          "creativity": 0.3,
+          "sophistication": 0.3
+        },
+        "source": "H2004"
+      },
+      "friendly-sans": {
+        "means": "sans with soft, open shapes: approachable",
+        "traits": {
+          "warmth": 0.8,
+          "sincerity": 0.7,
+          "trust": 0.5,
+          "joy": 0.3
+        },
+        "source": "H2004"
+      },
+      "rounded": {
+        "means": "rounded ends and bowls: soft, young, playful",
+        "traits": {
+          "joy": 1,
+          "warmth": 0.9,
+          "sincerity": 0.6,
+          "calm": 0.3,
+          "competence": -0.3,
+          "sophistication": -0.4
+        },
+        "source": "S2006"
+      },
+      "serif-classic": {
+        "means": "bookish serif: stable, mature, formal",
+        "traits": {
+          "trust": 0.8,
+          "heritage": 0.8,
+          "competence": 0.6,
+          "sincerity": 0.6,
+          "sophistication": 0.5
+        },
+        "source": "S2006"
+      },
+      "serif-elegant": {
+        "means": "high-contrast serif: refined, fashionable",
+        "traits": {
+          "sophistication": 1,
+          "heritage": 0.5,
+          "creativity": 0.3,
+          "ruggedness": -0.5
+        },
+        "source": "H2004"
+      },
+      "serif-soft": {
+        "means": "serif with rounded, friendly details",
+        "traits": {
+          "warmth": 0.7,
+          "sincerity": 0.7,
+          "heritage": 0.5,
+          "creativity": 0.4,
+          "sophistication": 0.3
+        },
+        "source": "H2004"
+      },
+      "slab": {
+        "means": "square serifs: sturdy, plain-spoken",
+        "traits": {
+          "ruggedness": 0.8,
+          "competence": 0.6,
+          "trust": 0.6,
+          "sincerity": 0.4
+        },
+        "source": "S2006"
+      },
+      "heavy-display": {
+        "means": "very bold or condensed: loud, assertive",
+        "traits": {
+          "energy": 1,
+          "excitement": 0.8,
+          "ruggedness": 0.7,
+          "calm": -0.6,
+          "sophistication": -0.3
+        },
+        "source": "S2006"
+      },
+      "mono": {
+        "means": "typewriter or code font: plain, technical",
+        "traits": {
+          "technical": 1,
+          "competence": 0.5,
+          "joy": -0.4,
+          "warmth": -0.3,
+          "excitement": -0.3
+        },
+        "source": "S2006"
+      },
+      "techno": {
+        "means": "angular, engineered shapes: futuristic",
+        "traits": {
+          "technical": 0.8,
+          "excitement": 0.6,
+          "energy": 0.5,
+          "creativity": 0.4,
+          "competence": 0.4
+        },
+        "source": "convention"
+      },
+      "expressive": {
+        "means": "display sans with quirks: distinctive, creative",
+        "traits": {
+          "creativity": 1,
+          "excitement": 0.7,
+          "joy": 0.4
+        },
+        "source": "H2004"
+      },
+      "inscriptional": {
+        "means": "letters as cut in stone or drawn by a scribe",
+        "traits": {
+          "heritage": 1,
+          "sophistication": 0.7,
+          "sincerity": 0.2,
+          "technical": -0.3
+        },
+        "source": "convention"
+      }
+    },
+    "kinds": {
+      "functional": {
+        "neutral-sans": 0.5,
+        "geometric-sans": 0.4,
+        "mono": 0.3,
+        "slab": 0.2,
+        "techno": 0.2
+      },
+      "sensory-social": {
+        "rounded": 0.4,
+        "expressive": 0.4,
+        "serif-elegant": 0.4,
+        "friendly-sans": 0.3,
+        "serif-soft": 0.3
+      },
+      "both": {}
+    }
+  }
+}

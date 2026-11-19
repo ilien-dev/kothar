@@ -1,0 +1,16 @@
+{
+  "name": "kothar",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Claude Code plugin: choose a product name and a measured logo identity.",
+  "type": "module",
+  "license": "MIT",
+  "scripts": {
+    "build": "tsc -p tsconfig.json && tsc -p tsconfig.web.json",
+    "test": "npm run build && node --test tests/core.test.js"
+  },
+  "devDependencies": {
+    "@types/node": "^26.6.6",
+    "typescript": "^7.0.2"
+  }
+}

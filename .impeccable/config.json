@@ -1,0 +1,17 @@
+{
+  "detector": {
+    "ignoreRules": [],
+    "ignoreFiles": [],
+    "ignoreValues": [
+      {
+        "rule": "marquee",
+        "value": "*",
+        "files": [
+          "assets/logo/identity-report.html"
+        ],
+        "createdAt": "2026-11-19T05:09:35.658Z",
+        "reason": "agent decided: user asked for looping motion elements in the kothar report template; this file is a generated copy of that report"
+      }
+    ]
+  }
+}

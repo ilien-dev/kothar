@@ -1,0 +1,23 @@
+{
+  "skill_name": "kothar",
+  "evals": [
+    {
+      "id": 1,
+      "prompt": "Este repo todavía no tiene nombre ni logo. Ayúdame a elegirlos: siempre saco los nombres de la mitología de cualquier cultura.",
+      "expected_output": "Lee el repo, guarda la preferencia de categorías, propone al menos 10 nombres con a quién representa y por qué, abre el reporte en localhost y espera la selección; no propone nombres que el usuario ya usa.",
+      "files": []
+    },
+    {
+      "id": 2,
+      "prompt": "I need a logo for my CLI tool that syncs dotfiles across machines. It's called Stow already, I just want the mark, 6 options.",
+      "expected_output": "Records the given name without re-running naming, produces 6 concepts split 2/2/2, every SVG passes kothar audit, blind judges run before step 2 is published.",
+      "files": []
+    },
+    {
+      "id": 3,
+      "prompt": "ya tengo nombre (Quipu) y quiero que el nombre vaya dibujado, no con una fuente. colores: algo terroso",
+      "expected_output": "Dibuja nombres en SVG que no son contornos de una fuente y los jueces leen «Quipu». No propone paletas: explica en una línea que el logotipo se entrega en negro, blanco y grises y que el color se decide al diseñar la web o el README; los archivos entregados no llevan colores de marca.",
+      "files": []
+    }
+  ]
+}

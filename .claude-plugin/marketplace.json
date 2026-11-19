@@ -1,0 +1,19 @@
+{
+  "name": "kothar",
+  "owner": {
+    "name": "jjimenezc",
+    "url": "https://github.com/ilien-dev"
+  },
+  "metadata": {
+    "description": "Marketplace for the kothar plugin."
+  },
+  "plugins": [
+    {
+      "name": "kothar",
+      "source": "./",
+      "description": "Names a product and forges its logo identity, measured by scripts and judged blind, chosen step by step in a local page.",
+      "category": "design",
+      "tags": ["logo", "naming", "branding", "svg"]
+    }
+  ]
+}
