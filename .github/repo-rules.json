@@ -1,0 +1,97 @@
+{
+  "name": "kothar",
+  "repo": "ilien-dev/kothar",
+  "defaultBranch": "main",
+  "purpose": "names a product and forges its logo identity: name candidates with their meaning, SVG logos measured by scripts and judged blind, free fonts and a shareable report, chosen step by step in a local page.",
+  "shipped": [
+    "skills/**",
+    ".claude-plugin/**",
+    ".codex-plugin/**"
+  ],
+  "visual": [
+    "skills/kothar/assets/**",
+    "src/web/**",
+    "assets/logo/**"
+  ],
+  "issueFirst": false,
+  "measured": {
+    "enabled": true,
+    "types": [
+      "feat",
+      "fix",
+      "perf"
+    ],
+    "methods": [
+      "A change to what the skill does: the cases in `evals/evals.json` run on main and on your branch, with the pass count of each.",
+      "A fix: the test in `tests/` that fails on main and passes on your branch.",
+      "A change to a measurement (size, originality, judges): `kothar audit` on the same logos on main and on your branch."
+    ]
+  },
+  "commands": [
+    "npm test"
+  ],
+  "ci": {
+    "requiredChecks": [
+      "Tests"
+    ]
+  },
+  "release": {
+    "kind": "npm",
+    "currentVersion": "0.1.0",
+    "npmPrepare": [
+      "npm ci",
+      "npm test"
+    ],
+    "versionFiles": [
+      {
+        "path": ".claude-plugin/plugin.json",
+        "jsonpath": "$.version"
+      },
+      {
+        "path": ".codex-plugin/plugin.json",
+        "jsonpath": "$.version"
+      },
+      {
+        "path": "package.json",
+        "jsonpath": "$.version"
+      },
+      {
+        "path": "package-lock.json",
+        "jsonpath": "$.version"
+      },
+      {
+        "path": "package-lock.json",
+        "jsonpath": "$.packages[\"\"].version"
+      }
+    ],
+    "build": [],
+    "buildSecrets": [],
+    "bootstrapSha": "c77949c3581824837a13b2e67e37259eb1acda39"
+  },
+  "standard": 1,
+  "branch": {
+    "types": [
+      "feat",
+      "fix",
+      "perf",
+      "refactor",
+      "docs",
+      "test",
+      "build",
+      "ci",
+      "chore",
+      "style",
+      "revert"
+    ],
+    "maxWords": 5
+  },
+  "title": {
+    "max": 72
+  },
+  "releaseTypes": [
+    "feat",
+    "fix",
+    "perf",
+    "revert"
+  ]
+}

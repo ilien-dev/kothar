@@ -47,6 +47,10 @@ node skills/kothar/scripts/kothar.js help
 
 State for a product lives in `.kothar/` inside that product's folder; machine-wide data (dependencies, reference index, fonts, naming preferences) lives in `~/.kothar`.
 
+## Contributing
+
+Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or a pull request. Report vulnerabilities privately as described in [SECURITY.md](SECURITY.md).
+
 ## Licence
 
 MIT. The reference sets are downloaded at setup time under their own licences and are not redistributed; brand logos are trademarks of their owners and are used only to measure likeness.
