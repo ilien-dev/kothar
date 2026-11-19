@@ -1,7 +1,7 @@
 {
   "name": "kothar",
   "displayName": "kothar",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Names a product and forges its logo identity: name candidates with their meaning, SVG logos measured by scripts and judged blind, in black, white and greys, free fonts and a shareable report, chosen step by step in a local page.",
   "author": {
     "name": "jjimenezc",
@@ -10,5 +10,12 @@
   "homepage": "https://github.com/ilien-dev/kothar",
   "repository": "https://github.com/ilien-dev/kothar",
   "license": "MIT",
-  "keywords": ["logo", "naming", "branding", "svg", "identity", "design"]
+  "keywords": [
+    "logo",
+    "naming",
+    "branding",
+    "svg",
+    "identity",
+    "design"
+  ]
 }
