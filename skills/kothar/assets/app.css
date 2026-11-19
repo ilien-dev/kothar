@@ -9,7 +9,9 @@ button:disabled{cursor:default}
 a{color:var(--ink)}a:hover{color:var(--k-acc)}
 svg{display:block;max-width:100%;height:auto}
 [data-ink="accent"]{color:var(--accent,currentColor)}
-.pad{padding-left:clamp(16px,4vw,56px);padding-right:clamp(16px,4vw,56px)}
+/* content stays in a centred column of at most --wrap; grounds and bars still run edge to edge */
+:root{--wrap:1180px;--gut:max(clamp(16px,4vw,56px),calc((100% - var(--wrap)) / 2))}
+.pad{padding-left:var(--gut);padding-right:var(--gut)}
 .mono{font:500 11px/1.4 var(--mono);letter-spacing:.08em;text-transform:uppercase}
 .mute{color:var(--mute)}
 .red{color:var(--k-acc)}
@@ -267,7 +269,7 @@ h2{font-size:20px}
 /* header and steps stay in view; logo cards share one height so every "choose" button lines up */
 .chrome{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--edge)}
 .bar{z-index:20}
-.steps{padding-left:calc(clamp(16px,4vw,56px) - 14px);padding-right:calc(clamp(16px,4vw,56px) - 14px)}
+.steps{padding-left:calc(var(--gut) - 14px);padding-right:calc(var(--gut) - 14px)}
 .step{padding:8px 14px 10px}
 main>.section:first-child,.loading{border-top:0}
 .readonly{border-top:0;border-bottom:1px solid var(--line)}
