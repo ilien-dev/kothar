@@ -1,10 +1,38 @@
 {
   "name": "kothar",
   "version": "0.1.0",
-  "private": true,
   "description": "Claude Code plugin: choose a product name and a measured logo identity.",
   "type": "module",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ilien-dev/kothar.git"
+  },
+  "homepage": "https://github.com/ilien-dev/kothar#readme",
+  "bugs": {
+    "url": "https://github.com/ilien-dev/kothar/issues"
+  },
+  "keywords": [
+    "logo",
+    "naming",
+    "branding",
+    "svg",
+    "identity",
+    "claude-code",
+    "plugin"
+  ],
+  "bin": {
+    "kothar": "skills/kothar/scripts/kothar.js"
+  },
+  "files": [
+    "skills/",
+    "!skills/**/*.tmp*",
+    ".claude-plugin/",
+    ".codex-plugin/"
+  ],
+  "engines": {
+    "node": ">=20"
+  },
   "scripts": {
     "build": "tsc -p tsconfig.json && tsc -p tsconfig.web.json",
     "test": "npm run build && node --test tests/core.test.js"

@@ -1,0 +1,27 @@
+name: CI
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    name: Tests
+    runs-on: ubuntu-24.04
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+      - run: npm ci
+      # The tests render SVGs with the renderer that `kothar setup` installs into ~/.kothar.
+      - run: node skills/kothar/scripts/kothar.js setup
+      - run: npm test
+      # The compiled CLI and page are committed (a plugin installs by cloning): they must match src/.
+      - name: Compiled files match the source
+        run: git diff --exit-code -- skills/
