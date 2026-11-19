@@ -58,6 +58,8 @@ export function buildState(ws, opts = {}) {
         similarityChecked: audit ? audit.similarityChecked : null, judgeCount: audit?.judges?.judges ?? 0,
     };
 }
+// Kothar's own mark as the tab icon, so the page reads as this tool's report (same file as assets/logo-color/favicon.svg).
+const K_FAVICON = 'data:image/svg+xml,' + encodeURIComponent('<svg xmlns="http://www.w3.org/2000/svg" viewBox="6.031 6.031 51.937 51.937" fill="#0B1622"><path d="M8 8h48v14H22v34H8z"/><circle cx="43" cy="43" r="12" fill="#0B7FD0"/></svg>');
 /** The whole page as one self-contained HTML document. `state` null = live mode (the page polls the server). */
 export function page(state, title) {
     const css = fs.readFileSync(path.join(ASSETS, 'app.css'), 'utf8');
@@ -70,8 +72,9 @@ export function page(state, title) {
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>${safe}</title>
+<link rel="icon" type="image/svg+xml" href="${K_FAVICON}">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&family=JetBrains+Mono:wght@400;500;700&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;700&display=swap">
 <style>${css}</style>
 </head>
 <body>
