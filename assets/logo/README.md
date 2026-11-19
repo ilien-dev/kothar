@@ -14,8 +14,8 @@ Todo lo necesario para usar el logotipo, generado con kothar el 2026-11-19.
 
 | Archivo | Úsalo para |
 |---|---|
-| `kothar-mark.svg` | el logotipo a color, sobre fondos claros |
-| `kothar-mark-on-dark.svg` | el logotipo sobre fondos oscuros |
+| `kothar-mark.svg` | el logotipo en negro y gris, sobre fondos claros |
+| `kothar-mark-on-dark.svg` | el logotipo en blanco y gris, sobre fondos oscuros |
 | `kothar-mark-mono.svg` | el logotipo en una sola tinta |
 | `kothar-logo.svg` | logotipo + nombre, sobre fondos claros |
 | `kothar-logo-on-dark.svg` | logotipo + nombre, sobre fondos oscuros |
@@ -29,27 +29,25 @@ Todo lo necesario para usar el logotipo, generado con kothar el 2026-11-19.
 | `png/kothar-logo-800.png`, `-1600.png`, `-on-dark-1600.png` | copias en píxeles de logotipo + nombre |
 | `og-image.png` | imagen de vista previa de enlaces, 1200 × 630 |
 
-Los colores también están como variables CSS en `colors.css` y como datos en `tokens.json`.
+El nombre, la tipografía y el logotipo también están como datos en `tokens.json`.
 
 ## Qué versión usar
 
-- Sobre fondos claros: los archivos a color.
-- Sobre fondos oscuros o fotos: los archivos «on-dark».
+- Sobre fondos claros: los archivos en negro y gris.
+- Sobre fondos oscuros o fotos: los archivos «on-dark», en blanco y gris.
 - Cuando solo hay una tinta (grabado, sello, interfaz monocroma): los archivos de una tinta, que toman el color del texto que los rodea (`currentColor`).
 
-## Colores · Plano técnico
+## Negro, blanco y grises
 
-| Papel | Hex |
-|---|---|
-| Primario | `#0B1622` |
-| Acento | `#0B7FD0` |
-| Fondo claro | `#F3F6FA` |
-| Fondo oscuro | `#0A1420` |
-| Neutro | `#7F8B99` |
-| Primario, sobre fondos oscuros | `#F3F6FA` |
-| Acento, sobre fondos oscuros | `#4DA8F0` |
+El logotipo se entrega sin colores de marca, para que encaje con la paleta que elijas después para la web, el README o la app: una paleta cambia a menudo, un logotipo casi nunca. La forma principal va en la tinta más oscura; la segunda parte, si el logotipo la tiene, en gris.
 
-Contraste del logotipo: 16.82:1 sobre el fondo claro, 17.09:1 sobre el fondo oscuro.
+| Parte | sobre fondos claros | sobre fondos oscuros |
+|---|---|---|
+| Fondo | `#FFFFFF` | `#000000` |
+| Forma principal | `#111111` | `#F5F5F5` |
+| Segunda parte | `#767676` | `#8C8C8C` |
+
+Para aplicar colores de marca más adelante, parte del archivo de una tinta: da un color a la forma principal y otro a la segunda parte (`data-ink="accent"`), cada uno con al menos 3:1 de contraste con su fondo.
 
 ## Tipografía
 
@@ -69,7 +67,7 @@ Deja libre al menos el 12 % del ancho del logotipo en cada lado. Nada más entra
 
 ## No se debe
 
-- recolorearlo fuera de esta paleta
+- colorear sus dos partes tan parecidas que ya no se distingan
 - estirarlo, girarlo, contornearlo ni añadirle sombras o degradados
 - ponerlo sobre un fondo donde baje de 3:1 de contraste
 - redibujarlo ni reconstruirlo con una fuente

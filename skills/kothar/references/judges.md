@@ -21,7 +21,7 @@ Pack when the only failures left in `kothar audit` are `judge-missing` or `judge
 - **Recognition.** Each concept has `depicts`: words a stranger should use for it. A judge recognised the mark when their description uses those words (whole words; plurals and close stems count; "a T" matches "letter t"). Fewer than half at large size is a warning with the judges' own words; recognised large but not at 16 px is a warning that the small version loses the idea. An abstract mark may legitimately be described by its shapes: list those shapes in `depicts` from the start.
 - **Lookalikes.** When most judges are reminded of the same thing, you get their words back. Words that name your intended subject are ignored (judges seeing a spool in a spool logo is success). What remains is a **warning when the judges also rate distinctiveness 3 or lower**, and only a note when they rate it higher.
 - **Reading.** For a drawn name, at least two thirds of the judges must type the name (letters only; upper or lower case does not matter) or it fails, with what they typed instead.
-- **Scores** for legibility, distinctiveness and memorability are medians. Low distinctiveness across judges means "generic", whatever the similarity index said.
+- **Scores** for legibility, distinctiveness and memorability are medians. Low distinctiveness across judges means "generic", whatever the similarity index said. They are first-sight scores: liking changes with repeated exposure, and people do not retain a logo's details, so the memorability score says how easily the silhouette could be drawn back, not whether the brand will be remembered.
 
 ## Acting on it, and when to stop
 

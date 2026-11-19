@@ -203,7 +203,7 @@ const COMMANDS = {
         run: () => {
             const D = traitData();
             print({
-                how: 'Weigh what this product is, from the repository and from what the user said: give each trait that applies a weight 1 (a little) to 3 (defining), leave out the rest (three to five traits is typical), and choose one kind. Save as {"product":{"kind":"...","traits":{"competence":3,...}}} with "kothar set".',
+                how: 'Weigh what this product is, from the repository and from what the user said: give each trait that applies a weight 1 (a little) to 3 (defining), leave out the rest (three to five traits is typical), and choose one kind. Also record three facts that decide which way the drawing rules point: stage ("new" or "known" to its audience), stakes ("high" when using or buying it puts money, safety, health or data at risk, otherwise "low") and category ("negative" when the field itself has bad associations, otherwise "neutral"). Save as {"product":{"kind":"...","traits":{"competence":3,...},"stage":"new","stakes":"low","category":"neutral"}} with "kothar set".',
                 kinds: Object.fromEntries(Object.entries(D.kinds).map(([k, v]) => [k, v.means])),
                 traits: Object.fromEntries(Object.entries(D.traits).map(([k, v]) => [k, v.means])),
                 note: D.note,
@@ -293,6 +293,7 @@ const COMMANDS = {
                 ...findings.map((f) => `${f.level}: [${f.rule}] ${f.msg}`),
                 findings.length ? '' : 'no findings',
                 `clean from: ${m.metrics.minCleanSize ?? '—'} px · smallest element: ${m.metrics.smallestElementPx ?? '—'} px at target size · ${l.stats.nodes} path nodes`,
+                `thin parts: ${m.metrics.thinStrokePx ?? '—'} px · narrow gaps: ${m.metrics.narrowGapPx ?? '—'} px at target size (each needs 1)${m.metrics.symmetry ? ` · mirror symmetry: ${m.metrics.symmetry.leftRight} left-right, ${m.metrics.symmetry.topBottom} top-bottom (a description, not a score)` : ''}`,
                 q ? `nearest shapes: ${q.matches.slice(0, 4).map((x) => `${x.score} ${x.label} "${x.name}"`).join(' · ')}` : '',
                 `look at it: ${base}-large.png (large) and ${base}-small.png (real pixels at ${role === 'wordmark' ? '22 px tall' : '16 px'}, enlarged)`,
             ].filter((x) => x !== '').join(String.fromCharCode(10)));

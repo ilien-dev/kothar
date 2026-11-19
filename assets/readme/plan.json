@@ -1,0 +1,112 @@
+{
+  "audience": "general",
+  "audience_confirmed": true,
+  "sentence": "When someone starts a project and needs a name or a logo but has no designer, they ask their AI agent and choose, step by step in their browser, among names that come with their meaning and logos that were tested before they see them, instead of settling for a generic drawing.",
+  "language": "en",
+  "translations": [
+    "README.es.md"
+  ],
+  "unfinished": [],
+  "captures_agreed": false,
+  "hero": {
+    "file": "assets/hero.src.svg",
+    "shows": [
+      "project readme card",
+      "nine logo options grid",
+      "scan line over the options",
+      "warning chip on one option",
+      "chosen option ring",
+      "identity card with light and dark lockups",
+      "favicon tab"
+    ]
+  },
+  "sections": [
+    {
+      "heading": "Every option has an idea behind it",
+      "role": "features",
+      "docs": "docs/how-it-measures.md",
+      "picture": {
+        "file": "assets/readme/ideas.src.svg",
+        "type": "drawn",
+        "claim": "Each logo option comes from the name, from what the project does, or from both, and carries its own short story.",
+        "shows": [
+          "three concept cards",
+          "by the name label",
+          "by what it does label",
+          "both label",
+          "crucible mark",
+          "square and dot mark",
+          "measured ingot mark",
+          "highlight walking across cards"
+        ]
+      }
+    },
+    {
+      "heading": "How it works",
+      "role": "how",
+      "docs": null,
+      "picture": {
+        "file": "assets/readme/how.src.svg",
+        "type": "drawn",
+        "claim": "You choose and confirm in the browser while your agent draws, measures and reviews the next options, and the page moves on by itself.",
+        "shows": [
+          "browser window with step 01 name",
+          "confirm button",
+          "creating logos loading spinner",
+          "agent terminal panel",
+          "your choice arrow",
+          "new options arrow"
+        ]
+      }
+    },
+    {
+      "heading": "Install",
+      "role": "install",
+      "docs": null,
+      "picture": {
+        "file": "assets/readme/install.src.svg",
+        "type": "drawn",
+        "claim": "The same skill installs in Claude Code as a plugin and with npx in Codex, Gemini or any other agent.",
+        "shows": [
+          "skill folder",
+          "parcels to each agent",
+          "claude code row with claude logo",
+          "codex row with codex logo",
+          "gemini row with gemini logo",
+          "other agent row with robot icon",
+          "check marks"
+        ]
+      }
+    },
+    {
+      "heading": "Development",
+      "role": "develop",
+      "docs": "docs/development.md",
+      "picture": null
+    },
+    {
+      "heading": "Contributing",
+      "role": "contributing",
+      "docs": null,
+      "picture": null
+    },
+    {
+      "heading": "Licence",
+      "role": "license",
+      "docs": null,
+      "picture": null
+    }
+  ],
+  "assets": {
+    "logos": {
+      "family": "devicon",
+      "variant": null,
+      "why": "Claude, Codex and Gemini in their official colours, as the user asked; flat colour marks beside the solid geometric Kothar mark"
+    },
+    "icons": {
+      "family": "ph",
+      "variant": "fill",
+      "why": "solid filled glyphs match the solid L-and-dot mark; a robot for any other agent"
+    }
+  }
+}
