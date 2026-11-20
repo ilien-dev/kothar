@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.4.0](https://github.com/ilien-dev/kothar/compare/v0.3.0...v0.4.0) (2026-11-20)
+
+
+### ⚠ BREAKING CHANGES
+
+* rebuild kothar as a question-led brand identity skill ([#7](https://github.com/ilien-dev/kothar/issues/7))
+
+### Features
+
+* rebuild kothar as a question-led brand identity skill ([#7](https://github.com/ilien-dev/kothar/issues/7)) ([684ba22](https://github.com/ilien-dev/kothar/commit/684ba22112cf54adfa68d7108d63412113475c60))
+
 ## [0.3.0](https://github.com/ilien-dev/kothar/compare/v0.2.0...v0.3.0) (2026-11-20)
 
 
