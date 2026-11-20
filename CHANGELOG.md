@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.5.0](https://github.com/ilien-dev/kothar/compare/v0.4.0...v0.5.0) (2026-11-20)
+
+
+### Features
+
+* rebrand kothar with its new three-passes identity ([#10](https://github.com/ilien-dev/kothar/issues/10)) ([433f772](https://github.com/ilien-dev/kothar/commit/433f772320f034b7e97e3aaa3b8674846554d902))
+
 ## [0.4.0](https://github.com/ilien-dev/kothar/compare/v0.3.0...v0.4.0) (2026-11-20)
 
 
