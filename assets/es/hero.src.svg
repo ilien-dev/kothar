@@ -1,131 +1,145 @@
 <!--palette
-bg       #0A1420 #F7F9FB
-ink      #F3F6FA #0B1622
-body     #AEB9C6 #3E4C5C
-accent   #4DA8F0 #0B7FD0
-acctext  #4DA8F0 #0A6AB0
-panel    #101C2A #FFFFFF
-line     #2A3E55 #CBD5E1
-skel     #22344A #DCE3EC
-deco     #14273C #DFE6EE
-mk       #F5F5F5 #111111
-mk2      #8C8C8C #767676
-warnbg   #3A2A10 #FFF4E0
-warntx   #F2C27A #7A4700
-warnline #E0A040 #B26A00
-tab      #1C2B3C #EDEDED
-white    #FFFFFF #FFFFFF
-black    #111111 #111111
-grey     #767676 #767676
-greyd    #8C8C8C #8C8C8C
+bg       #141619 #F2F3F5
+ink      #ECEEF0 #141619
+body     #B4BAC1 #3F454C
+muted    #959CA4 #5B6168
+accent   #F04E15 #F04E15
+acctext  #F26A36 #B83A0B
+panel    #1D2024 #FFFFFF
+line     #3A4047 #C9CED4
+mk       #ECEEF0 #141619
+thumb1   #C9CDD2 #C9CDD2
+thumb2   #2A2D31 #2A2D31
+thumb3   #E3E5E8 #E3E5E8
+knob     #F5F6F7 #F5F6F7
+dim      #7C838B #7C838B
+bubble   #262A2F #ECEEF0
+onacc    #141619 #141619
 -->
 <!--brief
-sentence: someone starting a project with no designer asks their AI agent for a name or a logo and chooses, step by step in the browser, among names with their meaning and logos tested before they see them.
-input: the project's own description (README.md, first lines: "names a product and builds its logo identity").
-output: nine options drawn for this repository (.kothar/concepts/c4, c10, c11, c14, c15, c16, c17/mark.svg), one warned for likeness (.kothar/audit.json, c10: close to a map icon, 0.825), the chosen "Escuadra y punto" (c4) and its identity (assets/logo/).
-features: names with their story (skills/kothar/references/naming.md, gate in src/identity.ts); clear as a tab icon (src/measure.ts, 16 px); not a copy of a famous logo (src/similarity.ts); you choose every step in the browser (src/server.ts, src/web/app.ts).
+sentence: someone shipping a project without a designer tells their AI agent what they like, and leaves with a name, a logo of their own and a brand book they can send anyone.
+input: the references the user hands the agent (this repository's own run: five product renders in grey with one orange accent, .kothar/brief.md).
+output: the proposals report with three concepts (.kothar/proposals.html; concepts a-tongs, b-steps, c-dial in .kothar/concepts/), the chosen one (b-steps) and its brand book (assets/brand/brand-book.html, assets/brand/logo/, assets/brand/web/).
+features: names with their story (skills/kothar/references/naming.md); logos drawn from your references (SKILL.md step 2, references/craft.md); checked at the size of a tab (references/craft.md step 5, rendering.md); one brand book to send anyone (references/report.md).
+strip: none, the picture runs to the bottom edge.
 left out as unfinished: nothing is marked unfinished.
 -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" role="img" aria-label="De la descripción de un proyecto a su logotipo: Kothar dibuja nueve opciones, las revisa, avisa de una que recuerda a un icono de mapa, se elige la de escuadra y punto y se convierte en una identidad en negro, blanco y gris">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 640" role="img" aria-label="Le das a tu agente de IA tus referencias; dibuja tres propuestas de logo, respondes B en el chat y el logo elegido se convierte en un brand book con sus colores, su icono de app y el nombre kothar">
 <style>
-/* 10 s  read     |in|==========================================|out
-         scan            |----sweep----|
-         warn                       |in|===========================|out
-         pick                              |in|=========================|out
-         fly                                |--fly--|
-         identity                                    |in|==============|out
-         features  four turns of 2.5 s */
-@keyframes rise{to{transform:translateY(-320px)}}
-@keyframes read{0%,6%{opacity:0}10%,95%{opacity:1}100%{opacity:0}}
-@keyframes scan{0%,24%{transform:translateY(0);opacity:0}26%{opacity:1}46%{transform:translateY(244px);opacity:1}48%,100%{transform:translateY(244px);opacity:0}}
-@keyframes warn{0%,42%{opacity:0}45%,94%{opacity:1}100%{opacity:0}}
-@keyframes pick{0%,52%{opacity:0}55%,96%{opacity:1}100%{opacity:0}}
-@keyframes fly{0%,56%{transform:translate(246px,0) scale(1);opacity:0}59%{transform:translate(246px,0) scale(1);opacity:1}70%{transform:translate(300px,-117px) scale(.667);opacity:1}73%,100%{transform:translate(300px,-117px) scale(.667);opacity:0}}
-@keyframes idin{0%,70%{opacity:0}74%,96%{opacity:1}100%{opacity:0}}
+/* 12 s  marks A B C   |pop|pop|pop|=================================================|out
+         reply B                       |in|=========================================|out
+         chip B                       |press|
+         ring B                          |in|=======================================|out
+         reply build                            |in|================================|out
+         parcel                                  |-----fly-----|
+         book items    ===========|out|                        |in|in|in|in|=========
+         features      four turns of 3 s */
+@keyframes popA{0%,2%{opacity:0;transform:scale(.6)}6%,92%{opacity:1;transform:none}96%,100%{opacity:0;transform:scale(.6)}}
+@keyframes popB{0%,6%{opacity:0;transform:scale(.6)}10%,92%{opacity:1;transform:none}96%,100%{opacity:0;transform:scale(.6)}}
+@keyframes popC{0%,10%{opacity:0;transform:scale(.6)}14%,92%{opacity:1;transform:none}96%,100%{opacity:0;transform:scale(.6)}}
+@keyframes reply{0%,28%{opacity:0;transform:translateY(12px)}31%,94%{opacity:1;transform:none}98%,100%{opacity:0;transform:none}}
+@keyframes build{0%,36%{opacity:0;transform:translateY(12px)}39%,94%{opacity:1;transform:none}98%,100%{opacity:0;transform:none}}
+@keyframes press{0%,26%{transform:scale(1)}28%{transform:scale(.88)}31%,100%{transform:scale(1)}}
+@keyframes chosen{0%,27%{opacity:0}30%,94%{opacity:1}98%,100%{opacity:0}}
+@keyframes ring{0%,31%{opacity:0}34%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes fly{0%,40%{transform:translate(0,0) scale(1);opacity:0}42%{transform:translate(0,0) scale(1);opacity:1}54%{transform:translate(-98px,252px) scale(1.667);opacity:1}57%,100%{transform:translate(-98px,252px) scale(1.667);opacity:0}}
+@keyframes book1{0%,34%{opacity:1}38%,53%{opacity:0}56%,100%{opacity:1}}
+@keyframes book2{0%,34%{opacity:1}38%,59%{opacity:0}62%,100%{opacity:1}}
+@keyframes book3{0%,34%{opacity:1}38%,65%{opacity:0}68%,100%{opacity:1}}
+@keyframes book4{0%,34%{opacity:1}38%,71%{opacity:0}74%,100%{opacity:1}}
 @keyframes turn{0%{transform:translateY(32px);opacity:0}4%,25%{transform:translateY(0);opacity:1}29%,100%{transform:translateY(-32px);opacity:0}}
-.rise{animation:rise 40s linear infinite}
-.read{animation:read 10s ease-out infinite}
-.scan{animation:scan 10s cubic-bezier(.4,0,.2,1) infinite}
-.warn{animation:warn 10s ease-out infinite}
-.pick{animation:pick 10s ease-out infinite}
-.fly{animation:fly 10s cubic-bezier(.4,0,.2,1) infinite;transform-box:fill-box;transform-origin:0 0}
-.idin{animation:idin 10s ease-out infinite}
-.turn{animation:turn 10s cubic-bezier(.4,0,.2,1) infinite}
+@keyframes flow{to{stroke-dashoffset:-24}}
+@keyframes caret{0%,100%{opacity:1}50%{opacity:0}}
+.popA,.popB,.popC{transform-box:fill-box;transform-origin:center}
+.popA{animation:popA 12s cubic-bezier(0,0,.2,1) infinite}
+.popB{animation:popB 12s cubic-bezier(0,0,.2,1) infinite}
+.popC{animation:popC 12s cubic-bezier(0,0,.2,1) infinite}
+.reply{animation:reply 12s cubic-bezier(0,0,.2,1) infinite}
+.build{animation:build 12s cubic-bezier(0,0,.2,1) infinite}
+.press{animation:press 12s ease-out infinite;transform-box:fill-box;transform-origin:center}
+.chosen{animation:chosen 12s ease-out infinite}
+.ring{animation:ring 12s ease-out infinite}
+.fly{animation:fly 12s cubic-bezier(.4,0,.2,1) infinite;transform-box:fill-box;transform-origin:center}
+.book1{animation:book1 12s ease-out infinite}
+.book2{animation:book2 12s ease-out infinite}
+.book3{animation:book3 12s ease-out infinite}
+.book4{animation:book4 12s ease-out infinite}
+.turn{animation:turn 12s cubic-bezier(.4,0,.2,1) infinite}
+.flow{animation:flow 1.2s linear infinite}
+.caret{animation:caret 1.1s steps(1,end) infinite}
 </style>
 <defs>
-<pattern id="sq" width="320" height="320" patternUnits="userSpaceOnUse">
-<path d="M30 40h44v12H42v32H30z" fill="none" stroke="$deco" stroke-width="2"/>
-<circle cx="230" cy="70" r="12" fill="none" stroke="$deco" stroke-width="2"/>
-<path d="M190 200h30v8h-22v22h-8z" fill="none" stroke="$deco" stroke-width="2"/>
-<circle cx="80" cy="250" r="7" fill="none" stroke="$deco" stroke-width="2"/>
-<path d="M262 278h36v10h-26v26h-10z" fill="none" stroke="$deco" stroke-width="2"/>
-<circle cx="150" cy="140" r="4" fill="$deco"/>
-</pattern>
-<clipPath id="feat"><rect x="56" y="392" width="480" height="40"/></clipPath>
-<symbol id="m4" viewBox="5.12 5.12 53.76 53.76"><path d="M8 8h48v14H22v34H8z" fill="$mk"/><circle cx="43" cy="43" r="12" fill="$mk2"/></symbol>
-<symbol id="m10" viewBox="2.88 4.88 58.24 54.24"><path d="M6 8h16v34h20V8h16v48H6z" fill="$mk"/><path d="M26 14h12v22H26z" fill="$mk2"/></symbol>
-<symbol id="m11" viewBox="0.295 -2.58 65.41 69.16"><path fill="none" stroke="$mk" stroke-width="9" d="M20 5Q62 32 20 59"/><path fill="none" stroke="$mk" stroke-width="5" d="M20 5V59"/><path d="M4 28h40v8H4z" fill="$mk"/><path d="M44 20l18 12-18 12z" fill="$mk2"/></symbol>
-<symbol id="m14" viewBox="-3.84 2.16 71.68 59.68"><path d="M4 6h14v10H4zM25 6h14v10H25zM46 6h14v10H46zM4 34h14v24H4zM25 34h14v24H25zM46 34h14v24H46z" fill="$mk"/><path d="M0 20h64v10H0z" fill="$mk2"/></symbol>
-<symbol id="m15" viewBox="0.64 0.64 62.72 62.72"><path fill-rule="evenodd" d="M4 4l16 8h24l16-8-7 18v20l7 18-16-8H20L4 60l7-18V22zM32 20a12 12 0 1 0 0 24 12 12 0 0 0 0-24z" fill="$mk"/><circle cx="32" cy="32" r="6" fill="$mk2"/></symbol>
-<symbol id="m16" viewBox="0.64 0.64 62.72 62.72"><path d="M14 4h36v13H14zM4 47h56v13H4z" fill="$mk"/><circle cx="32" cy="32" r="10" fill="$mk2"/></symbol>
-<symbol id="m17" viewBox="2.88 2.88 58.24 58.24"><path d="M6 6h20v11h-9v30h9v11H6zM58 6H38v11h9v30h-9v11h20z" fill="$mk"/><path d="M25 25h14v14H25z" fill="$mk2"/></symbol>
-<symbol id="mL" viewBox="5.12 5.12 53.76 53.76"><path d="M8 8h48v14H22v34H8z" fill="$black"/><circle cx="43" cy="43" r="12" fill="$grey"/></symbol>
-<symbol id="mD" viewBox="5.12 5.12 53.76 53.76"><path d="M8 8h48v14H22v34H8z" fill="$white"/><circle cx="43" cy="43" r="12" fill="$greyd"/></symbol>
+<symbol id="mb" viewBox="0 0 256 256"><path fill="$mk" d="M24 24H96V96H24ZM122 24H166A14 14 0 0 1 180 38V82A14 14 0 0 1 166 96H122A14 14 0 0 1 108 82V38A14 14 0 0 1 122 24ZM52 108H68A28 28 0 0 1 96 136V152A28 28 0 0 1 68 180H52A28 28 0 0 1 24 152V136A28 28 0 0 1 52 108Z"/><circle cx="170.5" cy="170.5" r="62.5" fill="$accent"/></symbol>
+<symbol id="ma" viewBox="0 0 256 256"><path d="M182 232L128 158L82.6 114A52 52 0 0 1 90 41.5M74 232L128 158L173.4 114A52 52 0 0 0 166 41.5" fill="none" stroke="$mk" stroke-width="22" stroke-linecap="round" stroke-linejoin="round"/><circle cx="128" cy="78" r="28" fill="$accent"/></symbol>
+<symbol id="mc" viewBox="0 0 256 256"><path fill="$mk" fill-rule="evenodd" d="M128 28A100 100 0 1 1 127.9 28ZM128 74A54 54 0 1 0 128.1 74Z"/><path d="M128 128L152 104" fill="none" stroke="$accent" stroke-width="24" stroke-linecap="round"/></symbol>
+<clipPath id="feat"><rect x="56" y="454" width="500" height="48"/></clipPath>
 </defs>
 <rect width="1280" height="640" fill="$bg"/>
-<g id="backdrop"><rect class="rise" x="0" y="0" width="1280" height="960" fill="url(#sq)"/></g>
-<rect x="44" y="48" width="500" height="400" fill="$bg" opacity=".92"/>
+<g id="backdrop" data-backdrop="grid still"><defs><pattern id="bd-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M0 0H40M0 0V40" fill="none" stroke="$line" stroke-width="1"/></pattern></defs><rect x="-40" y="-40" width="1360" height="720" fill="url(#bd-grid)" opacity=".35"/></g>
 
 <!-- text block -->
-<g id="logo"><svg x="64" y="62" width="46" height="46" viewBox="6.031 6.031 51.937 51.937"><path d="M8 8h48v14H22v34H8z" fill="$ink"/><circle cx="43" cy="43" r="12" fill="$accent"/></svg></g>
-<g id="name" transform="translate(120 101) scale(.25)"><path fill="$ink" d="M41.20 0L14 0L14-144L41.20-144L41.20-77.60L96-144L129.20-144L69-73L133 0L98.60 0L41.20-65.60L41.20 0ZM187.60 3Q171.30 3 159-4.30Q146.70-11.60 139.85-24.45Q133-37.30 133-54Q133-70.90 140-83.75Q147-96.60 159.30-103.80Q171.60-111 187.60-111Q203.90-111 216.25-103.70Q228.60-96.40 235.50-83.55Q242.40-70.70 242.40-54Q242.40-37.20 235.45-24.35Q228.50-11.50 216.15-4.25Q203.80 3 187.60 3ZM187.60-22.40Q200.70-22.40 207.15-31.25Q213.60-40.10 213.60-54Q213.60-68.40 207.05-77Q200.50-85.60 187.60-85.60Q178.70-85.60 173-81.60Q167.30-77.60 164.55-70.50Q161.80-63.40 161.80-54Q161.80-39.50 168.35-30.95Q174.90-22.40 187.60-22.40ZM329.20-22.60L329.20 0Q318 2.10 307.25 1.85Q296.50 1.60 288.05-1.95Q279.60-5.50 275.20-13.40Q271.20-20.80 271-28.45Q270.80-36.10 270.80-45.80L270.80-138L298-138L298-47.40Q298-41.10 298.15-36.05Q298.30-31 300.20-28Q303.80-22.30 311.70-21.80Q319.60-21.30 329.20-22.60ZM329.20-87L252.40-87L252.40-108L329.20-108L329.20-87ZM454.40 0L426.80 0L426.80-51Q426.80-54.70 426.40-60.45Q426-66.20 423.90-72Q421.80-77.80 417.05-81.70Q412.30-85.60 403.60-85.60Q400.10-85.60 396.10-84.50Q392.10-83.40 388.60-80.25Q385.10-77.10 382.85-71Q380.60-64.90 380.60-54.80L365-62.20Q365-75 370.20-86.20Q375.40-97.40 385.85-104.30Q396.30-111.20 412.20-111.20Q424.90-111.20 432.90-106.90Q440.90-102.60 445.35-96Q449.80-89.40 451.70-82.25Q453.60-75.10 454-69.20Q454.40-63.30 454.40-60.60L454.40 0ZM380.60 0L353 0L353-144L377.20-144L377.20-70L380.60-70L380.60 0ZM510.40 3Q498.80 3 490.75-1.45Q482.70-5.90 478.55-13.35Q474.40-20.80 474.40-29.80Q474.40-37.30 476.70-43.50Q479-49.70 484.15-54.45Q489.30-59.20 498-62.40Q504-64.60 512.30-66.30Q520.60-68 531.10-69.55Q541.60-71.10 554.20-73L544.40-67.60Q544.40-77.20 539.80-81.70Q535.20-86.20 524.40-86.20Q518.40-86.20 511.90-83.30Q505.40-80.40 502.80-73L478.20-80.80Q482.30-94.20 493.60-102.60Q504.90-111 524.40-111Q538.70-111 549.80-106.60Q560.90-102.20 566.60-91.40Q569.80-85.40 570.40-79.40Q571-73.40 571-66L571 0L547.20 0L547.20-22.20L550.60-17.60Q542.70-6.70 533.55-1.85Q524.40 3 510.40 3ZM516.20-18.40Q523.70-18.40 528.85-21.05Q534-23.70 537.05-27.10Q540.10-30.50 541.20-32.80Q543.30-37.20 543.65-43.05Q544-48.90 544-52.80L552-50.80Q539.90-48.80 532.40-47.45Q524.90-46.10 520.30-45Q515.70-43.90 512.20-42.60Q508.20-41 505.75-39.15Q503.30-37.30 502.15-35.10Q501-32.90 501-30.20Q501-26.50 502.85-23.85Q504.70-21.20 508.10-19.80Q511.50-18.40 516.20-18.40ZM624.40 0L597 0L597-108L621-108L621-81.60L618.40-85Q620.50-90.60 624-95.20Q627.50-99.80 632.60-102.80Q636.50-105.20 641.10-106.55Q645.70-107.90 650.60-108.25Q655.50-108.60 660.40-108L660.40-82.60Q655.90-84 649.95-83.55Q644-83.10 639.20-80.80Q634.40-78.60 631.10-74.95Q627.80-71.30 626.10-66.35Q624.40-61.40 624.40-55.20L624.40 0Z"/></g>
-<text id="tagline" class="b" font-size="44" fill="$ink"><tspan x="64" y="200">Del proyecto</tspan><tspan x="64" y="252" fill="$acctext">a su logotipo.</tspan></text>
-<text id="about" class="s" font-size="20" fill="$body"><tspan x="64" y="304">Una skill para tu agente de IA: nombres con</tspan><tspan x="64" y="332">su significado y logotipos ya probados.</tspan></text>
+<g id="logo" transform="translate(56 80) scale(.21875)"><path fill="$mk" d="M24 24H96V96H24ZM122 24H166A14 14 0 0 1 180 38V82A14 14 0 0 1 166 96H122A14 14 0 0 1 108 82V38A14 14 0 0 1 122 24ZM52 108H68A28 28 0 0 1 96 136V152A28 28 0 0 1 68 180H52A28 28 0 0 1 24 152V136A28 28 0 0 1 52 108Z"/><circle cx="170.5" cy="170.5" r="62.5" fill="$accent"/></g>
+<text id="name" class="b" x="124" y="122" font-size="40" fill="$ink">kothar</text>
+<text id="tagline" class="b" font-size="46" fill="$ink"><tspan x="56" y="236">Un nombre y una marca</tspan><tspan x="56" y="294" fill="$acctext">para tu proyecto.</tspan></text>
+<text id="about" class="s" font-size="20" fill="$body"><tspan x="56" y="356">Una skill para tu agente de IA: pregunta,</tspan><tspan x="56" y="386">dibuja tu logo y arma su brand book.</tspan></text>
 <g id="facts" clip-path="url(#feat)">
-<g class="turn" opacity="0" style="animation-delay:-7.5s"><rect x="64" y="406" width="12" height="12" fill="$accent"/><text class="s" x="90" y="419" font-size="18" fill="$ink">Nombres que traen su historia</text></g>
-<g class="turn" opacity="0" style="animation-delay:-5s"><rect x="64" y="406" width="12" height="12" fill="$accent"/><text class="s" x="90" y="419" font-size="18" fill="$ink">Se lee hasta como icono de pestaña</text></g>
-<g class="turn" opacity="0" style="animation-delay:-2.5s"><rect x="64" y="406" width="12" height="12" fill="$accent"/><text class="s" x="90" y="419" font-size="18" fill="$ink">No copia un logotipo famoso</text></g>
-<g class="turn" style="animation-delay:0s"><rect x="64" y="406" width="12" height="12" fill="$accent"/><text class="s" x="90" y="419" font-size="18" fill="$ink">Tú eliges cada paso</text></g>
+<g class="turn" opacity="0" style="animation-delay:-9s"><rect x="56" y="468" width="14" height="14" rx="3" fill="$accent"/><text x="84" y="483" class="s" font-size="20" fill="$ink">Nombres con su historia</text></g>
+<g class="turn" opacity="0" style="animation-delay:-6s"><rect x="56" y="468" width="14" height="14" rx="3" fill="$accent"/><text x="84" y="483" class="s" font-size="20" fill="$ink">Logos a partir de tus referencias</text></g>
+<g class="turn" opacity="0" style="animation-delay:-3s"><rect x="56" y="468" width="14" height="14" rx="3" fill="$accent"/><text x="84" y="483" class="s" font-size="20" fill="$ink">Revisados al tamaño de una pestaña</text></g>
+<g class="turn" style="animation-delay:0s"><rect x="56" y="468" width="14" height="14" rx="3" fill="$accent"/><text x="84" y="483" class="s" font-size="20" fill="$ink">Un brand book para enviar a quien sea</text></g>
 </g>
 
-<!-- stage: project -> nine options -> identity -->
 <g id="stage">
-<text class="m" x="560" y="96" font-size="14" fill="$body" letter-spacing="1">TU PROYECTO</text>
-<rect x="560" y="112" width="170" height="440" rx="10" fill="$panel" stroke="$line" stroke-width="1.5"/>
-<text class="m" x="576" y="144" font-size="13" fill="$body">README.md</text>
-<g class="read"><text class="s" font-size="16" fill="$ink"><tspan x="576" y="182">«Un plugin que</tspan><tspan x="576" y="204">nombra productos</tspan><tspan x="576" y="226">y dibuja su</tspan><tspan x="576" y="248">logotipo.»</tspan></text></g>
-<rect x="576" y="286" width="120" height="8" rx="4" fill="$skel"/><rect x="576" y="304" width="96" height="8" rx="4" fill="$skel"/><rect x="576" y="322" width="110" height="8" rx="4" fill="$skel"/><rect x="576" y="358" width="124" height="8" rx="4" fill="$skel"/><rect x="576" y="376" width="88" height="8" rx="4" fill="$skel"/><rect x="576" y="394" width="116" height="8" rx="4" fill="$skel"/><rect x="576" y="430" width="104" height="8" rx="4" fill="$skel"/><rect x="576" y="448" width="120" height="8" rx="4" fill="$skel"/><rect x="576" y="466" width="80" height="8" rx="4" fill="$skel"/><rect x="576" y="502" width="112" height="8" rx="4" fill="$skel"/><rect x="576" y="520" width="92" height="8" rx="4" fill="$skel"/>
-<path d="M738 282h22" stroke="$accent" stroke-width="2.5"/><path d="M760 275l10 7-10 7z" fill="$accent"/>
+<!-- the chat with the agent -->
+<g data-kit="window"><rect x="600" y="40" width="300" height="532" rx="12" fill="$panel" stroke="$line" stroke-width="1.5"/><path d="M600 74H900" stroke="$line" stroke-width="1.5"/><circle cx="620" cy="57" r="5" fill="$line"/><circle cx="636" cy="57" r="5" fill="$line"/><circle cx="652" cy="57" r="5" fill="$line"/><text x="750" y="62" class="m" font-size="14" fill="$muted" text-anchor="middle">Tu agente</text></g>
+<!-- you: the references -->
+<rect x="668" y="92" width="216" height="118" rx="14" fill="$bubble"/>
+<text x="684" y="118" class="s" font-size="16" fill="$body">Mis referencias</text>
+<rect x="684" y="130" width="56" height="64" rx="8" fill="$thumb1"/><circle cx="712" cy="162" r="16" fill="$knob"/><circle cx="712" cy="162" r="5" fill="$accent"/>
+<rect x="748" y="130" width="56" height="64" rx="8" fill="$thumb2"/><circle cx="776" cy="162" r="14" fill="none" stroke="$accent" stroke-width="5"/>
+<rect x="812" y="130" width="56" height="64" rx="8" fill="$thumb3"/><circle cx="830" cy="146" r="6" fill="none" stroke="$dim" stroke-width="2"/><circle cx="830" cy="162" r="6" fill="none" stroke="$dim" stroke-width="2"/><circle cx="830" cy="178" r="6" fill="none" stroke="$dim" stroke-width="2"/><circle cx="852" cy="170" r="9" fill="$accent"/>
+<!-- the agent asks -->
+<rect x="616" y="228" width="236" height="104" rx="14" fill="$bubble"/>
+<text x="632" y="256" class="s" font-size="16" fill="$ink">¿Con cuál seguimos?</text>
+<g data-kit="chip"><rect x="632" y="290" width="36" height="28" rx="14" fill="none" stroke="$muted" stroke-width="1.5"/><text x="650" y="309" class="s" font-size="16" fill="$body" text-anchor="middle">A</text></g>
+<g class="press"><g data-kit="chip"><rect x="676" y="290" width="36" height="28" rx="14" fill="none" stroke="$accent" stroke-width="1.5"/><text x="694" y="309" class="s" font-size="16" fill="$acctext" text-anchor="middle">B</text></g></g>
+<g data-kit="chip"><rect x="720" y="290" width="36" height="28" rx="14" fill="none" stroke="$muted" stroke-width="1.5"/><text x="738" y="309" class="s" font-size="16" fill="$body" text-anchor="middle">C</text></g>
+<!-- you answer B -->
+<g class="reply"><rect x="812" y="350" width="72" height="44" rx="14" fill="$accent"/><text x="848" y="378" class="b" font-size="18" fill="$onacc" text-anchor="middle">B</text></g>
+<!-- the agent builds -->
+<g class="build"><rect x="616" y="412" width="236" height="52" rx="14" fill="$bubble"/><text x="632" y="443" class="s" font-size="16" fill="$ink">Armando tu brand book</text></g>
+<!-- the input -->
+<rect x="616" y="508" width="268" height="44" rx="12" fill="none" stroke="$line" stroke-width="1.5"/>
+<rect class="caret" x="632" y="520" width="3" height="20" fill="$accent"/>
 
-<text class="m" x="780" y="96" font-size="14" fill="$body" letter-spacing="1">9 OPCIONES</text>
-<g>
-<rect x="780" y="156" width="80" height="80" rx="6" fill="$panel" stroke="$line" stroke-width="1.5"/><use href="#m10" x="796" y="172" width="48" height="48"/>
-<rect x="866" y="156" width="80" height="80" rx="6" fill="$panel" stroke="$line" stroke-width="1.5"/><use href="#m11" x="882" y="172" width="48" height="48"/>
-<rect x="952" y="156" width="80" height="80" rx="6" fill="$panel" stroke="$line" stroke-width="1.5"/><use href="#m14" x="968" y="172" width="48" height="48"/>
-<rect x="780" y="242" width="80" height="80" rx="6" fill="$panel" stroke="$line" stroke-width="1.5"/><use href="#m4" x="796" y="258" width="48" height="48"/>
-<rect x="866" y="242" width="80" height="80" rx="6" fill="$panel" stroke="$line" stroke-width="1.5"/><use href="#m15" x="882" y="258" width="48" height="48"/>
-<rect x="952" y="242" width="80" height="80" rx="6" fill="$panel" stroke="$line" stroke-width="1.5"/><use href="#m16" x="968" y="258" width="48" height="48"/>
-<rect x="780" y="328" width="80" height="80" rx="6" fill="$panel" stroke="$line" stroke-width="1.5"/><use href="#m17" x="796" y="344" width="48" height="48"/>
-<rect x="866" y="328" width="80" height="80" rx="6" fill="$panel" stroke="$line" stroke-width="1.5"/><rect x="890" y="352" width="32" height="32" rx="4" fill="$skel"/>
-<rect x="952" y="328" width="80" height="80" rx="6" fill="$panel" stroke="$line" stroke-width="1.5"/><rect x="976" y="352" width="32" height="32" rx="4" fill="$skel"/>
-</g>
-<g class="scan" opacity="0"><rect x="780" y="158" width="252" height="4" rx="2" fill="$accent"/></g>
-<g class="warn"><rect x="781.25" y="157.25" width="77.5" height="77.5" rx="5" fill="none" stroke="$warnline" stroke-width="2.5"/><rect x="780" y="420" width="252" height="52" rx="6" fill="$warnbg"/><g data-icon="warning"><path d="M808 432l12 22h-24z" fill="none" stroke="$warntx" stroke-width="2.5" stroke-linejoin="round"/><path d="M808 440v6" stroke="$warntx" stroke-width="2.5" stroke-linecap="round"/></g><text class="s" font-size="16" fill="$warntx"><tspan x="832" y="442">El crisol recuerda</tspan><tspan x="832" y="462">a un icono de mapa</tspan></text></g>
-<rect class="pick" x="781.75" y="243.75" width="76.5" height="76.5" rx="5" fill="none" stroke="$accent" stroke-width="3.5"/>
-<path d="M1040 282h12" stroke="$accent" stroke-width="2.5"/><path d="M1052 275l10 7-10 7z" fill="$accent"/>
+<!-- connectors -->
+<path class="flow" d="M902 164H916" fill="none" stroke="$muted" stroke-width="2" stroke-dasharray="8 16"/>
+<path d="M914 158l8 6-8 6" fill="none" stroke="$muted" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<path class="flow" d="M1082 290V304" fill="none" stroke="$muted" stroke-width="2" stroke-dasharray="8 16"/>
+<path d="M1076 302l6 8 6-8" fill="none" stroke="$muted" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 
-<text class="m" x="1068" y="96" font-size="14" fill="$body" letter-spacing="1">SU IDENTIDAD</text>
-<rect x="1068" y="112" width="172" height="440" rx="10" fill="$panel" stroke="$line" stroke-width="1.5"/>
-<g class="idin">
-<rect x="1082" y="126" width="144" height="62" rx="6" fill="$white" stroke="$line"/><use href="#mL" x="1096" y="141" width="32" height="32"/><text class="b" x="1140" y="163" font-size="16" fill="$black">Kothar</text>
-<rect x="1082" y="196" width="144" height="62" rx="6" fill="$black"/><use href="#mD" x="1096" y="211" width="32" height="32"/><text class="b" x="1140" y="233" font-size="16" fill="$white">Kothar</text>
-<rect x="1082" y="270" width="144" height="30" rx="6" fill="$tab"/><use href="#m4" x="1096" y="277" width="16" height="16"/><text class="s" x="1120" y="290" font-size="13" fill="$ink">Kothar</text>
-<use href="#m4" x="1082" y="346" width="16" height="16"/><use href="#m4" x="1108" y="338" width="24" height="24"/><use href="#m4" x="1142" y="330" width="32" height="32"/><use href="#m4" x="1184" y="322" width="40" height="40"/>
-<text class="m" x="1082" y="384" font-size="13" fill="$body">16 – 40 px</text>
-<text class="s" x="1082" y="428" font-size="16" fill="$body">Claro y oscuro</text>
-<text class="s" x="1082" y="454" font-size="16" fill="$body">Manrope · libre</text>
-<text class="s" x="1082" y="480" font-size="16" fill="$body">SVG · PNG · favicon</text>
+<!-- the proposals report -->
+<g data-kit="window"><rect x="924" y="40" width="316" height="248" rx="12" fill="$panel" stroke="$line" stroke-width="1.5"/><path d="M924 74H1240" stroke="$line" stroke-width="1.5"/><circle cx="944" cy="57" r="5" fill="$line"/><circle cx="960" cy="57" r="5" fill="$line"/><circle cx="976" cy="57" r="5" fill="$line"/><text x="1082" y="62" class="m" font-size="14" fill="$muted" text-anchor="middle">proposals.html</text></g>
+<rect x="944" y="94" width="84" height="174" rx="10" fill="$bubble"/>
+<rect x="1040" y="94" width="84" height="174" rx="10" fill="$bubble"/>
+<rect x="1136" y="94" width="84" height="174" rx="10" fill="$bubble"/>
+<g class="popA"><use href="#ma" x="958" y="122" width="56" height="56"/></g>
+<g class="popB"><use href="#mb" x="1054" y="122" width="56" height="56"/></g>
+<g class="popC"><use href="#mc" x="1150" y="122" width="56" height="56"/></g>
+<text x="986" y="236" class="b" font-size="18" fill="$body" text-anchor="middle">A</text>
+<text x="1082" y="236" class="b" font-size="18" fill="$acctext" text-anchor="middle">B</text>
+<text x="1178" y="236" class="b" font-size="18" fill="$body" text-anchor="middle">C</text>
+<rect class="ring" x="1040" y="94" width="84" height="174" rx="10" fill="none" stroke="$accent" stroke-width="3"/>
+
+<!-- the chosen logo travels -->
+<g transform="translate(1058 126)"><g class="fly" opacity="0"><use href="#mb" width="48" height="48"/></g></g>
+
+<!-- the brand book -->
+<g data-kit="window"><rect x="924" y="312" width="316" height="260" rx="12" fill="$panel" stroke="$line" stroke-width="1.5"/><path d="M924 346H1240" stroke="$line" stroke-width="1.5"/><circle cx="944" cy="329" r="5" fill="$line"/><circle cx="960" cy="329" r="5" fill="$line"/><circle cx="976" cy="329" r="5" fill="$line"/><text x="1082" y="334" class="m" font-size="14" fill="$muted" text-anchor="middle">brand-book.html</text></g>
+<g class="book1"><use href="#mb" x="944" y="362" width="80" height="80"/></g>
+<g class="book2"><text x="1040" y="416" class="b" font-size="34" fill="$ink">kothar</text></g>
+<g class="book3"><rect x="944" y="476" width="36" height="36" rx="6" fill="$accent"/><rect x="988" y="476" width="36" height="36" rx="6" fill="$mk"/><rect x="1032" y="476" width="36" height="36" rx="6" fill="$thumb1"/><rect x="1076" y="476" width="36" height="36" rx="6" fill="none" stroke="$line" stroke-width="1.5"/></g>
+<g class="book4"><rect x="1148" y="464" width="72" height="72" rx="16" fill="$thumb2"/><svg x="1160" y="476" width="48" height="48" viewBox="0 0 256 256"><path fill="#ECEEF0" d="M24 24H96V96H24ZM122 24H166A14 14 0 0 1 180 38V82A14 14 0 0 1 166 96H122A14 14 0 0 1 108 82V38A14 14 0 0 1 122 24ZM52 108H68A28 28 0 0 1 96 136V152A28 28 0 0 1 68 180H52A28 28 0 0 1 24 152V136A28 28 0 0 1 52 108Z"/><circle cx="170.5" cy="170.5" r="62.5" fill="#F04E15"/></svg></g>
 </g>
-<g transform="translate(796 258)"><g class="fly" opacity="0"><use href="#m4" x="0" y="0" width="48" height="48"/></g></g>
-</g>
+
 </svg>

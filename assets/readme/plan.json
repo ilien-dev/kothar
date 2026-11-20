@@ -1,0 +1,114 @@
+{
+  "audience": "general",
+  "audience_confirmed": true,
+  "sentence": "Someone shipping a project without a designer tells their AI agent what they like, and leaves with a name, a logo of their own and a brand book they can send anyone.",
+  "language": "en",
+  "translations": [
+    "README.es.md"
+  ],
+  "backdrop": "grid still",
+  "unfinished": [
+    {
+      "item": "the word 'version' in the list of what you get",
+      "source": "README.md:50",
+      "match": "one-colour and reversed versions",
+      "decision": "not-a-feature"
+    },
+    {
+      "item": "the phrase 'work in progress' about the .kothar/ folder",
+      "source": "docs/development.md:17",
+      "match": "work in progress lives in",
+      "decision": "not-a-feature"
+    }
+  ],
+  "captures_agreed": false,
+  "hero": {
+    "file": "assets/hero.src.svg",
+    "shows": [
+      "a chat with the agent asking a question with options",
+      "reference images in grey and orange",
+      "three logo proposals",
+      "the chosen logo",
+      "the brand book with the logo, colours and icons"
+    ]
+  },
+  "sections": [
+    {
+      "heading": "How it works",
+      "role": "how",
+      "docs": null,
+      "picture": {
+        "file": "assets/readme/how.src.svg",
+        "type": "drawn",
+        "claim": "Before you see a logo, your agent writes many ideas, keeps the few that differ, and checks each drawing large and at tab size, version after version.",
+        "shows": [
+          "a list of one-line ideas with most struck out",
+          "a drawing improving from v1 to v3",
+          "the same drawing at tab size in a browser tab"
+        ]
+      }
+    },
+    {
+      "heading": "What you get",
+      "role": "features",
+      "docs": null,
+      "picture": {
+        "file": "assets/readme/features.src.svg",
+        "type": "drawn",
+        "claim": "You get one brand book page by page: the symbol at every size, colours and fonts, the logo with the name, app icons, social images and an animated logo.",
+        "shows": [
+          "pages of a brand book lit one at a time",
+          "colour swatches with their codes",
+          "the logo beside the name",
+          "app icons",
+          "a social image",
+          "an animated logo"
+        ]
+      }
+    },
+    {
+      "heading": "Install",
+      "role": "install",
+      "docs": null,
+      "picture": {
+        "file": "assets/readme/install.src.svg",
+        "type": "drawn",
+        "claim": "The same skill folder installs in Claude Code as a plugin, and in Codex, Gemini or any other agent with npx.",
+        "shows": [
+          "the skill folder skills/kothar",
+          "Claude Code, Codex, Gemini and another agent, each with a tick"
+        ]
+      }
+    },
+    {
+      "heading": "Development",
+      "role": "develop",
+      "docs": "docs/development.md",
+      "picture": null
+    },
+    {
+      "heading": "Contributing",
+      "role": "contributing",
+      "docs": null,
+      "picture": null
+    },
+    {
+      "heading": "Licence",
+      "role": "license",
+      "docs": null,
+      "picture": null
+    }
+  ],
+  "assets": {
+    "icons": {
+      "family": "ph",
+      "variant": "fill",
+      "why": "the mark is solid shapes with soft corners; Phosphor fill has the same solid, rounded glyphs"
+    },
+    "logos": {
+      "family": "devicon",
+      "variant": null,
+      "why": "agent logos in their own colours, as the install scene shows them; small beside the name"
+    }
+  }
+}
