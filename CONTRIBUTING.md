@@ -3,7 +3,7 @@
 Thanks for wanting to help. A contribution does not have to be a pull request: a clear issue
 that reports a bug or proposes an improvement is a contribution too.
 
-kothar names a product and forges its logo identity: name candidates with their meaning, SVG logos measured by scripts and judged blind, free fonts and a shareable report, chosen step by step in a local page. **A contribution that drifts away from that purpose will be rejected**,
+kothar names a product and builds its brand identity through questions in the conversation: name candidates with their meaning, logo proposals drawn from the user's references, colour, free fonts, the pieces the user selects (social profiles, stationery, an animated logo) and a brand book in HTML. **A contribution that drifts away from that purpose will be rejected**,
 however well it is made.
 
 <!-- This file is generated from .github/repo-rules.json by Nabu (https://github.com/ilien-dev/nabu).
@@ -80,7 +80,7 @@ is declined, however good it looks. Put the result on `main` and on your branch 
 
 - A change to what the skill does: the cases in `evals/evals.json` run on main and on your branch, with the pass count of each.
 - A fix: the test in `tests/` that fails on main and passes on your branch.
-- A change to a measurement (size, originality, judges): `kothar audit` on the same logos on main and on your branch.
+- A change to the report template or the render helper: the same example rendered on main and on your branch with a headless browser, both screenshots compared.
 
 For `feat`, `fix` or `perf` changes to what users get, Measurement cannot say "not applicable". For any
 other change it can, with the reason (`Not applicable: docs only`).
@@ -136,8 +136,7 @@ The rules are the same. Agents that read `.claude/skills` or `.agents/skills` ha
 
 ## Working on kothar
 
-- The source is TypeScript in `src/`. `npm run build` compiles it to `skills/kothar/scripts/` (the CLI) and `skills/kothar/assets/app.js` (the page). The compiled files are committed because a plugin is installed by cloning: commit them together with the source change. CI rebuilds them and fails if they differ.
-- Node 20 or later. Run `node skills/kothar/scripts/kothar.js setup` once before `npm test`: the tests render with the SVG renderer it installs into `~/.kothar`. `node skills/kothar/scripts/kothar.js help` lists the commands.
-- State for a product lives in `.kothar/` in that product's folder and machine-wide data in `~/.kothar`; neither belongs in a commit.
-- The reference sets (brand logos, icon sets, emoji) are downloaded at setup under their own licences. Never commit them or anything derived from them that could be redistributed.
+- The skill is Markdown and two HTML files, with no build step and nothing to install: `SKILL.md` and `references/` are the instructions, `assets/report.html` the report template, `assets/render.html` the helper a headless browser runs. `npm test` checks that they stay consistent.
+- Node 20 or later, only for `npm test`. Testing a change to the skill means running it in an agent; testing the template or the render helper needs a Chromium-based browser (`references/rendering.md`).
+- Work in progress for a product lives in `.kothar/` in that product's folder and never belongs in a commit.
 

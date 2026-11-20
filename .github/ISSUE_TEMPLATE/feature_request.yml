@@ -5,7 +5,7 @@ body:
   - type: markdown
     attributes:
       value: |
-        One idea per issue. kothar names a product and forges its logo identity: name candidates with their meaning, SVG logos measured by scripts and judged blind, free fonts and a shareable report, chosen step by step in a local page. Ideas outside that purpose will be declined.
+        One idea per issue. kothar names a product and builds its brand identity through questions in the conversation: name candidates with their meaning, logo proposals drawn from the user's references, colour, free fonts, the pieces the user selects (social profiles, stationery, an animated logo) and a brand book in HTML. Ideas outside that purpose will be declined.
         Search the [issues](https://github.com/ilien-dev/kothar/issues?q=is%3Aissue) and [pull requests](https://github.com/ilien-dev/kothar/pulls?q=is%3Apr) first.
   - type: textarea
     id: problem

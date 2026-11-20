@@ -11,9 +11,14 @@
     {
       "name": "kothar",
       "source": "./",
-      "description": "Names a product and forges its logo identity, measured by scripts and judged blind, chosen step by step in a local page.",
+      "description": "Names a product and builds its brand identity, from the logo to a brand book, through questions in the conversation.",
       "category": "design",
-      "tags": ["logo", "naming", "branding", "svg"]
+      "tags": [
+        "logo",
+        "naming",
+        "branding",
+        "brand-book"
+      ]
     }
   ]
 }

@@ -11,7 +11,7 @@ out the difference. The check script decides, not this text: run it.
 
 ## 1. In scope, and new?
 
-- kothar names a product and forges its logo identity: name candidates with their meaning, SVG logos measured by scripts and judged blind, free fonts and a shareable report, chosen step by step in a local page. If the change does not serve that, say so and stop: it will be rejected.
+- kothar names a product and builds its brand identity through questions in the conversation: name candidates with their meaning, logo proposals drawn from the user's references, colour, free fonts, the pieces the user selects (social profiles, stationery, an animated logo) and a brand book in HTML. If the change does not serve that, say so and stop: it will be rejected.
 - Search before writing anything:
   ```
   gh pr list --repo ilien-dev/kothar --state all --search "<keywords>"
@@ -32,7 +32,7 @@ it is lost afterwards. How to measure here:
 
 - A change to what the skill does: the cases in `evals/evals.json` run on main and on your branch, with the pass count of each.
 - A fix: the test in `tests/` that fails on main and passes on your branch.
-- A change to a measurement (size, originality, judges): `kothar audit` on the same logos on main and on your branch.
+- A change to the report template or the render helper: the same example rendered on main and on your branch with a headless browser, both screenshots compared.
 
 If nothing can show the effect, tell the user the change will likely be declined, before doing
 the work.
