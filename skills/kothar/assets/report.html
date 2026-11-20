@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=1200">
+<meta name="generator" content="kothar · https://github.com/ilien-dev/kothar">
+<title>Eco · Brand book</title>
+<!--
+  kothar report template. Every text, colour and drawing below is the EXAMPLE (Eco).
+  Replace all of it; references/report.md says which pages go in each report and how to fill them.
+  Keep: the generator meta, the colophon at the end, the page structure and the CSS.
+-->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@500;600;700&amp;family=Inter:wght@400;500;600&amp;family=JetBrains+Mono:wght@400;500&amp;family=Space+Grotesk:wght@500;700&amp;display=block" rel="stylesheet">
+<style>
+/* ── Brand tokens: the only block that changes per brand ─────────────── */
+:root{
+  --brand:#C4F03A;          /* signature colour */
+  --on-brand:#151515;       /* ink used on top of the brand colour */
+  --brand-dark:#4A6600;     /* brand colour for small text on paper, if needed */
+  --ink:#151515;
+  --paper:#F4F4F2;
+  --grey:#E8E8E6;
+  --font-name:'Space Grotesk',sans-serif;   /* the face of the name in the lockups */
+  --font-name-weight:700;
+  --font-name-tracking:-.045em;
+  --accent:var(--brand);    /* fills data-ink="accent" parts: style="fill:var(--accent,currentColor)" */
+  --font-display:'Inter Tight',sans-serif;  /* report headings: keep, or use the brand display face */
+  --font-text:'Inter',sans-serif;
+  --font-mono:'JetBrains Mono',ui-monospace,monospace;
+}
+/* ── Report chrome: keep ──────────────────────────────────────────────── */
+:root{--muted:#5f5f5f;--line:#e3e3df;--desk:#D6D6D1}
+*{box-sizing:border-box}
+html{background:var(--desk)}
+body{margin:0;font-family:var(--font-text);color:var(--ink);-webkit-font-smoothing:antialiased}
+.deck{width:1120px;margin:40px auto;display:flex;flex-direction:column;gap:24px}
+.s{width:1120px;height:630px;flex:none;background:#fff;position:relative;padding:40px 56px 56px;overflow:hidden;display:flex;flex-direction:column}
+.hd{display:flex;justify-content:space-between;font:500 11px/1 var(--font-mono);letter-spacing:.08em;text-transform:uppercase;color:var(--muted);border-top:2px solid var(--ink);padding-top:10px;margin-bottom:32px}
+.ft{position:absolute;left:56px;right:56px;bottom:20px;display:flex;justify-content:space-between;font:400 10px/1 var(--font-mono);color:var(--muted)}
+.h{font:600 40px/1.04 var(--font-display);letter-spacing:-.03em;margin:0}
+.k{font:500 11px/1.3 var(--font-mono);letter-spacing:.06em;text-transform:uppercase;color:var(--muted);margin:0 0 8px}
+.p{font:400 14px/1.55 var(--font-text);margin:0;color:#2a2a2a}
+.wm{font-family:var(--font-name);font-weight:var(--font-name-weight);letter-spacing:var(--font-name-tracking);line-height:.8}
+.brand{background:var(--brand);color:var(--on-brand)}
+.ink{background:var(--ink);color:var(--paper)}
+.paper{background:var(--paper)}
+.tile{display:flex;align-items:center;justify-content:center}
+.box{border:1px solid var(--line);position:relative;overflow:hidden}
+.cap{font:500 10px/1.2 var(--font-mono);color:var(--muted);margin-top:8px;letter-spacing:.04em}
+.bar{display:block;height:6px;border-radius:3px;background:#e6e6e2}
+.g12{display:grid;grid-template-columns:repeat(12,minmax(0,1fr));column-gap:20px;flex:1}
+.mk{display:block;flex:none}
+.guide{fill:none;stroke:var(--ink);stroke-width:1;stroke-dasharray:4 4;opacity:.55}
+.sheet{background:#fff;box-shadow:0 6px 18px rgba(0,0,0,.12);display:flex;flex-direction:column}
+.colo{width:1120px;margin:0 auto 48px;padding:28px 56px;display:flex;align-items:center;gap:18px;border-top:1px solid #9a9a95;color:#3a3a3a}
+.colo a{color:var(--ink);text-decoration:none;border-bottom:1px solid #9a9a95;font:500 12px/1 var(--font-mono)}
+.colo a:hover{border-bottom-color:var(--ink)}
+@media print{
+  @page{size:1120px 630px;margin:0}
+  html{background:none}
+  .deck{margin:0;gap:0}
+  .s{break-after:page}
+  .s:last-of-type{break-after:auto}
+  .colo{display:none}
+  .credit{display:inline}
+}
+.credit{display:none}
+/* One palette and name font per concept, proposals report only: override the tokens on that concept's pages. */
+.concept-a{--brand:#C4F03A;--on-brand:#151515;--accent:#C4F03A;--font-name:'Space Grotesk',sans-serif;--font-name-weight:700;--font-name-tracking:-.045em}
+</style>
+</head>
+<body>
+<!-- The marks, defined once and reused with <use>. One pair per concept in a proposals report. -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="mark" viewBox="0 0 256 256"><path fill="currentColor" fill-rule="evenodd" transform="translate(0 -6)" d="M8.24 220L89 80.12Q96 68 103 80.12L128.51 124.31L158.1 60.69Q164 48 169.9 60.69L244 220ZM84 220V202A44 44 0 0 1 172 202V220ZM108 220V202A20 20 0 0 1 148 202V220Z"/></symbol>
+<symbol id="mark-small" viewBox="0 0 256 256"><path fill="currentColor" fill-rule="evenodd" transform="translate(0 -6)" d="M8.24 220L89 80.12Q96 68 103 80.12L128.51 124.31L158.1 60.69Q164 48 169.9 60.69L244 220ZM76 220V200A52 52 0 0 1 180 200V220Z"/></symbol>
+</defs></svg>
+
+<main class="deck">
+
+<!-- page: cover · both reports -->
+<section class="s" style="padding:0;flex-direction:row">
+<div style="flex:1;padding:40px 56px;display:flex;flex-direction:column;justify-content:space-between">
+<div class="k">Brand book · v1.0 · 20.11.2026</div>
+<div>
+<div class="wm" style="font-size:220px">eco</div>
+<p class="p" style="font-size:20px;margin-top:28px;max-width:420px">Get found for what people search.</p>
+</div>
+<div class="k" style="margin:0">Prepared for [client] · Final round · Confidential</div>
+</div>
+<div class="brand tile" style="width:460px;flex:none"><svg class="mk" viewBox="0 0 256 256" style="width:300px;height:300px" aria-hidden="true"><use href="#mark"/></svg></div>
+</section>
+
+<!-- page: brief · both reports. Reference tiles become <img> of the user's references (object-fit:cover). -->
+<section class="s">
+<div class="hd"><span>01 · The brief</span><span>Brief and references</span></div>
+<div class="g12">
+<div style="grid-column:span 5;display:flex;flex-direction:column;gap:20px">
+<h2 class="h">Two skills that place the words people search for.</h2>
+<p class="p">Eco researches keywords and places them in a project's README and website, every step checked by a script. For anyone who publishes software and wants it to be found.</p>
+<div><div class="k">Adjectives</div><p class="p" style="font-weight:600">Precise · Verifiable · Mythological · Sober</p></div>
+<div><div class="k">Avoid</div><p class="p">Magnifiers, arrows, charts and the blue every SEO tool uses.</p></div>
+</div>
+<div style="grid-column:7 / span 6;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:12px">
+<figure class="paper tile" style="grid-column:span 2;margin:0"><figcaption class="cap">Ref. 01 · image from the client</figcaption></figure>
+<figure class="ink tile" style="margin:0"><figcaption class="cap" style="color:#bdbdbd">Ref. 02 · a logo</figcaption></figure>
+<figure class="brand tile" style="margin:0"><figcaption class="cap" style="color:var(--on-brand)">Ref. 03 · colour</figcaption></figure>
+<figure class="paper tile" style="margin:0"><figcaption class="cap">Ref. 04 · website</figcaption></figure>
+<figure class="paper tile" style="margin:0"><figcaption class="cap">Ref. 05 · mood</figcaption></figure>
+</div>
+</div>
+<div class="ft"><span>eco · Brand book</span><span>02</span></div>
+</section>
+
+<!-- page: concept · proposals report only, one per concept (concept A, B, C…), each with its own class -->
+<section class="s concept-a">
+<div class="hd"><span>Concept A · Recommended</span><span>The mountain that answers</span></div>
+<div class="g12">
+<div style="grid-column:span 5;display:flex;flex-direction:column;gap:16px">
+<h2 class="h">Two peaks with a cave, and an arch inside that repeats the outer one.</h2>
+<p class="p">The echo made visible: the voice coming back from the mountain, as Eco gives back the words people search for.</p>
+<div style="border-top:1px solid var(--line);padding-top:12px;display:flex;flex-direction:column;gap:6px">
+<p class="p">— The myth without the literal nymph: only the place where the echo lives.</p>
+<p class="p">— At 16 px the two peaks and the cave remain.</p>
+<p class="p" style="color:var(--muted)">— Resembles: two-peak marks in dev tools; told apart by the cave.</p>
+<p class="cap" style="margin:4px 0 0">Name in <span class="wm" style="font-size:13px;letter-spacing:0">Space Grotesk 700</span> · palette: lime, ink, paper</p>
+</div>
+<div style="display:flex;align-items:flex-end;gap:18px;margin-top:auto">
+<svg class="mk" viewBox="0 0 256 256" style="width:64px;height:64px" aria-hidden="true"><use href="#mark"/></svg>
+<svg class="mk" viewBox="0 0 256 256" style="width:32px;height:32px" aria-hidden="true"><use href="#mark"/></svg>
+<svg class="mk" viewBox="0 0 256 256" style="width:16px;height:16px" aria-hidden="true"><use href="#mark-small"/></svg>
+<span class="cap" style="margin:0">64 · 32 · 16 px</span>
+</div>
+</div>
+<div style="grid-column:7 / span 6;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:2fr 1fr 1fr;gap:12px">
+<div class="paper tile" style="grid-column:span 2"><svg class="mk" viewBox="0 0 256 256" style="width:190px;height:190px" aria-hidden="true"><use href="#mark"/></svg></div>
+<div class="brand tile"><svg class="mk" viewBox="0 0 256 256" style="width:96px;height:96px" aria-hidden="true"><use href="#mark"/></svg></div>
+<div class="box" style="background:#ecedef;padding:10px"><div style="display:flex;gap:6px;align-items:center;background:#fff;border-radius:6px 6px 0 0;padding:6px 8px"><span class="brand tile" style="width:14px;height:14px;border-radius:3px"><svg class="mk" viewBox="0 0 256 256" style="width:11px;height:11px" aria-hidden="true"><use href="#mark-small"/></svg></span><span style="font-size:10px">eco</span></div></div>
+<div class="paper tile"><span class="brand tile" style="width:56px;height:56px;border-radius:13px"><svg class="mk" viewBox="0 0 256 256" style="width:38px;height:38px" aria-hidden="true"><use href="#mark-small"/></svg></span></div>
+<div style="background:#0d1117;display:flex;align-items:center;gap:8px;padding:0 12px"><span class="brand tile" style="width:22px;height:22px"><svg class="mk" viewBox="0 0 256 256" style="width:16px;height:16px" aria-hidden="true"><use href="#mark"/></svg></span><span class="wm" style="font-size:20px;color:#e6edf3">eco</span></div>
+<div style="grid-column:span 3;display:flex;gap:8px;align-items:stretch">
+<div class="tile" style="flex:1;gap:6px;background:var(--brand)"><svg class="mk" viewBox="0 0 256 256" style="width:30px;height:30px;color:#151515" aria-hidden="true"><use href="#mark"/></svg><span class="cap" style="margin:0;color:#151515">Lime · ink</span></div>
+<div class="tile" style="flex:1;gap:6px;background:#FF5F0F"><svg class="mk" viewBox="0 0 256 256" style="width:30px;height:30px;color:#151515" aria-hidden="true"><use href="#mark"/></svg><span class="cap" style="margin:0;color:#151515">Orange · ink</span></div>
+<div class="tile" style="flex:1;gap:6px;background:#1D2B53"><svg class="mk" viewBox="0 0 256 256" style="width:30px;height:30px;color:#F4F4F2" aria-hidden="true"><use href="#mark"/></svg><span class="cap" style="margin:0;color:#F4F4F2">Navy · paper</span></div>
+</div>
+</div>
+</div>
+<div class="ft"><span>eco · Proposals</span><span>03</span></div>
+</section>
+
+<!-- page: comparison · proposals report only. One column per concept. -->
+<section class="s">
+<div class="hd"><span>Side by side</span><span>Every concept at the same sizes</span></div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;flex:1">
+<div style="display:flex;flex-direction:column;gap:10px"><div class="paper tile" style="flex:1"><svg class="mk" viewBox="0 0 256 256" style="width:128px;height:128px" aria-hidden="true"><use href="#mark"/></svg></div><div class="ink tile" style="height:90px;gap:22px"><svg class="mk" viewBox="0 0 256 256" style="width:32px;height:32px;color:var(--brand)" aria-hidden="true"><use href="#mark"/></svg><svg class="mk" viewBox="0 0 256 256" style="width:16px;height:16px;color:var(--brand)" aria-hidden="true"><use href="#mark-small"/></svg></div><b style="font:600 15px var(--font-display)">A · The mountain that answers</b></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div class="paper tile" style="flex:1"><span class="cap">Concept B</span></div><div class="ink tile" style="height:90px"></div><b style="font:600 15px var(--font-display)">B · [name of the concept]</b></div>
+<div style="display:flex;flex-direction:column;gap:10px"><div class="paper tile" style="flex:1"><span class="cap">Concept C</span></div><div class="ink tile" style="height:90px"></div><b style="font:600 15px var(--font-display)">C · [name of the concept]</b></div>
+</div>
+<div class="ft"><span>eco · Proposals</span><span>04</span></div>
+</section>
+
+<!-- page: recommendation · proposals report only -->
+<section class="s">
+<div class="hd"><span>Our recommendation</span><span>And what to decide</span></div>
+<div class="g12">
+<div class="brand tile" style="grid-column:span 5"><svg class="mk" viewBox="0 0 256 256" style="width:240px;height:240px" aria-hidden="true"><use href="#mark"/></svg></div>
+<div style="grid-column:7 / span 6;display:flex;flex-direction:column;gap:18px;justify-content:center">
+<h2 class="h">A · The mountain that answers.</h2>
+<p class="p">It is the only concept that tells the story of the name and of the product in one sign, and it keeps its idea at 16 px.</p>
+<div><div class="k">Honest risk</div><p class="p">Two-peak marks exist in developer tools; the cave and the solid base set it apart.</p></div>
+<div><div class="k">Next</div><p class="p">Tell us which concept to take forward, and which palette. We then build the full identity and every piece you selected. Before public use, a trademark search.</p></div>
+</div>
+</div>
+<div class="ft"><span>eco · Proposals</span><span class="credit">Identity made with kothar · github.com/ilien-dev/kothar</span><span>05</span></div>
+</section>
+
+<!-- page: idea · brand book -->
+<section class="s">
+<div class="hd"><span>02 · The idea</span><span>The mountain that answers</span></div>
+<div class="g12">
+<div class="paper tile" style="grid-column:span 6">
+<svg class="mk" viewBox="0 0 256 256" style="width:400px;height:400px" aria-hidden="true"><use href="#mark"/>
+<circle class="guide" cx="128" cy="196" r="44"/><circle class="guide" cx="128" cy="196" r="20"/>
+<line class="guide" x1="0" y1="227" x2="104" y2="47"/><line class="guide" x1="256" y1="240" x2="144" y2="0"/>
+<line class="guide" x1="0" y1="214" x2="256" y2="214"/></svg>
+</div>
+<div style="grid-column:8 / span 5;display:flex;flex-direction:column;gap:18px;justify-content:center">
+<h2 class="h">Echo was a mountain nymph: only her voice remained among the rocks.</h2>
+<p class="p">The symbol is her mountain: two peaks with a cave and, inside, an arch that repeats the outer one. It is the voice that comes back, as Eco gives back in your text the words people search for.</p>
+<div style="border-top:1px solid var(--line);padding-top:14px;display:flex;flex-direction:column;gap:8px">
+<p class="p">— The myth without the literal: no nymph, no speech bubble, only the place where the echo lives.</p>
+<p class="p">— Construction: two concentric arches, flanks at the slope later reused in the lettering.</p>
+<p class="p">— At 16 px the two peaks and the cave remain.</p>
+</div>
+</div>
+</div>
+<div class="ft"><span>eco · Brand book</span><span>03</span></div>
+</section>
+
+<!-- page: symbol · brand book -->
+<section class="s">
+<div class="hd"><span>03 · Symbol</span><span>Sizes and screens</span></div>
+<div style="display:flex;align-items:flex-end;gap:36px;padding-bottom:22px;border-bottom:1px solid var(--line)">
+<div><svg class="mk" viewBox="0 0 256 256" style="width:192px;height:192px" aria-hidden="true"><use href="#mark"/></svg><div class="cap">192 px</div></div>
+<div><svg class="mk" viewBox="0 0 256 256" style="width:96px;height:96px" aria-hidden="true"><use href="#mark"/></svg><div class="cap">96</div></div>
+<div><svg class="mk" viewBox="0 0 256 256" style="width:64px;height:64px" aria-hidden="true"><use href="#mark"/></svg><div class="cap">64</div></div>
+<div><svg class="mk" viewBox="0 0 256 256" style="width:32px;height:32px" aria-hidden="true"><use href="#mark"/></svg><div class="cap">32</div></div>
+<div><svg class="mk" viewBox="0 0 256 256" style="width:24px;height:24px" aria-hidden="true"><use href="#mark-small"/></svg><div class="cap">24 · small</div></div>
+<div><svg class="mk" viewBox="0 0 256 256" style="width:16px;height:16px" aria-hidden="true"><use href="#mark-small"/></svg><div class="cap">16 · small</div></div>
+<div style="flex:1"></div>
+<div style="max-width:250px"><div class="k">Small-size cut</div><p class="p" style="font-size:12px">Below 32 px the inner arch is dropped and the cave grows. The main symbol is used from 32 px.</p></div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:22px;flex:1">
+<div class="box" style="background:#ecedef;padding:14px">
+<div style="display:flex;gap:6px;align-items:center;background:#fff;border-radius:8px 8px 0 0;padding:8px 10px;width:190px"><span class="brand tile" style="width:16px;height:16px;border-radius:3px"><svg class="mk" viewBox="0 0 256 256" style="width:13px;height:13px" aria-hidden="true"><use href="#mark-small"/></svg></span><span style="font-size:11px">eco · keywords</span></div>
+<div style="background:#fff;height:120px;padding:12px"><span class="bar" style="width:70%"></span><span class="bar" style="width:50%;margin-top:8px"></span></div>
+<div class="cap">Browser tab</div></div>
+<div class="box paper tile" style="gap:22px;flex-direction:column">
+<div style="display:flex;gap:22px">
+<div class="brand tile" style="width:84px;height:84px;border-radius:20px;box-shadow:0 10px 22px rgba(0,0,0,.18)"><svg class="mk" viewBox="0 0 256 256" style="width:58px;height:58px" aria-hidden="true"><use href="#mark-small"/></svg></div>
+<div class="brand tile" style="width:84px;height:84px;border-radius:50%;box-shadow:0 10px 22px rgba(0,0,0,.18)"><svg class="mk" viewBox="0 0 256 256" style="width:52px;height:52px" aria-hidden="true"><use href="#mark-small"/></svg></div></div>
+<div class="cap">App icon · iOS · Android</div></div>
+<div class="box ink tile" style="flex-direction:column;gap:14px"><svg class="mk" viewBox="0 0 256 256" style="width:120px;height:120px;color:var(--brand)" aria-hidden="true"><use href="#mark"/></svg><div class="cap" style="color:#bdbdbd">On a dark ground</div></div>
+</div>
+<div class="ft"><span>eco · Brand book</span><span>04</span></div>
+</section>
+
+<!-- page: colour and type · brand book -->
+<section class="s">
+<div class="hd"><span>04 · Colour and type</span><span>A starting point, open to change</span></div>
+<div style="display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:12px;height:220px">
+<div class="brand" style="padding:14px;display:flex;flex-direction:column;justify-content:flex-end"><b style="font-size:14px">Lime</b><span class="cap" style="color:var(--on-brand)">#C4F03A · 196 240 58<br>Brand surface</span></div>
+<div style="background:var(--brand-dark);color:#fff;padding:14px;display:flex;flex-direction:column;justify-content:flex-end"><b style="font-size:14px">Dark lime</b><span class="cap" style="color:#e9f3c8">#4A6600 · 74 102 0<br>Small text and lines</span></div>
+<div class="ink" style="padding:14px;display:flex;flex-direction:column;justify-content:flex-end"><b style="font-size:14px">Ink</b><span class="cap" style="color:#bdbdbd">#151515 · 21 21 21<br>The name and text</span></div>
+<div class="paper box" style="padding:14px;display:flex;flex-direction:column;justify-content:flex-end"><b style="font-size:14px">Paper</b><span class="cap">#F4F4F2 · 244 244 242<br>Light grounds</span></div>
+<div style="background:var(--grey);padding:14px;display:flex;flex-direction:column;justify-content:flex-end"><b style="font-size:14px">Grey</b><span class="cap">#E8E8E6 · 232 232 230<br>Report ground</span></div>
+</div>
+<p class="cap" style="margin-top:10px">Contrast: ink on lime 13.8:1 · lime on ink 12.9:1 · dark lime on paper 6.0:1 · lime on white 1.1:1, so only as a surface.</p>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px;margin-top:22px;border-top:1px solid var(--line);padding-top:20px">
+<div><div class="k">Display · Space Grotesk 700</div><div style="font:700 54px/1 'Space Grotesk';letter-spacing:-.04em">Aa eco</div><p class="cap">Headings and the name</p></div>
+<div><div class="k">Text · Inter</div><div style="font:500 54px/1 Inter;letter-spacing:-.03em">Aa Gg</div><p class="cap">Interfaces and documents</p></div>
+<div><div class="k">Code · JetBrains Mono</div><div style="font:400 48px/1 'JetBrains Mono'">{a}</div><p class="cap">Terminal and examples</p></div>
+</div>
+<div class="ft"><span>eco · Brand book</span><span>05</span></div>
+</section>
+
+<!-- page: lockups · brand book -->
+<section class="s">
+<div class="hd"><span>05 · Lockups</span><span>Versions, clear space, misuse</span></div>
+<div style="display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;height:250px">
+<div class="paper tile" style="gap:16px"><span class="brand tile" style="width:64px;height:64px"><svg class="mk" viewBox="0 0 256 256" style="width:48px;height:48px" aria-hidden="true"><use href="#mark"/></svg></span><span class="wm" style="font-size:72px">eco</span></div>
+<div class="ink tile" style="gap:16px"><svg class="mk" viewBox="0 0 256 256" style="width:64px;height:64px;color:var(--brand)" aria-hidden="true"><use href="#mark"/></svg><span class="wm" style="font-size:72px">eco</span></div>
+<div class="paper tile" style="flex-direction:column;gap:12px"><span class="brand tile" style="width:84px;height:84px"><svg class="mk" viewBox="0 0 256 256" style="width:64px;height:64px" aria-hidden="true"><use href="#mark"/></svg></span><span class="wm" style="font-size:56px">eco</span></div>
+</div>
+<div class="g12" style="margin-top:20px;column-gap:16px">
+<div class="box tile" style="grid-column:span 4">
+<div style="border:1px dashed #9a9a9a;padding:22px;display:flex;align-items:center;gap:20px"><span class="brand tile" style="width:48px;height:48px"><svg class="mk" viewBox="0 0 256 256" style="width:36px;height:36px" aria-hidden="true"><use href="#mark"/></svg></span><span class="wm" style="font-size:52px">eco</span></div>
+<span class="cap" style="position:absolute;left:12px;bottom:10px">Clear space = u (half the cave)</span></div>
+<div style="grid-column:span 8;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px">
+<div class="box tile" style="flex-direction:column"><span class="wm" style="font-size:44px;transform:scaleX(1.5)">eco</span><span class="cap">Do not stretch</span></div>
+<div class="box tile" style="flex-direction:column"><svg class="mk" viewBox="0 0 256 256" style="width:60px;height:60px;transform:rotate(-18deg)" aria-hidden="true"><use href="#mark"/></svg><span class="cap">Do not rotate</span></div>
+<div class="box tile" style="flex-direction:column"><svg class="mk" viewBox="0 0 256 256" style="width:60px;height:60px;color:var(--brand)" aria-hidden="true"><use href="#mark"/></svg><span class="cap">No lime on light</span></div>
+<div class="box tile" style="flex-direction:column"><span style="font:400 40px/1 Georgia,serif">eco</span><span class="cap">No other font</span></div>
+</div>
+</div>
+<div class="ft"><span>eco · Brand book</span><span>06</span></div>
+</section>
+
+<!-- page: in the product · brand book (the website is a skeleton mock-up, not a deliverable) -->
+<section class="s">
+<div class="hd"><span>06 · In the product</span><span>Terminal, README, website, stickers</span></div>
+<div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:16px;flex:1">
+<div style="background:#1e1e1e;border-radius:8px;overflow:hidden;display:flex;flex-direction:column">
+<div style="height:22px;background:#2d2d2d;display:flex;gap:6px;align-items:center;padding:0 10px"><i style="width:8px;height:8px;border-radius:50%;background:#555"></i><i style="width:8px;height:8px;border-radius:50%;background:#555"></i><i style="width:8px;height:8px;border-radius:50%;background:#555"></i></div>
+<div style="padding:16px;display:flex;gap:16px;align-items:center;font:400 12px/1.6 var(--font-mono);color:#d4d4d4"><svg class="mk" viewBox="0 0 256 256" style="width:64px;height:64px;color:var(--brand)" aria-hidden="true"><use href="#mark"/></svg><div><span style="color:var(--brand)">eco</span> [version]<br><span style="color:#8a8a8a">[command] · [result]</span><br>$ <span style="opacity:.6">▌</span></div></div></div>
+<div style="background:#0d1117;border-radius:8px;padding:16px;color:#e6edf3">
+<div style="display:flex;align-items:center;gap:10px;border-bottom:1px solid #30363d;padding-bottom:10px"><span class="brand tile" style="width:30px;height:30px"><svg class="mk" viewBox="0 0 256 256" style="width:22px;height:22px" aria-hidden="true"><use href="#mark"/></svg></span><span class="wm" style="font-size:28px">eco</span></div>
+<div style="display:flex;gap:6px;margin:10px 0"><i style="width:54px;height:12px;border-radius:3px;background:#238636"></i><i style="width:54px;height:12px;border-radius:3px;background:#1f6feb"></i></div>
+<span class="bar" style="background:#21262d;width:90%"></span><span class="bar" style="background:#21262d;width:70%;margin-top:8px"></span><div class="cap" style="color:#8b949e;margin-top:14px">README · GitHub</div></div>
+<div class="box" style="display:flex;flex-direction:column">
+<div style="height:18px;background:#eceff2;display:flex;gap:5px;align-items:center;padding:0 8px"><i style="width:7px;height:7px;border-radius:50%;background:#c9ced4"></i><i style="width:7px;height:7px;border-radius:50%;background:#c9ced4"></i></div>
+<div style="height:36px;display:flex;align-items:center;gap:12px;padding:0 14px;border-bottom:1px solid #eee"><svg class="mk" viewBox="0 0 256 256" style="width:18px;height:18px" aria-hidden="true"><use href="#mark"/></svg><span class="wm" style="font-size:18px">eco</span><span style="flex:1"></span><span class="bar" style="width:40px"></span><span class="bar" style="width:40px"></span><span class="brand" style="width:56px;height:18px;border-radius:4px"></span></div>
+<div style="padding:16px 14px;display:flex;gap:16px;flex:1"><div style="flex:1"><b style="font:700 18px/1.15 var(--font-name);display:block;margin-bottom:10px">Get found for what people search.</b><span class="bar" style="width:80%"></span><span class="bar" style="width:60%;margin-top:6px"></span></div><div class="brand" style="width:130px"></div></div>
+<div class="cap" style="padding:0 14px 8px">Website · skeleton</div></div>
+<div style="background:#3a3d42;border-radius:10px;display:flex;align-items:center;justify-content:center;position:relative">
+<div style="width:300px;height:180px;background:#2e3135;border-radius:8px;display:flex;align-items:center;justify-content:center;gap:24px"><span class="brand tile" style="width:78px;height:78px;border-radius:50%;box-shadow:0 2px 6px rgba(0,0,0,.4)"><svg class="mk" viewBox="0 0 256 256" style="width:50px;height:50px" aria-hidden="true"><use href="#mark"/></svg></span><span class="tile" style="width:96px;height:52px;background:var(--paper);border-radius:10px;transform:rotate(-8deg)"><span class="wm" style="font-size:30px">eco</span></span></div>
+<span class="cap" style="position:absolute;left:12px;bottom:8px;color:#d0d0d0">Laptop stickers</span></div>
+</div>
+<div class="ft"><span>eco · Brand book</span><span>07</span></div>
+</section>
+
+<!-- page: social · brand book, only the networks the user selected -->
+<section class="s">
+<div class="hd"><span>07 · Social</span><span>GitHub, X, LinkedIn, Instagram, TikTok, YouTube, Discord</span></div>
+<div style="display:grid;grid-template-columns:repeat(12,minmax(0,1fr));grid-template-rows:repeat(2,minmax(0,1fr));gap:14px;flex:1">
+<div style="grid-column:span 5;display:flex;flex-direction:column"><div class="ink" style="flex:1;display:flex;align-items:center;gap:20px;padding:0 28px"><svg class="mk" viewBox="0 0 256 256" style="width:86px;height:86px;color:var(--brand)" aria-hidden="true"><use href="#mark"/></svg><div><div class="wm" style="font-size:56px">eco</div><p style="font:400 12px/1.4 var(--font-text);color:#bdbdbd;margin:8px 0 0">Get found for what people search.</p></div></div><div class="cap">GitHub · social preview</div></div>
+<div class="box" style="grid-column:span 4;display:flex;flex-direction:column"><div class="brand" style="height:64px"></div><span class="ink tile" style="width:62px;height:62px;border-radius:50%;margin:-31px 0 0 14px;border:3px solid #fff"><svg class="mk" viewBox="0 0 256 256" style="width:38px;height:38px;color:var(--brand)" aria-hidden="true"><use href="#mark"/></svg></span><div style="padding:6px 14px"><b style="font-size:13px">eco</b><div style="font-size:11px;color:var(--muted)">@[handle]</div></div><div class="cap" style="padding:0 14px">X · profile and header</div></div>
+<div class="box" style="grid-column:span 3;display:flex;flex-direction:column"><div class="ink" style="height:46px"></div><span class="brand tile" style="width:54px;height:54px;margin:-27px 0 0 14px;border:3px solid #fff"><svg class="mk" viewBox="0 0 256 256" style="width:38px;height:38px" aria-hidden="true"><use href="#mark"/></svg></span><div style="padding:6px 14px"><b style="font-size:13px">eco</b><span class="bar" style="width:70%;margin-top:6px"></span></div><div class="cap" style="padding:0 14px">LinkedIn · page</div></div>
+<div style="grid-column:span 3;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:3px;align-content:start"><span class="brand tile" style="aspect-ratio:1"><svg class="mk" viewBox="0 0 256 256" style="width:60%" aria-hidden="true"><use href="#mark"/></svg></span><span class="ink tile" style="aspect-ratio:1"><span class="wm" style="font-size:22px">eco</span></span><span class="paper" style="aspect-ratio:1"></span><span class="paper" style="aspect-ratio:1"></span><span class="brand" style="aspect-ratio:1"></span><span class="ink tile" style="aspect-ratio:1"><svg class="mk" viewBox="0 0 256 256" style="width:50%;color:var(--brand)" aria-hidden="true"><use href="#mark"/></svg></span><div class="cap" style="grid-column:1/-1">Instagram · grid</div></div>
+<div class="box tile" style="grid-column:span 2;flex-direction:column;gap:8px;background:#000"><span class="brand tile" style="width:64px;height:64px;border-radius:50%"><svg class="mk" viewBox="0 0 256 256" style="width:40px;height:40px" aria-hidden="true"><use href="#mark"/></svg></span><b style="color:#fff;font-size:12px">@[handle]</b><span class="cap" style="color:#bdbdbd">TikTok</span></div>
+<div style="grid-column:span 4;display:flex;flex-direction:column"><div class="brand" style="flex:1;display:flex;align-items:center;justify-content:center;gap:14px"><svg class="mk" viewBox="0 0 256 256" style="width:48px;height:48px" aria-hidden="true"><use href="#mark"/></svg><span class="wm" style="font-size:44px">eco</span></div><div class="cap">YouTube · channel banner</div></div>
+<div style="grid-column:span 3;background:#1e1f22;display:flex;padding:10px;gap:10px"><div style="display:flex;flex-direction:column;gap:8px"><span class="brand tile" style="width:40px;height:40px;border-radius:14px"><svg class="mk" viewBox="0 0 256 256" style="width:26px;height:26px" aria-hidden="true"><use href="#mark-small"/></svg></span><span style="width:40px;height:40px;border-radius:50%;background:#313338"></span><span style="width:40px;height:40px;border-radius:50%;background:#313338"></span></div><div style="flex:1"><span class="bar" style="background:#313338;width:80%"></span><span class="bar" style="background:#313338;width:60%;margin-top:8px"></span><div class="cap" style="color:#b5bac1;margin-top:50px">Discord · server</div></div></div>
+</div>
+<div class="ft"><span>eco · Brand book</span><span>08</span></div>
+</section>
+
+<!-- page: stationery · brand book, only the pieces the user selected -->
+<section class="s" style="background:#EFEFEB">
+<div class="hd"><span>08 · Stationery</span><span>Letterhead, contract, card, signature, invoice, slide</span></div>
+<div style="display:flex;gap:14px;flex:1;align-items:flex-start">
+<div><div class="sheet" style="width:200px;height:283px;padding:18px"><div style="display:flex;align-items:center;gap:6px"><span class="brand tile" style="width:16px;height:16px"><svg class="mk" viewBox="0 0 256 256" style="width:12px;height:12px" aria-hidden="true"><use href="#mark"/></svg></span><span class="wm" style="font-size:15px">eco</span></div><span class="bar" style="margin-top:30px"></span><span class="bar" style="width:80%;margin-top:6px"></span><span class="bar" style="width:90%;margin-top:6px"></span><div style="flex:1"></div><div class="brand" style="height:2px"></div><div style="font:400 6px/1.4 var(--font-mono);color:var(--muted);margin-top:4px">[address] · [email] · [website]</div></div><div class="cap">Letterhead · A4 and Letter</div></div>
+<div><div class="sheet" style="width:200px;height:283px;padding:18px"><div style="display:flex;justify-content:space-between;align-items:center"><svg class="mk" viewBox="0 0 256 256" style="width:16px;height:16px" aria-hidden="true"><use href="#mark"/></svg><span style="font:500 6px var(--font-mono)">CONTRACT NO. [—]</span></div><b style="font:700 13px/1.1 var(--font-name);display:block;margin-top:20px">[Service] agreement</b><div style="font:500 6px var(--font-mono);color:var(--muted);margin-top:12px">1 · [CLAUSE]</div><span class="bar" style="margin-top:4px"></span><span class="bar" style="width:85%;margin-top:4px"></span><div style="font:500 6px var(--font-mono);color:var(--muted);margin-top:10px">2 · [CLAUSE]</div><span class="bar" style="margin-top:4px"></span><span class="bar" style="width:70%;margin-top:4px"></span><div style="display:flex;gap:16px;margin-top:40px"><div style="flex:1;border-top:1px solid var(--ink);font:500 5px var(--font-mono);padding-top:3px">SIGNATURE</div><div style="flex:1;border-top:1px solid var(--ink);font:500 5px var(--font-mono);padding-top:3px">SIGNATURE</div></div></div><div class="cap">Contract · layout only</div></div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div style="display:flex;gap:10px"><div class="brand tile" style="width:150px;height:92px;box-shadow:0 4px 12px rgba(0,0,0,.12)"><svg class="mk" viewBox="0 0 256 256" style="width:48px;height:48px" aria-hidden="true"><use href="#mark"/></svg></div><div class="sheet" style="width:150px;height:92px;padding:12px"><b style="font-size:10px">[Name]</b><div style="font-size:7px;color:var(--muted)">[Role]</div><div style="font:400 6px/1.5 var(--font-mono);margin-top:22px">[email]<br>[phone]</div></div></div>
+<div class="cap" style="margin-top:-4px">Business card · front and back</div>
+<div style="width:310px;background:#fff;padding:12px;display:flex;gap:10px;align-items:center;border-left:3px solid var(--ink)"><span class="brand tile" style="width:34px;height:34px"><svg class="mk" viewBox="0 0 256 256" style="width:24px;height:24px" aria-hidden="true"><use href="#mark"/></svg></span><div><b style="font-size:11px">[Name] · eco</b><div style="font-size:9px;color:var(--muted)">[role] · [website]</div></div></div>
+<div class="cap" style="margin-top:-4px">Email signature</div>
+</div>
+<div style="display:flex;flex-direction:column;gap:12px">
+<div class="sheet" style="width:250px;height:150px;padding:14px"><div style="display:flex;justify-content:space-between"><span class="wm" style="font-size:16px">eco</span><b style="font:700 9px var(--font-name)">INVOICE [NO.]</b></div><div style="margin-top:16px;display:grid;grid-template-columns:3fr 1fr;gap:5px"><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span><span class="bar"></span></div><div style="margin-top:14px;display:flex;justify-content:flex-end"><span class="brand" style="width:80px;height:16px"></span></div></div>
+<div class="cap" style="margin-top:-4px">Invoice</div>
+<div class="ink" style="width:250px;height:141px;padding:16px;display:flex;flex-direction:column;justify-content:space-between"><svg class="mk" viewBox="0 0 256 256" style="width:22px;height:22px;color:var(--brand)" aria-hidden="true"><use href="#mark"/></svg><b style="font:700 16px/1.1 var(--font-name)">[Slide title]</b></div>
+<div class="cap" style="margin-top:-4px">Slide 16:9</div>
+</div>
+</div>
+<div class="ft"><span>eco · Brand book</span><span>09</span></div>
+</section>
+
+<!-- page: motion and delivery · brand book (motion row only if the animated logo was selected) -->
+<section class="s">
+<div class="hd"><span>09 · Motion and delivery</span><span>Animated logo, files, next steps</span></div>
+<div style="display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;height:170px">
+<div class="paper tile" style="flex-direction:column"><svg class="mk" viewBox="0 0 256 256" style="width:70px;height:70px;clip-path:inset(60% 0 0 0)" aria-hidden="true"><use href="#mark"/></svg><span class="cap">0 ms · the base rises</span></div>
+<div class="paper tile" style="flex-direction:column"><svg class="mk" viewBox="0 0 256 256" style="width:70px;height:70px;clip-path:inset(25% 0 0 0)" aria-hidden="true"><use href="#mark-small"/></svg><span class="cap">300 ms · the peaks</span></div>
+<div class="paper tile" style="flex-direction:column"><svg class="mk" viewBox="0 0 256 256" style="width:70px;height:70px" aria-hidden="true"><use href="#mark-small"/></svg><span class="cap">600 ms · the cave</span></div>
+<div class="brand tile" style="flex-direction:column"><svg class="mk" viewBox="0 0 256 256" style="width:70px;height:70px" aria-hidden="true"><use href="#mark"/></svg><span class="cap" style="color:var(--on-brand)">900 ms · the echo</span></div>
+</div>
+<div class="g12" style="margin-top:24px">
+<div style="grid-column:span 7;font:400 12px/1.75 var(--font-mono);background:var(--paper);padding:18px 20px">assets/brand/<br>├─ logo/ symbol, small cut, horizontal, stacked · colour, one ink, reversed<br>├─ web/ favicon.svg · favicon.ico · app icons · manifest<br>├─ social/ github · x · linkedin · instagram · tiktok · youtube · discord<br>├─ stationery/ letterhead · contract · card · signature · invoice · slide<br>├─ motion/ eco-animated.svg<br>├─ tokens.json · README.md<br>└─ brand-book.html · this document</div>
+<div style="grid-column:9 / span 4;display:flex;flex-direction:column;gap:12px">
+<div class="k">Next steps</div>
+<p class="p">1 · A trademark search: mountain marks are common.</p>
+<p class="p">2 · A hand adjustment of the white version, slightly heavy on dark.</p>
+<p class="p">3 · Use the identity in the README and the website.</p>
+</div>
+</div>
+<div class="ft"><span>eco · Brand book</span><span class="credit">Identity made with kothar · github.com/ilien-dev/kothar</span><span>10</span></div>
+</section>
+
+</main>
+
+<!-- Credit: keep in every report. One ink, quiet, at the very end. -->
+<footer class="colo">
+<svg viewBox="6 6 52 52" style="width:28px;height:28px;flex:none;color:#151515" role="img" aria-label="kothar logo"><path fill="currentColor" d="M8 8h48v14H22v34H8z"/><circle fill="currentColor" cx="43" cy="43" r="12"/></svg>
+<div style="display:flex;flex-direction:column;gap:6px">
+<span style="font:600 13px/1 var(--font-text)">Identity made with kothar</span>
+<span style="font:400 11px/1.3 var(--font-mono);color:#4a4a4a">Name, logo and brand for a project, with an AI agent</span>
+</div>
+<span style="flex:1"></span>
+<a href="https://github.com/ilien-dev/kothar">github.com/ilien-dev/kothar</a>
+</footer>
+</body>
+</html>

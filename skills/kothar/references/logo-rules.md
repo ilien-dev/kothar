@@ -1,125 +1,83 @@
-# Drawing a logo that passes
+# The logo file, and what the evidence supports
 
 ## Contents
-1. The authoring contract (what the file must be)
-2. Designing for the measurements
-3. Each audit rule and how to fix it
-4. Originality
-5. A worked example
+1. The file contract
+2. The small-size cut
+3. Colour versions
+4. What the evidence supports, and what it does not
+5. Originality
 
-## 1. The authoring contract
+## 1. The file contract
 
-Every mark is a master file in **one ink**. It is delivered in black, white and greys, and brand colour is applied later by whoever designs the site or the app, so the drawing itself must work as a single flat colour on any background. That is the oldest test in logo design, and it is also what makes the file usable as a favicon, an engraving or a one-colour print.
+Every mark has a **master in one ink**. Colour versions are derived from it (section 3), so the drawing must work as a single flat colour on any ground. That is the oldest test in logo design, and it is also what makes the file usable as a favicon, an engraving or a one-colour print.
 
 ```svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
-  <path d="M8 8h48v14H22v34H8z"/>
-  <circle data-ink="accent" cx="44" cy="44" r="12"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256" fill="currentColor">
+  <path fill-rule="evenodd" d="..."/>
+  <circle data-ink="accent" cx="..." cy="..." r="..."/>
 </svg>
 ```
 
-- `viewBox` is required. Use a small integer grid (24, 32, 48, 64, 100). Whole numbers or one decimal: the grid keeps shapes aligned, and nobody can see the third decimal.
-- **Only `currentColor` or `none`** as fill and stroke. Put `fill="currentColor"` on the root. No hex colours, no black-by-default shapes.
-- **One optional second tone.** Mark the element or group with `data-ink="accent"`. In the single-ink version it is the same ink as everything else; in the delivered black-and-grey and white-and-grey versions it is grey, and later it can take a brand colour. So the logo must still read when that part is the same ink as the rest: a part that only works because it is a different tone is not a design, it is a dependency.
-- **Real holes, never white paint.** A white shape on top looks right on white and wrong everywhere else. Cut the hole into the path (`fill-rule="evenodd"`), or use a `<mask>`.
-- No `<text>` (outline nothing by hand either: draw letterforms as shapes), no `<image>`, no gradients, filters, patterns, `<style>`, scripts or external references. No partial opacity.
-- Centre the artwork in its viewBox with even margins, and keep ink off the viewBox edge.
-- Strokes are allowed but risky: a stroke that is thin in the viewBox is thin forever. Prefer filled shapes; if you use strokes, make them at least 1/12 of the artwork's width.
+- `viewBox="0 0 256 256"` for the symbol. Whole numbers or one decimal, because nobody can see the third.
+- Fill and stroke are only `currentColor` or `none`, with `fill="currentColor"` on the root.
+- **An optional second tone:** mark the element or group with `data-ink="accent"`. It takes the accent colour in colour versions and the main ink in one-ink versions. The mark must still read when that part is the same ink as the rest. A part that only works because it is a different colour is a dependency, not a design.
+- **Real holes, never white paint.** Cut the hole into the path (`fill-rule="evenodd"`) or use a `<mask>`. A white shape on top looks right on white and wrong everywhere else. Inside a `<mask>`, `#fff` and `#000` are allowed because they are the mask's own values, not colours. Give the mask `maskUnits="userSpaceOnUse"` with the full viewBox, or it clips stroked shapes. Prefix every `id` with the concept's id (`a-cut`), because several marks will share one page.
+- No `<text>` in the symbol, no `<image>`, gradients, filters, patterns, `<style>`, scripts, external references or partial opacity.
+- Centre the artwork optically with even margins, about 4-8% of the canvas, and keep ink off the edge.
+- Strokes are allowed but are converted to filled shapes in the master before delivery, because a stroke scales differently from everything else.
 
-A **compact variant** (`mark-compact.svg`) is the same sign with less in it, for 16–32 px: drop the secondary element, merge thin parts, enlarge the core. It must still look like the full mark (the audit compares them). Draw one whenever the full mark has detail that cannot survive 16 px, instead of crushing the full mark to fit.
+## 2. The small-size cut
 
-## 2. Designing for the measurements
+Someone may meet this logo at 16 px in a browser tab without ever having seen it large. Whatever they cannot perceive there does not exist for them. At 16 px a part narrower than 1/16 of the artwork is under one pixel and vanishes or blurs. Render the mark at 16, 24 and 32 px and look (`rendering.md`).
 
-Think about the person who meets this logo at 16 px in a browser tab, having never seen it large. Whatever they cannot perceive there does not exist for them. So:
+When detail is lost, draw `mark-small.svg`: the same sign with less in it. Drop the secondary element, merge thin parts and enlarge the counters. It must still look like the full mark. A simpler version is better than a crushed master. State in the brand book from which size each version is used.
 
-- **One idea, few shapes.** Two to five bold shapes. If you need to explain it, it has too much in it.
-- **Thick everywhere.** At 16 px the artwork is 16 device pixels across, so any stroke or gap narrower than 1/16 of the artwork's width is under one pixel and will vanish or blur. Aim for strokes and gaps of at least 1/10.
-- **No tiny separate pieces.** A dot, a star, a tick mark smaller than about 1/10 of the width is noise at small size.
-- **Roughly square.** It has to sit in a favicon and an app icon. Keep the proportion under 2:1.
-- **Silhouette first.** Squint: if the outline alone does not say what it is, interior detail will not save it.
+## 3. Colour versions
 
-### What the evidence supports, and what it does not
+From the master, derive (names in `deliverables.md`):
 
-Research on how logos are perceived is thin. Most findings come from a single paper that showed invented brands once to a few hundred people, and the two that were retested at scale did not hold. So the research sorts into three kinds, and each is used differently.
+- **Colour on light:** the mark in the brand colour on paper, or in ink on a tile of the brand colour when the brand colour fails contrast on light (as Eco's lime does).
+- **Colour on dark:** the brand colour or paper on ink.
+- **One ink:** black, white, and the brand colour alone.
+
+Every version is checked for contrast against its ground (`color.md`). Each version is a copy of the master with `currentColor` replaced by explicit colours and `data-ink="accent"` filled with the accent.
+
+## 4. What the evidence supports, and what it does not
+
+Research on how logos are perceived is thin. Most findings come from a single paper that showed invented brands once to a few hundred people, and the two that were retested at scale did not hold. The findings sort into three kinds, and each kind is used differently.
 
 **Holds up across studies. Design for it.**
 
-- People recognise a logo they know almost without error and still cannot reproduce its details (Blake et al. 2015; Iancu & Iancu 2017; Mayas et al. 2024). The sign lives in its overall silhouette: no interior detail will be remembered, which is why "silhouette first" comes before everything else.
-- Design explains much of whether an unknown symbol is liked and very little of whether it is recognised later (3-10% in a ten-country study, van der Lans et al. 2009). Memory comes from seeing the logo many times, which is the owner's work. Never promise "memorable" in a rationale.
-- Liking rises with repeated exposure and then falls (Montoya et al. 2017, 268 curves). A first look, yours or the user's or a judge's, predicts the long run poorly.
-- Curved contours are liked a little more than angular ones, mostly at a glance (Chuquichambi et al. 2022, 61 studies). It is a mild preference and carries no meaning about the product.
+- People recognise a logo they know almost without error and still cannot reproduce its details (Blake et al. 2015; Iancu & Iancu 2017; Mayas et al. 2024). The sign lives in its overall silhouette, which is why the silhouette comes first.
+- Design explains much of whether an unknown symbol is liked and very little of whether it is recognised later: 3-10% in a ten-country study (van der Lans et al. 2009). Memory comes from seeing the logo many times, which is the owner's work. Never promise "memorable".
+- Liking rises with repeated exposure and then falls (Montoya et al. 2017, 268 curves). A first look predicts the long run poorly, whether it is yours, the user's or anyone else's.
+- Curved contours are liked a little more than angular ones, mostly at a glance (Chuquichambi et al. 2022, 61 studies). It is a mild preference and says nothing about the product.
 
-**Depends on the product. A reason to choose one way, never a rule.** Each comes from one paper or one team, with a stated condition; `product.stage`, `product.stakes`, `product.category` and the traits say which way it points.
+**Depends on the product. A reason to choose one way, never a rule.** The brief's stage, stakes and category say which way each one points.
 
-- *Showing what the product does* helps a brand nobody knows yet, fades once the brand is known, and reverses when the category itself has bad associations (Luffarelli, Mukesh & Mahmood 2019). For `stage: new` with `category: neutral`, the `product` concept is the strongest place to start; for `category: negative`, do not depict the category.
-- *A symbol alone does not bring a new brand's name to mind*, while the name does bring the symbol (Dommer & Parker 2023; Morgan et al. 2021). For `stage: new` the mark is expected to travel with the name; do not lean on the mark to say who it is.
-- *Mirror symmetry* reads as familiar and easy; *asymmetry* reads as livelier and suits a product where `excitement` weighs (Luffarelli et al. 2019; Bajaj & Bond 2018). Neither is better. A shape that is almost symmetric is the one to avoid: it is read as a broken symmetric shape (Gartus & Leder 2017, on abstract patterns). The audit notes that case as `symmetry`.
-- *An enclosing frame* reads as protection when the stakes are high and as confinement when they are low (Fajardo et al. 2016). Enclose the sign for `stakes: high`, leave it open otherwise.
-- *Shapes with parts cut away or left open* read as inventive and as less trustworthy (Hagtvedt 2011, on lettering). Keep forms closed and complete when `trust` weighs or `stakes` is high; a cut is a fair move when `creativity` weighs.
-- *Clear space between the parts* of a pictorial mark improves how it is rated (Sharma & Varki 2018), and it is also what small sizes need.
-- *Recognisable, organic shapes* are liked more than abstract ones at first sight (van der Lans et al. 2009; Machado et al. 2015). It does not make them better recognised later.
+- *Showing what the product does* helps a brand nobody knows yet, fades once the brand is known, and backfires when the category itself has bad associations (Luffarelli, Mukesh & Mahmood 2019).
+- *A symbol alone does not bring a new brand's name to mind*, while the name does bring back the symbol (Dommer & Parker 2023; Morgan et al. 2021). For a new brand, the mark travels with the name.
+- *Mirror symmetry* reads as familiar and easy. *Asymmetry* reads as livelier (Luffarelli et al. 2019; Bajaj & Bond 2018). Neither is better. An almost-symmetric shape is the one to avoid, because it reads as a broken symmetric one (Gartus & Leder 2017).
+- *An enclosing frame* reads as protection when the stakes are high and as confinement when they are low (Fajardo et al. 2016).
+- *Shapes with parts cut away* read as inventive and as less trustworthy (Hagtvedt 2011, on lettering).
+- *Clear space between the parts* of a pictorial mark improves how it is rated (Sharma & Varki 2018), and small sizes need it anyway.
+- *Recognisable, organic shapes* are liked more than abstract ones at first sight (van der Lans et al. 2009; Machado et al. 2015). That does not make them better recognised later.
 
-**Do not use as a reason**, in a rationale or to the user. These are common in design writing and are not supported.
+**Never use as a reason**, in a rationale or to the user. These claims are common in design writing and are not supported:
 
-- "Round is warm or soft, angular is tough or durable", and "a logo that suggests movement is liked more": both failed a preregistered retest with 823 people (Motoki & Iseki 2022).
-- The golden ratio and construction on circle grids: no preference for either has been found (Höge 1997; McManus et al. 2010; Stieger & Swami 2015).
-- "Simpler is always better", "symmetry is quality", repeated elements or parallel lines as merits in themselves.
+- "Round is warm, angular is tough" and "a logo that suggests movement is liked more": both failed a preregistered retest with 823 people (Motoki & Iseki 2022).
+- The golden ratio and construction on circle grids as merits: no preference for either has been found (Höge 1997; McManus et al. 2010; Stieger & Swami 2015). A construction grid is a drawing tool, not an argument.
+- "Simpler is always better", "symmetry is quality".
 - "A good logo raises sales": the evidence is correlational.
 
-A rationale says what the mark depicts and why that belongs to this product. It may name one of the conditional reasons above when it applies. It never argues from the last list.
+A rationale says what the mark shows and why that belongs to this product. It may cite one conditional reason above when it applies, and never one from the last list.
 
-### Look at it
+## 5. Originality
 
-You cannot judge a drawing from its path data. After writing a file, run `kothar check <file.svg>` and open the two PNGs it writes: the drawing large, and its real pixels at 16 px, enlarged. If you cannot tell what the small one is, neither can anyone else. The same command prints the measurements and the four nearest known shapes for that one file, so you can try a variant without running the whole audit.
+No index of known logos ships with this skill, so originality rests on your knowledge and your honesty.
 
-## 3. Each audit rule and how to fix it
-
-`kothar audit` prints findings as `level: [rule] message`. `fail` blocks the step; `warn` is shown to the user beside the logo.
-
-| Rule | What was measured | Fix |
-|---|---|---|
-| `ink-fill`, `ink-stroke` | A colour other than `currentColor`/`none`, or a shape with no fill (renders black) | Put `fill="currentColor"` on the root; replace colours; cut holes instead of painting white |
-| `forbidden-*`, `style-block`, `external-ref` | Text, raster, gradients, filters, CSS, links | Redraw as plain shapes |
-| `viewbox`, `precision`, `filesize`, `complexity-nodes` | Missing viewBox, noisy decimals, too heavy, too many path nodes | Simplify; a logo is rarely more than 1–2 kB |
-| `size` | Rendered at each size: share of ink thinner than one pixel, share of gaps that close, and how much of the shape survives the pixel grid. Reports the smallest size from which it stays clean (needs 16 px, or 48 px for a full mark that has a compact variant) | Thicken thin parts, widen gaps, remove detail; or add a compact variant. The message gives the width of the thin parts and narrow gaps in pixels at that size and by how much to grow them |
-| `topology` | At the target size the number of separate pieces or holes changes: a gap closed or a thin join broke | Widen that gap or thicken that join |
-| `elements` | The smallest separate piece, in pixels at the target size. Under 1 px fails | Enlarge it, merge it into a larger shape, or remove it |
-| `density` | Ink under 12% of its box (hairline) or over 95% (a block) | Add weight, or add a cut that gives the block a drawing |
-| `pieces` | More than 12 separate pieces | Merge or remove |
-| `aspect` | Longer than 2:1 | Recompose towards a square |
-| `off-centre`, `clipped` | Artwork not centred in its viewBox, or touching its edge | Recentre; leave margin |
-| `balance` (info) | Visual weight far from the centre of the shape | Fine if intended |
-| `symmetry` (info) | 85-97% of the shape matches its mirror image: almost symmetric, not quite | Make it exact, or break it clearly enough to look meant |
-| `similarity` | Shape correlation against ~21,000 brand logos, UI icons and emoji. From 0.76 it warns, from 0.88 it fails, and names the nearest | See Originality |
-| `siblings` | Two of your options are nearly the same drawing | Make them different ideas, not variations |
-| `compact-kinship` | The compact variant no longer resembles the full mark | Simplify the same drawing |
-| `judge-*` | What the blind judges saw (see `judges.md`) | Redraw what they misread |
-
-`size`, `topology` and `elements` are facts about pixels: what is thinner than a pixel is lost for every viewer. The limits for `density`, `pieces`, `aspect` and the `symmetry` band are this tool's own; no study gives a cut-off for them. `complexity-nodes` is about how the file was written, not about how complex the drawing looks. `kothar check` also prints the mirror symmetry of the shape as a description: it is never scored, because which one suits depends on the product.
-
-Do not chase a number with tricks (padding the viewBox, adding a border to change the silhouette). The measurements exist to predict what a person sees; a drawing that games them still looks the way it looks.
-
-## 4. Originality
-
-A logo that is a stock icon is not a logo: it cannot be owned, and people will read it as "settings" or "send". The same goes for a mark that sits close to a famous brand, most of all a brand in the user's own industry, where the resemblance is a legal problem and not just a weak design.
-
-- Do not start from the obvious pictogram of the subject (a gear for tools, a bolt for speed, a shield for security, a rocket for launch, a brain or sparkle for AI, a hexagon for anything technical). Start from what is particular to this name and this product.
+- Do not start from the obvious pictogram of the subject or a cliché of the field (`craft.md`, step 1).
 - A plain initial in a heavy sans is the most common logo there is. If a letter is the idea, it needs a cut, a join or a second reading that makes it this product's letter.
-- The comparison works on a coarse picture of the shape (its mass and outline on a 24-pixel grid, plain or mirrored), so it reacts to overall silhouette and where the weight sits, not to fine detail. Plain primitives (a filled square, a disc, a bar and a dot) always have dozens of neighbours.
-- When `similarity` names a neighbour, look at what the two share (usually the silhouette) and change *that*: a different proportion, a cut through the mass, a counter-shape, an asymmetry. Rotating or mirroring does not count; the comparison already checks mirrored versions.
-- A warning (0.76–0.88) is a prompt to look, not a wall. If the neighbour is something unrelated that merely shares a rectangle, and the judges do not name it, leave it; the user sees the note. Do not move a shape by a unit at a time to slip under the number: that changes the score, not what people see.
-- A failure (0.88 and above) means the same shape. Change the idea, not the coordinates.
-- When the judges say what it reminds them of, believe them over your own intent.
-
-## 5. A worked example
-
-A product that measures logos, named Kothar (a smith who names what he forges). Fusion concept: a try-square (the measuring tool) whose corner holds a dot (the thing measured, and the head of a hammer seen from above).
-
-```svg
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" fill="currentColor">
-  <path d="M8 8h48v14H22v34H8z"/>
-  <circle data-ink="accent" cx="43" cy="43" r="12"/>
-</svg>
-```
-
-Two shapes. The thinnest part (14 of 48 units) is 4.6 px at 16 px. The dot is 8 px at 16 px. In single ink both are one ink and still read as "corner + dot"; in the delivered versions the dot is grey. `depicts`: `["square", "try square", "escuadra", "corner", "bracket", "angle", "dot", "punto"]`.
+- For each concept, ask yourself which famous logos or stock icons it could be mistaken for, most of all in the user's own field. If one comes to mind, change the feature they share (usually the silhouette). Rotating or mirroring does not count.
+- Name any resemblance you are unsure about next to the concept in the proposals report, so the user chooses knowing it.
+- Always recommend a trademark search before public use.

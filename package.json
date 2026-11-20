@@ -1,7 +1,7 @@
 {
   "name": "kothar",
   "version": "0.3.0",
-  "description": "Claude Code plugin: choose a product name and a measured logo identity.",
+  "description": "Claude Code plugin and agent skill: name a product and build its brand identity, from the logo to a brand book.",
   "type": "module",
   "license": "MIT",
   "repository": {
@@ -16,14 +16,13 @@
     "logo",
     "naming",
     "branding",
+    "brand-identity",
+    "brand-book",
     "svg",
-    "identity",
     "claude-code",
-    "plugin"
+    "plugin",
+    "agent-skill"
   ],
-  "bin": {
-    "kothar": "skills/kothar/scripts/kothar.js"
-  },
   "files": [
     "skills/",
     "!skills/**/*.tmp*",
@@ -34,11 +33,6 @@
     "node": ">=20"
   },
   "scripts": {
-    "build": "tsc -p tsconfig.json && tsc -p tsconfig.web.json",
-    "test": "npm run build && node --test tests/core.test.js"
-  },
-  "devDependencies": {
-    "@types/node": "^26.6.6",
-    "typescript": "^7.0.2"
+    "test": "node --test tests/skill.test.js"
   }
 }

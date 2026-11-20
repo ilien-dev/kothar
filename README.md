@@ -1,15 +1,15 @@
 <p align="center">
   <picture>
     <source media="(prefers-color-scheme: dark)" srcset="assets/hero-dark.svg">
-    <img src="assets/hero-light.svg" alt="From a project's description to its logo: Kothar draws nine options, scans them, flags one that looks like a map icon, the square-and-dot option is chosen and becomes an identity in black, white and grey" width="100%">
+    <img src="assets/hero-light.svg" alt="From a project's description to its logo: Kothar draws nine options, scans them, flags one that looks like a map icon, the square-and-dot option is chosen and becomes an identity" width="100%">
   </picture>
 </p>
 
 <p align="center"><b>English</b> · <a href="README.es.md">Español</a></p>
 
-<h1 align="center">Kothar: a name and a logo for your project</h1>
+<h1 align="center">Kothar: a name and a brand for your project</h1>
 
-<p align="center"><b>Names with their meaning and logos tested before you see them, chosen step by step in your browser.</b></p>
+<p align="center"><b>Names with their meaning, logos drawn from your references, and a brand book you can send to anyone.</b></p>
 
 <p align="center">
   <img alt="Claude Code plugin" src="https://img.shields.io/badge/Claude%20Code-plugin-0B7FD0">
@@ -19,7 +19,7 @@
 
 ---
 
-**Kothar is a skill for your AI agent that names your project and draws its logo.** It reads what your project does, proposes names with where each one comes from, and draws several logo options, each with its own idea. It tests them before you see them, and you choose in a page that opens in your browser. The logo at the top of this page is what it made for this repository.
+**Kothar is a skill for your AI agent that names your project and builds its brand.** It asks what you like, proposes names with where each one comes from, and draws several logo proposals, each with its own idea. When you choose one, it builds the rest: colours, fonts, the pieces you need, and a brand book that shows your logo at every size and in every place it will live.
 
 ```bash
 /plugin marketplace add ilien-dev/kothar
@@ -32,36 +32,26 @@ That is for Claude Code. In Codex, Gemini and other agents:
 npx skills add ilien-dev/kothar
 ```
 
-## Every option has an idea behind it
-
-<p align="center"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/ideas-dark.svg">
-  <img src="assets/readme/ideas-light.svg" alt="Three of the nine logo options drawn for this repository: The crucible comes from the name, Square and dot from what the project does, The measured ingot from both; Square and dot is the one chosen" width="100%">
-</picture></p>
-
-A logo is easier to remember when it tells something. So the options are split between three kinds of idea: some come from the name, some from what your project does, and some join the two. Each one comes with its explanation: what it shows and why it belongs to your project. Every option passes the same tests before it reaches you:
-
-- **Clear when small.** Each one is checked at 16 pixels, the size of a browser tab icon.
-- **Its own shape.** It is compared with about 21,000 known logos and icons; if it looks like one, you see it noted next to the option.
-- **Understood by strangers.** AI reviewers that have never seen your project say what they see, and what they do not recognise is redrawn.
-
-The full list of what is measured is in [docs/how-it-measures.md](docs/how-it-measures.md).
-
 ## How it works
 
-<p align="center"><picture>
-  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/how-dark.svg">
-  <img src="assets/readme/how-light.svg" alt="In the browser you pick the name Kothar and press Confirm; your agent draws nine options, measures them and has three blind reviewers look at them while the page shows Creating logos; then the page moves to step 02" width="100%">
-</picture></p>
+Everything happens in the conversation, through questions with options to pick from.
 
-1. Ask your agent for a name or a logo, in your own words. It asks a couple of questions and opens the page, which runs on your own computer.
-2. Choose the name, then the logo. After each step the page waits while your agent prepares the next one.
-3. Review the identity guide (the logo in every version, its sizes and how to use it) and save the files into your project's `assets/logo/`. Ask for changes in the chat.
+1. **What it is for.** Your agent reads your repository, or asks what the product is if there is none.
+2. **Your references.** It asks for images of logos, websites and anything else that looks the way you want your brand to look. If you have none, describe them: brands you admire and why. This is what steers the design the most.
+3. **The name.** Keep yours, or choose among ten or more candidates, each with what it refers to and why it fits.
+4. **How many logos, which colours, which pieces.** Pick from the list below.
+5. **The proposals.** Your agent writes many ideas, keeps the strongest and most different, draws them, looks at them at 16 pixels and at full size, and refines them. A report opens in your browser with each proposal, its idea, its palette and a few mockups. You choose in the chat.
+6. **The brand book.** Your agent builds the identity and every piece you selected into `assets/brand/`, and opens the brand book. You ask for changes in the chat.
 
-**Already have a name?** Tell your agent ("my project is called tu-app") and it will not propose others: it starts with the logo. If you only want the symbol, without letters, ask for that.
+Before each report it asks whether you want it in your language or in English.
 
-> [!NOTE]
-> The logo comes in black, white and grey. Colour changes more often than a logo, so you choose it later, when you design your site or your README. The guide that comes with the files explains how to apply it.
+## What you can get
+
+- **Always:** the symbol and a version for small sizes, horizontal and stacked lockups, colour, one-colour and reversed versions, the palette with its contrast ratios, the fonts (free, from Google Fonts), favicon and app icons, a link-preview image, and `tokens.json`.
+- **Social networks**, the ones you choose: GitHub, X, LinkedIn, Facebook, Instagram, TikTok, YouTube, Discord, Bluesky, Mastodon, Threads, Reddit and Product Hunt, at each network's size.
+- **Stationery**, the pieces you choose: letterhead, a contract template (the layout, not legal text), business card, email signature, invoice and a presentation slide.
+- **An animated logo**, if you want one.
+- **The brand book:** a single HTML file that shows the idea, the construction, the logo at every size, the colours and fonts, how to use it and how not to, and mockups in a terminal, a README, a website skeleton, social profiles and stickers. It prints to PDF.
 
 ## Install
 
@@ -85,12 +75,12 @@ npx skills add ilien-dev/kothar
 
 The installer finds the agents you have and lets you choose where to install it. Add `-g` to have it in every project.
 
-> [!IMPORTANT]
-> Kothar needs Node 20 or later in every agent, and the `npx skills` installer itself needs Node 22.20 or later. The first run downloads the SVG renderer and the set of known logos it compares against, which takes a couple of minutes, once.
+> [!NOTE]
+> Nothing else to install. To turn the files into PNG and to set the name in outlines, your agent uses Chrome, Edge, Brave or Chromium if you have one, without opening a window. Without one, you get the SVG files and the brand book. The `npx skills` installer needs Node 22.20 or later.
 
 ## Development
 
-Source is TypeScript in `src/`, compiled into the skill with `npm run build`; `npm test` builds and runs the tests. How to build and test it, and where it keeps its working files, is in [docs/development.md](docs/development.md).
+The skill is Markdown plus two HTML files, with no build step. How it is organised and how to test a change is in [docs/development.md](docs/development.md).
 
 ## Contributing
 
@@ -98,4 +88,4 @@ Read [CONTRIBUTING.md](CONTRIBUTING.md) before opening an issue or a pull reques
 
 ## Licence
 
-MIT. The known logos and icons it compares against are downloaded at setup under their own licences and are not redistributed; brand logos are trademarks of their owners and are used only to measure likeness.
+MIT.

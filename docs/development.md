@@ -1,15 +1,19 @@
 # Development
 
-How to build and test Kothar from its source.
+How Kothar is built and how to test a change.
 
-Source is TypeScript in `src/`. `npm run build` compiles it to `skills/kothar/scripts/` (the command-line tool) and `skills/kothar/assets/app.js` (the page). The compiled files are committed, because a plugin is installed by cloning.
+There is no build step. The skill in `skills/kothar/` is:
+
+- `SKILL.md`, the flow the agent follows, and `references/`, the detail it reads at each step.
+- `assets/report.html`, the template for the proposals report and the brand book, filled with a complete example (Eco).
+- `assets/render.html`, a helper page that a headless Chromium browser opens to turn the name into outlines and to build the `.ico`.
 
 ```bash
-npm install
-npm test        # builds, then runs tests/core.test.js
-node skills/kothar/scripts/kothar.js help
+npm test        # checks that the skill is consistent: links, frontmatter, template, manifests
 ```
 
-State for a product lives in `.kothar/` inside that product's folder. Machine-wide data (dependencies, the reference index, fonts, naming preferences) lives in `~/.kothar`. On first use the skill runs `kothar setup --refs`, which installs the SVG renderer and builds the reference index (a couple of minutes, once).
+To see the template, open `skills/kothar/assets/report.html` in a browser. To try the render helper, follow `skills/kothar/references/rendering.md` with a job file of your own.
+
+A product's work in progress lives in `.kothar/` inside that product's folder, and what the user keeps goes to its `assets/brand/`.
 
 Before opening a branch or a pull request, read [CONTRIBUTING.md](../CONTRIBUTING.md).

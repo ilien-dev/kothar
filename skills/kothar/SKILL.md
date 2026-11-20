@@ -1,148 +1,112 @@
 ---
 name: kothar
-description: Chooses a product's name and builds its logo identity end to end - name candidates with their meaning, SVG logo options measured by scripts and judged blind, optional hand-drawn name lettering, free fonts, an animated logo and a shareable identity report, all in black, white and greys - through a step-by-step page on localhost where the user picks everything. Use it whenever the user wants to name a product, repo, app, library, company or side project, wants a logo, logotype, wordmark, icon, favicon or "brand" for one, asks for logo ideas or options, wants a font to go with a logo, or says the project needs an identity - even if they only ask for one of those pieces, and even if they never say the word "logo".
+description: Use when the user wants a name, a logo or a brand identity for a product, repository, app, library, company or side project - naming it, logo or icon ideas, a logotype or wordmark, a favicon or app icon, brand colours or fonts, a brand book or style guide, profile images and banners for GitHub, X, LinkedIn, Instagram, TikTok, YouTube, Discord or other networks, letterhead, a contract template, business cards or an email signature - even if they only ask for one of those pieces and never say "brand".
 ---
 
 # kothar
 
-Kothar-wa-Khasis forged the weapons of the gods and gave each one its name. This skill does both jobs for a product: it names it, then forges its logo.
+Kothar-wa-Khasis forged the weapons of the gods and gave each one its name. This skill does the same for a product: it names it, forges its logo, and builds the brand around it. A studio would deliver that as a brand book. Here the brand book is a single HTML file that the user opens in their browser.
 
-Two ideas shape everything below.
+Everything happens through questions in the conversation. There is no server and nothing to install. You draw in SVG, render what you draw with a browser already on the machine, look at the pictures, and write the files into the user's project.
 
-**The user chooses in a page, not in the terminal.** After a couple of opening questions, the session opens a report on `localhost`. The user picks a name there, presses *Confirm*, and the page shows a loading screen while you work; when you publish the next step the page moves on by itself. The terminal stays quiet. This matters because choosing a logo is visual, and because the user should not have to babysit a terminal while you draw.
+## Three things that decide the quality
 
-**Scripts decide what is good enough, not your impression.** You cannot see your own SVG the way a person does, and you are biased towards work you just made. So every logo is rendered and measured (does it survive 16 px, is anything too small to perceive, does it copy a famous brand or a stock icon) and then shown to judges who know nothing about it. A step cannot be published while a check fails. When a check fails, fix the drawing; do not argue with the number.
+1. **References before ideas.** What the user shows you outweighs anything they could describe. Ask for images first, and read every one.
+2. **Ideas before drawings.** Write many one-sentence ideas, keep the few that are different and particular to this product, and only then draw. `references/craft.md` is the method. Read it before the first drawing, every time.
+3. **Look at what you draw.** You cannot judge a mark from its path data. Render it large and at 16 px (`references/rendering.md`), open the PNGs, and fix what you see. If no browser can render on this machine, tell the user and keep the geometry extra simple.
 
-## The tool
+## Ask with options
 
-Everything goes through one CLI, in `scripts/` next to this file:
-
-```
-node "<this skill's folder>/scripts/kothar.js" <command>
-```
-
-Below it is written `kothar <command>`. Run `kothar help` for the full list. State lives in `.kothar/` inside the user's project (`identity.json` is the single source of truth; you patch it with `kothar set --file patch.json`, never by hand-editing while the server runs, because the page writes to it too). The exact shape of every patch is in `references/identity.md`: read it before your first `set`.
-
-First run on a machine: `kothar doctor`. If it does not say `ready`, run `kothar setup --refs` (installs the SVG renderer and builds the index of ~21,000 brand logos, icons and emoji that logos are compared against; a couple of minutes, once). Needs Node 20+ and npm.
-
-**Language.** Speak to the user in their language, write everything you put on the page (names, reasons, rationales) in it, and pass its code to `init --locale <code>` so the page's own wording matches. English is the default; English and Spanish are built in. For any other language run `kothar strings --locale <code>` once before opening the page: if it answers `ready: false` it prints the English wording, which you translate (values only; keys, `{n}` placeholders and symbols stay) and store with `kothar strings save --locale <code> --file <file>`. The translation is kept on the machine, so each language is translated once. Without it the page falls back to English.
+Use the harness's question tool with selectable options when it has one, a few questions per call. Without one, ask in a short numbered list. Speak the user's language throughout. Keep the terminal quiet while you work: one line on what you are doing, not a narration.
 
 ## The flow
 
 ```
-terminal: understand the product, ask where names come from
-   └─ page step 01  name + how it is written + how many logos      → Confirm
-        (page shows "Creating logos" while you draw, measure, judge)
-   └─ page step 02  logo (+ drawn name)                             → Confirm
-        ("Building the identity")
-   └─ page step 03  the identity report (read-only; steps 01–02 stay consultable)
-terminal: changes are requested here; the report updates
+1  What it is for                   (questions)
+2  References                       (questions; images preferred)
+3  Name                             (questions; candidates in the chat)
+4  How many logos, which colours, which pieces   (questions)
+5  Draw the proposals               (work: craft, render, refine)
+6  Report language                  (question)
+7  Proposals report                 (HTML opened in the browser) → the user chooses in the chat
+8  Build the identity and the pieces (work)
+9  Brand book                       (HTML opened in the browser) → changes in the chat
 ```
 
-**No colour.** The logo is chosen and delivered in black, white and greys: the main shape in the darkest ink, the optional second part (`data-ink="accent"`) in grey. A palette changes often and a logo rarely, and choosing colours from the logo alone is a poor basis, so colour is left to whoever designs the site, the README or the app later. If the user asks for colours, say so in one line and carry on; the delivered guide explains how to apply brand colours to the single-ink file.
+Work in progress lives in `.kothar/` in the product's folder (the brief, the ideas, the concepts, render pages and the proposals report); every `.kothar/` path below is relative to it. What the user keeps goes to `assets/brand/` (or `brand/` when the project has no `assets/` folder). If `.kothar/brief.md` already exists, ask whether to continue from it or start over. Starting over moves the old `.kothar/` aside under a dated name; never delete it.
 
-### Before anything: is there earlier work, and what is this for?
+### 1 · What it is for
 
-Run `kothar status` first. Two questions decide everything that follows; ask them with selectable options, and only the ones that apply.
+Ask what the brand is for:
+- **This repository** (the default inside one): read what it does (README, manifest, main source folders) and write two sentences on what it is and who uses it.
+- **Another or a new product:** ask what it is and who it is for. If you are inside a repository that belongs to something else, use `.kothar-<short-name>/` instead of `.kothar/` so the two do not mix.
+- **No repository:** everything comes from what the user tells you. Ask until you can write those two sentences.
 
-**What is the logo for?**
-- *This repository* (the default inside a repository): read it, as step 0 says.
-- *A different or new product*: do not read this repository for meaning. Ask the user what the product is and who it is for, and keep its work apart with `--dir .kothar-<short-name>` on every command.
-- *No repository at all*: everything comes from what the user tells you; ask until you can write the two-sentence summary.
+### 2 · References
 
-**If `status` shows earlier work for that same product** (`exists: true`):
-- If `waitingForYou` is not null, the user asked for something in the page and nobody answered: that request is your task. Treat it exactly as if `kothar wait` had just returned it.
-- Otherwise ask: *continue from the last report, or start from scratch?*
-  - **From the last report**: `kothar restart`, `kothar open`, `kothar wait --step 1`. The page shows the same names and logos with the earlier choices selected. As long as the user only chooses again among what exists, the page moves through the steps and rebuilds the report **by itself**: you draw nothing. `wait` returns only when they ask for something new (a regenerate button, another number of logos, a drawn name that does not exist yet); then you do that part and carry on as usual.
-  - **From scratch**: `kothar init --force …` sets the old work aside in a dated folder and begins again at step 0.
+This is the question that steers everything after it, so ask it early and say why. Ask for **several** references, images preferred: logos they like, websites, app icons, posters, photographs, anything that shows the look, mood or message they want. Paths, pasted images or links all work. If they have no images, ask for the most precise description they can give: brands they admire and what they like about each, how it should feel, what it must not look like.
 
-The user can also press *Start over* in the final report, which is the same as `kothar restart`. If your session is still open when that happens you will not be told; it does not matter, because the page needs you only when it shows a loading screen, and `kothar status` will then say what is pending.
+Open and read every image. For each reference, note in one line what to take from it (a colour, a weight, a contour, a mood) and what to leave. Then write `.kothar/brief.md`:
 
-### 0 · Before the page (terminal)
+```
+Product: <two sentences>          Audience: <who, what is at stake for them>
+Adjectives: <3-5, from the user's words and references>
+References: <one line each: what to take, what to leave>
+Likes / dislikes: <in their words>
+Clichés of the field: <the signs every competitor uses; off-limits without a fresh twist>
+Stage: new | known       Stakes: low | high       Category: neutral | negative
+Name note: <a known product with the same name, if any>
+Choices: <logo count> · <colour answer> · <pieces> · <report language>   (filled in at steps 4 and 6)
+```
 
-1. **Understand the product.** In a repository, read what it does: README, manifest, the main source folders. Names and logos must come from what this product actually does, so write down in one or two sentences what it is and who uses it. With no repository, ask the user.
-2. `kothar init --summary "<those sentences>" --industry "<its field>" --locale <es|en>`. This also records the names the user already uses (their GitHub repositories, read with the user's own `gh` login when available, and the folders next to the project) so you never propose one of them. If the user wants **only the symbol** ("just the mark", "solo el logotipo"), add `--mark-only`: no fonts are offered, no name is drawn, no lockups are exported, and the page skips those parts.
-3. **What kind of product is it, as a person would feel it?** Run `kothar traits`: it lists a dozen traits (competence, excitement, calm, trust, warmth…) and three kinds of product. From the repository and from what the user told you, give the traits that genuinely apply a weight from 1 to 3 and choose the kind, then save them (`"product": {"kind": …, "traits": {…}}` with `kothar set`). This is what the fonts for the name are chosen from, so judge it from evidence (who uses the product, what for, what is at stake for them), not from what would give fonts you like. If you cannot tell, ask the user one question about how they want the product to feel. In the same patch record three facts: `stage` (is the brand new to its audience, or already known), `stakes` (does using it put money, safety, health or data at risk) and `category` (does the field itself have bad associations). They decide which way several drawing rules point in step 2.
-4. **Where should names come from?** Run `kothar prefs`.
-   - If preferences are saved, ask one confirmation question and nothing else: *"Last time the names came from <categories>. Keep those, or use others?"* People who always name things after mythology should not be re-interviewed every time.
-   - If nothing is saved, ask for a category or source of inspiration, offering a few options plus **"I don't know"** (then you choose, from the product itself). Then ask what they prefer in a name: length, and whose tongue it has to be easy for (speakers of their language, English speakers, both). Offer options and accept free text.
-   - Save the answer with `kothar prefs save --file prefs.json` so it is not asked again (shape in `references/identity.md`).
-5. Ask whether you may check availability online (`--online` sends each candidate to npm, PyPI, crates.io and DNS). Skip the lookups if they decline.
+Stage, stakes and category are read from the evidence. They tilt several drawing decisions (see `references/logo-rules.md`).
 
-Use the harness's question tool with selectable options when it has one.
+### 3 · Name
 
-### 1 · Names → page step 01
+- **They have a name:** use it as given. If you know of an established product with that name in the same field, say so once, then carry on.
+- **They want one:** follow `references/naming.md`. Ask where names should come from (free answer, or "I don't know", and then you choose from the product), the length, and whose tongue it has to be easy for. Ask whether you may check availability online. Present at least ten candidates in the chat, each with what it refers to and why that represents the product, and let them pick or ask for more.
 
-Read `references/naming.md`. In short: brainstorm about twenty, measure them (`kothar names <a> <b> … --table`, which flags names already taken, hard to pronounce in each language, or one letter away from an existing one), keep **at least ten**. Each candidate carries *who or what it is* and *why that represents this product*. The second is the point: a name is justified by a real parallel with what the repository does, not by sounding good.
+### 4 · How many logos, colours, pieces
 
-**The user already has a name.** Do not propose others. Send that single name as the only candidate (you still write what it refers to and why it fits, for the report) together with `"given": true` inside `naming`, and skip step 0.3 entirely (no questions, nothing saved to preferences). If you know of an established product with that same name in the same field, tell the user once, in the terminal, and carry on with their name: it is their decision, but they should make it knowing. The page then shows their name and goes straight to how it is written and how many logos.
+In one round of questions:
+- **How many logo proposals:** 3 (recommended), 4, 6, or a number of their own.
+- **Colour:** do they already have colours, preferences, or should the references decide? See `references/color.md`.
+- **Which pieces to deliver,** multi-select. Group them the way `references/deliverables.md` does: social networks (GitHub, X, LinkedIn, Facebook, Instagram, TikTok, YouTube, Discord, Bluesky, Mastodon, Threads, Reddit, Product Hunt), stationery (letterhead, contract template, business card, email signature, invoice, presentation slide), and the animated logo. The core identity (the symbol, a small-size version, lockups, colour and one-ink versions, palette, type, favicon and app icons) always comes.
 
-The fonts offered for the name are not your taste either: `kothar font plan` chooses them from those product traits (a typeface is read as stable, friendly, technical, loud… before a word is read), one from each class that fits, all free. Before running it, look at the traits again with the name and the audience in mind: a name from myth or history adds `heritage`, a developer tool adds `technical`. A paid font can only come from the user, in the page, with a licence confirmation and a legal warning that the page shows.
+### 5 · Draw the proposals
 
-If the user presses *Regenerate fonts*, `wait` returns `"regenerate": "fonts"` with `keep` and maybe a `hint`: run `kothar font plan --next --keep "A|B"`. It answers in one of three ways, in this order as the options run out: fonts that still fit the traits (`psychology`, nothing more to do); a list of `candidates` for you to choose from by judgement (`kothar font plan --pick "A|B"`, thinking of the product, the name and who will read it); or fonts drawn at random from those not shown yet. A hint from the user ("more serious", "with serifs") is a reason to use `--pick` yourself from `kothar font list`, whatever the mode. No font is ever offered twice. Then `kothar flow ready --step 1` and `wait` again.
+Read `references/craft.md` and `references/logo-rules.md`. In short:
 
-Then: `kothar set --file patch.json` → `kothar flow ready --step 1` → `kothar open` (starts the server, opens the browser, prints the URL; tell the user the URL) → `kothar wait --step 1`.
+1. In `.kothar/concepts/ideas.md`, write the word map and 12 to 20 one-sentence ideas from the brief, the name and the references. Choose freely what kind of mark each one is: a pictorial sign, an abstract form, a letter, a scene, an emblem. No categories are imposed, and the ideas should not repeat one formula.
+2. Keep the strongest, most different ones, as many as the user asked for. For each one, write down the construction (shapes, radii, angles, grid) before drawing.
+3. Draw each one in `.kothar/concepts/<id>/` as `mark-v1.svg`, `mark-v2.svg`…, and copy the version you keep to `mark.svg`. Add `mark-small.svg` when detail will not survive 24 px.
+4. Render a contact sheet, look at it, and refine at least twice. Then propose a palette (`references/color.md`) and a name font (`references/typography.md`) for each concept.
 
-`wait` blocks until the user confirms and prints their selection: name, font, whether they also want the name drawn in SVG, and how many logos. It exits with code 3 after nine minutes if they are still deciding: just run it again. While the user is choosing, say nothing more than where the page is.
+### 6 · Report language
 
-### 2 · Logos → page step 02
+Just before generating the first report, ask: *"Should the report be in <the conversation's language> or in English?"* Use that answer for both reports. Skip it when the conversation is in English.
 
-The user asked for `count` logos. `kothar split <count>` gives the split across the three kinds of concept, which must all be present:
+### 7 · Proposals report
 
-- **name**: depicts what the chosen name refers to (the figure, object, creature).
-- **product**: depicts what the product does.
-- **fusion**: one sign that carries both.
+Build `.kothar/proposals.html` from `assets/report.html` as `references/report.md` describes: a cover, the brief and references, one page per concept (the idea, why it fits, the mark large and at 16-64 px, the palette, and three small mockups), a comparison page and your recommendation. Open it in the browser (`references/rendering.md`, "Opening a page"). In the chat, give one line per concept and your recommendation, then ask which one to take forward. The user may also ask for changes or for new ideas: redraw (new ideas, not retouches of the rejected ones), rebuild the report, and ask again.
 
-Three logos is one of each, six is two of each, nine is three of each. Any other number is split evenly, and the remainder goes to the kind with the richest material for *this* product (say why in that concept's rationale).
+### 8 · Build the identity and the pieces
 
-Read `references/logo-rules.md` before drawing: it is the authoring contract (single ink through `currentColor`, an optional accent, no text, no gradients, real holes) and it explains each measurement and how to fix a drawing that fails it. Its section "What the evidence supports" says what research on logos backs, how the product's traits, stage, stakes and category bear on a drawing (whether to depict the product, enclose the sign, keep it symmetric, cut a shape open), and which popular claims must never appear in a rationale. Write each concept to `.kothar/concepts/<id>/mark.svg`, plus `mark-compact.svg` when the full drawing cannot survive 16 px: a simpler version of the same sign is better than detail nobody can see.
+For the chosen concept:
+1. Final geometry, optical corrections and the small-size cut. Final palette and fonts.
+2. The core files and every piece the user selected, as `references/deliverables.md` lists them. The name in each lockup is converted to outlines, and PNGs and the `.ico` come from the browser (`references/rendering.md`).
+3. The animated logo if selected (`references/animation.md`).
+4. `tokens.json` and a `README.md` for the brand folder, credit included (`references/report.md`, "Credits").
 
-If the user asked for the **name drawn in SVG**, read `references/wordmarks.md` and draw one per logo into `.kothar/wordmarks/`. This is where you are expected to be inventive: rearrange, stack, cut, flip or join letters, bring a piece of the mark into a letter, set one part in the second tone. Lettering that merely looks like a font is flagged by the audit, and lettering nobody can read is failed by the judges. Stay between the two.
+### 9 · Brand book
 
-**Look at what you draw.** `kothar check <file.svg>` measures one drawing in a second (add `--role wordmark` for a drawn name) and writes two PNGs you can open: the drawing large, and its real pixels at 16 px. Use it after every drawing, before the full audit: reading the picture tells you more than the numbers, and it is how you find out what a similarity score is about.
+Build `assets/brand/brand-book.html` with every page of `references/report.md` that applies to what was selected, open it in the browser, and tell the user in two lines where it is and where the files are. Changes are asked for in the chat: edit the file or the piece, render again, rebuild the affected pages, reopen.
 
-Keep the loading screen honest as you go: `kothar flow working --doing <n>`, where `<n>` is the 0-based position of the task in progress in the list the page shows (the list is filled in automatically when the user confirms).
-
-Then measure and judge, and loop until clean:
-
-1. `kothar audit` until there is no `fail`. Fix a `warn` when the fix is obvious; do not grind on one. A similarity warning whose neighbour is plainly unrelated (you looked at both) can stay.
-2. `kothar judge pack`, then follow `references/judges.md`: it prints three prompts; start three fresh agents with exactly those; they save their own answers; `kothar judge score`.
-3. Redraw what the judges failed or did not recognise, audit again, and run **one** more round. A drawing that changed needs that new round; the gate checks it.
-
-Stop after the second judged round unless a `fail` remains. Leftover warnings are shown to the user beside each logo in plain words, which is fine: they are entitled to pick a logo that only works from 24 px, or that reminds people of something, as long as they know. `references/judges.md` says exactly what is worth another round and what is not.
-
-`kothar flow ready --step 2` → `kothar wait --step 2`. The selection has the chosen logo, the chosen lettering (`wordmark` is null when they keep their font).
-
-Instead of choosing, the user may ask for other options from the page. Then `wait` returns `"regenerate": "logos"` or `"regenerate": "names"`, with `keep` (the ids they marked to keep) and sometimes a `hint`. Leave the kept ones exactly as they are (same id, same file) and replace only the others: a new logo takes the category of the one it replaces, so the split holds, and gets a new id; new drawings must be different ideas, not retouches of what was turned down. Then the same loop as before for the new drawings (check, audit, a judge round, at most two) and `flow ready --step 2` again. Repeat as often as they ask.
-
-### 3 · Identity → page step 03
-
-The user confirmed a logo: the page shows "Building the identity" while you do this.
-
-1. `kothar animate` writes a baseline animated SVG for the chosen mark. If a reveal that fits the concept is obvious (a hammer strikes, a ruler extends), improve it by hand following the rules in `references/animation.md`.
-2. `kothar report` audits the animation, exports the files to `.kothar/final/`, publishes step 03 in the page and writes `.kothar/report.html`, a single self-contained file the user can send to anyone.
-
-Tell the user, briefly, that the report is open in the page, and keep listening with `kothar wait --step 3`. The report has three ways forward and the page handles two of them alone:
-
-- **Generate assets**: the user is satisfied. The page writes everything into the project's `assets/logo/` folder (the mark and the mark + name as SVG in black and grey for light grounds, white and grey for dark grounds, and single ink; PNGs; favicon and home-screen icon; a link-preview image; the animated mark; `tokens.json` with the name, font and inks; the identity report; and a `README.md` that tells whoever uses the logo how: files, tones, sizes, clear space, how to apply brand colours later, what not to do). Then the server stops and `wait` returns `"delivered": true`. **That ends the job**: stop listening, tell the user where the files are in one or two lines, and finish. Using the logo in the repository (README, site, app) is work for another session.
-- **Start over**: the page reopens step 01 with everything kept; see "Before anything" above. `wait` returns only if they then ask for something new.
-- Nothing, and the user comes back to the terminal to ask for a change: see below.
-
-`kothar deliver` does the same as the button, if the user asks in the terminal. Steps 01 and 02 stay open in the page to review what was chosen, not to change it.
-
-### After the report
-
-Changes are asked for in the terminal.
-
-- **A tweak to the chosen identity** ("make the dot bigger", "a thicker corner"): edit the file, `kothar audit`, then `kothar report` again. The page updates in place. A changed mark needs a fresh judge round only if its shape changed materially.
-- **A different name or logo**: go back to that step (`kothar flow ready --step <n>` after preparing its content) and continue forward from there.
-
-`kothar stop` shuts the server down when the user is finished.
+The job ends there. Using the identity in the README, the site or the app is a separate task.
 
 ## When things are not ideal
 
-- **No browser, or a remote machine.** `kothar open --no-browser` still prints the URL; give it to the user (they may need to forward the port).
-- **No way to spawn agents.** See the fallbacks in `references/judges.md`. Never skip judging silently; if it truly cannot be done, publish with `--override "<reason>"`, which the page shows to the user.
-- **The similarity index is missing** (`setup --refs` failed, offline). The audit says so and the page tells the user that likeness to known logos was not checked. Do not present such logos as original.
-- **A check you believe is wrong.** Fix the drawing anyway if you can. Only if the check is plainly inapplicable, `kothar flow ready --step <n> --override "<reason>"`; the reason is displayed in the page. Never use it to save time.
-- **Shell quoting.** Always pass JSON through `--file`, never inline: quoting differs between shells and breaks on Windows.
+- **No Chromium-based browser** (Chrome, Edge, Brave, Chromium): deliver SVG only and say plainly that the PNGs, the `.ico` and the name outlines need one. The lockups keep the name as live text naming its font.
+- **Offline:** the outline step and the fonts in the report need the network. Lockups keep live text and the report falls back to system fonts. Say so.
+- **The user gives a paid font:** use it only if they confirm that they hold a licence that covers logo use. It cannot be outlined from a public URL, so ask for the font file.
+- **A mark resembles a known logo:** when you or the user notice it, change the feature that causes it. Always recommend a professional trademark search before public use; you cannot clear a mark.

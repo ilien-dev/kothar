@@ -1,7 +1,7 @@
 {
   "name": "kothar",
   "version": "0.3.0",
-  "description": "Names a product and forges its logo identity: name candidates with their meaning, SVG logos measured by scripts and judged blind, in black, white and greys, free fonts and a shareable report, chosen step by step in a local page.",
+  "description": "Names a product and builds its brand identity through questions: name candidates with their meaning, logo proposals drawn from your references, colour, free fonts, social profiles, stationery and a brand book in HTML.",
   "author": {
     "name": "jjimenezc",
     "url": "https://github.com/ilien-dev/kothar"
@@ -13,14 +13,15 @@
     "logo",
     "naming",
     "branding",
+    "brand-identity",
+    "brand-book",
     "svg",
-    "identity",
     "design"
   ],
   "skills": "./skills/",
   "interface": {
     "displayName": "Kothar",
-    "shortDescription": "Name a product and forge its measured logo identity",
+    "shortDescription": "Name a product and build its brand identity",
     "developerName": "jjimenezc",
     "category": "Design",
     "capabilities": [
