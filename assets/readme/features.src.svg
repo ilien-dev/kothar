@@ -1,0 +1,71 @@
+<!--palette
+bg       #141619 #F2F3F5
+ink      #ECEEF0 #141619
+body     #B4BAC1 #3F454C
+muted    #959CA4 #5B6168
+accent   #F04E15 #F04E15
+acctext  #F26A36 #B83A0B
+panel    #1D2024 #FFFFFF
+line     #3A4047 #C9CED4
+skel     #33383E #DADDE1
+mk       #ECEEF0 #141619
+bubble   #262A2F #ECEEF0
+onacc    #141619 #141619
+alu      #C9CDD2 #C9CDD2
+tile     #2A2D31 #2A2D31
+light    #ECEEF0 #ECEEF0
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 448" role="img" aria-label="Six pages of one brand book, brand-book.html, light up one after another: the symbol at three sizes, the colours with their code, the logo beside the name kothar, two app icons, a GitHub image and a logo that assembles itself">
+<style>
+/* 12 s  the ring lights each page for 2 s, in reading order
+         swatches lift while Colours is lit; the animated logo assembles while its page is lit */
+@keyframes lit0{0%{opacity:0}2%,15%{opacity:1}17%,100%{opacity:0}}
+.lit0{animation:lit0 12s ease-in-out infinite}
+@keyframes lit1{0%,16.7%{opacity:0}18.7%,31.7%{opacity:1}33.7%,100%{opacity:0}}
+.lit1{animation:lit1 12s ease-in-out infinite}
+@keyframes lit2{0%,33.3%{opacity:0}35.3%,48.3%{opacity:1}50.3%,100%{opacity:0}}
+.lit2{animation:lit2 12s ease-in-out infinite}
+@keyframes lit3{0%,50%{opacity:0}52%,65%{opacity:1}67%,100%{opacity:0}}
+.lit3{animation:lit3 12s ease-in-out infinite}
+@keyframes lit4{0%,66.7%{opacity:0}68.7%,81.7%{opacity:1}83.7%,100%{opacity:0}}
+.lit4{animation:lit4 12s ease-in-out infinite}
+@keyframes lit5{0%,83.3%{opacity:0}85.3%,98.3%{opacity:1}100.3%,100%{opacity:0}}
+.lit5{animation:lit5 12s ease-in-out infinite}
+@keyframes sw{0%,16%{transform:none}19%,29%{transform:translateY(-6px)}32%,100%{transform:none}}
+.sw{animation:sw 12s cubic-bezier(.4,0,.2,1) infinite;transform-box:fill-box;transform-origin:center}
+@keyframes a1{0%,80%{opacity:1;transform:none}82%,86%{opacity:0;transform:scale(.4)}89%,100%{opacity:1;transform:none}}
+@keyframes a2{0%,80%{opacity:1;transform:none}82%,88%{opacity:0;transform:scale(.4)}91%,100%{opacity:1;transform:none}}
+@keyframes a3{0%,80%{opacity:1;transform:none}82%,90%{opacity:0;transform:scale(.4)}93%,100%{opacity:1;transform:none}}
+@keyframes a4{0%,80%{opacity:1;transform:none}82%,92%{opacity:0;transform:scale(.4)}95%,100%{opacity:1;transform:none}}
+.a1{animation:a1 12s cubic-bezier(0,0,.2,1) infinite;transform-box:fill-box;transform-origin:center}
+.a2{animation:a2 12s cubic-bezier(0,0,.2,1) infinite;transform-box:fill-box;transform-origin:center}
+.a3{animation:a3 12s cubic-bezier(0,0,.2,1) infinite;transform-box:fill-box;transform-origin:center}
+.a4{animation:a4 12s cubic-bezier(0,0,.2,1) infinite;transform-box:fill-box;transform-origin:center}
+</style>
+<rect width="1280" height="448" fill="$bg"/>
+<g id="backdrop" data-backdrop="grid still"><defs><pattern id="bd-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M0 0H40M0 0V40" fill="none" stroke="$line" stroke-width="1"/></pattern></defs><rect x="-40" y="-40" width="1360" height="528" fill="url(#bd-grid)" opacity=".35"/></g>
+<text id="eyebrow" class="m" x="56" y="80" font-size="14" fill="$acctext" letter-spacing="2">WHAT YOU GET</text>
+<text id="title" class="b" font-size="40" fill="$ink"><tspan x="56" y="136">One brand book,</tspan><tspan x="56" y="182">every piece inside</tspan></text>
+<text id="sub" class="s" font-size="18" fill="$body"><tspan x="56" y="232">Open it in any browser,</tspan><tspan x="56" y="258">print it to PDF.</tspan></text>
+<g id="stage">
+<g data-kit="window"><rect x="500" y="16" width="756" height="412" rx="14" fill="$bubble" stroke="$line" stroke-width="1.5"/><path d="M500 50H1256" stroke="$line" stroke-width="1.5"/><circle cx="520" cy="33" r="5" fill="$line"/><circle cx="536" cy="33" r="5" fill="$line"/><circle cx="552" cy="33" r="5" fill="$line"/><text x="878" y="38" class="m" font-size="14" fill="$muted" text-anchor="middle">brand-book.html</text></g>
+<rect x="516" y="60" width="232" height="168" rx="12" fill="$panel" stroke="$line" stroke-width="1.5"/><text x="536" y="208" class="s" font-size="16" fill="$body">Symbol</text><text x="728" y="208" class="m" font-size="14" fill="$muted" text-anchor="end">01</text>
+<rect x="760" y="60" width="232" height="168" rx="12" fill="$panel" stroke="$line" stroke-width="1.5"/><text x="780" y="208" class="s" font-size="16" fill="$body">Colours and type</text><text x="972" y="208" class="m" font-size="14" fill="$muted" text-anchor="end">02</text>
+<rect x="1004" y="60" width="232" height="168" rx="12" fill="$panel" stroke="$line" stroke-width="1.5"/><text x="1024" y="208" class="s" font-size="16" fill="$body">Logo and name</text><text x="1216" y="208" class="m" font-size="14" fill="$muted" text-anchor="end">03</text>
+<rect x="516" y="240" width="232" height="168" rx="12" fill="$panel" stroke="$line" stroke-width="1.5"/><text x="536" y="388" class="s" font-size="16" fill="$body">App icons</text><text x="728" y="388" class="m" font-size="14" fill="$muted" text-anchor="end">04</text>
+<rect x="760" y="240" width="232" height="168" rx="12" fill="$panel" stroke="$line" stroke-width="1.5"/><text x="780" y="388" class="s" font-size="16" fill="$body">GitHub image</text><text x="972" y="388" class="m" font-size="14" fill="$muted" text-anchor="end">05</text>
+<rect x="1004" y="240" width="232" height="168" rx="12" fill="$panel" stroke="$line" stroke-width="1.5"/><text x="1024" y="388" class="s" font-size="16" fill="$body">Animated logo</text><text x="1216" y="388" class="m" font-size="14" fill="$muted" text-anchor="end">06</text>
+<g transform="translate(536 92) scale(0.34375)"><path fill="$mk" d="M24 24H96V96H24ZM122 24H166A14 14 0 0 1 180 38V82A14 14 0 0 1 166 96H122A14 14 0 0 1 108 82V38A14 14 0 0 1 122 24ZM52 108H68A28 28 0 0 1 96 136V152A28 28 0 0 1 68 180H52A28 28 0 0 1 24 152V136A28 28 0 0 1 52 108Z"/><circle cx="170.5" cy="170.5" r="62.5" fill="$accent"/></g><g transform="translate(636 132) scale(0.18750)"><path fill="$mk" d="M24 24H96V96H24ZM122 24H166A14 14 0 0 1 180 38V82A14 14 0 0 1 166 96H122A14 14 0 0 1 108 82V38A14 14 0 0 1 122 24ZM52 108H68A28 28 0 0 1 96 136V152A28 28 0 0 1 68 180H52A28 28 0 0 1 24 152V136A28 28 0 0 1 52 108Z"/><circle cx="170.5" cy="170.5" r="62.5" fill="$accent"/></g><g transform="translate(696 152) scale(0.10938)"><path fill="$mk" d="M24 24H96V96H24ZM122 24H166A14 14 0 0 1 180 38V82A14 14 0 0 1 166 96H122A14 14 0 0 1 108 82V38A14 14 0 0 1 122 24ZM52 108H68A28 28 0 0 1 96 136V152A28 28 0 0 1 68 180H52A28 28 0 0 1 24 152V136A28 28 0 0 1 52 108Z"/><circle cx="170.5" cy="170.5" r="62.5" fill="$accent"/></g>
+<rect class="sw" x="780" y="88" width="44" height="44" rx="8" fill="$accent"/><rect class="sw" x="832" y="88" width="44" height="44" rx="8" fill="$mk"/><rect class="sw" x="884" y="88" width="44" height="44" rx="8" fill="$alu"/><rect class="sw" x="936" y="88" width="36" height="44" rx="8" fill="none" stroke="$line" stroke-width="1.5"/><text x="780" y="164" class="m" font-size="16" fill="$acctext">#F04E15</text>
+<g transform="translate(1032 104) scale(0.20313)"><path fill="$mk" d="M24 24H96V96H24ZM122 24H166A14 14 0 0 1 180 38V82A14 14 0 0 1 166 96H122A14 14 0 0 1 108 82V38A14 14 0 0 1 122 24ZM52 108H68A28 28 0 0 1 96 136V152A28 28 0 0 1 68 180H52A28 28 0 0 1 24 152V136A28 28 0 0 1 52 108Z"/><circle cx="170.5" cy="170.5" r="62.5" fill="$accent"/></g><text x="1094" y="140" class="b" font-size="28" fill="$ink">kothar</text>
+<rect x="540" y="264" width="80" height="80" rx="18" fill="$tile"/><g transform="translate(552 276) scale(0.21875)"><path fill="$light" d="M24 24H96V96H24ZM122 24H166A14 14 0 0 1 180 38V82A14 14 0 0 1 166 96H122A14 14 0 0 1 108 82V38A14 14 0 0 1 122 24ZM52 108H68A28 28 0 0 1 96 136V152A28 28 0 0 1 68 180H52A28 28 0 0 1 24 152V136A28 28 0 0 1 52 108Z"/><circle cx="170.5" cy="170.5" r="62.5" fill="$accent"/></g><circle cx="680" cy="304" r="40" fill="$tile"/><g transform="translate(656 280) scale(0.18750)"><path fill="$light" d="M24 24H96V96H24ZM122 24H166A14 14 0 0 1 180 38V82A14 14 0 0 1 166 96H122A14 14 0 0 1 108 82V38A14 14 0 0 1 122 24ZM52 108H68A28 28 0 0 1 96 136V152A28 28 0 0 1 68 180H52A28 28 0 0 1 24 152V136A28 28 0 0 1 52 108Z"/><circle cx="170.5" cy="170.5" r="62.5" fill="$accent"/></g>
+<rect x="780" y="260" width="192" height="96" rx="8" fill="$light"/><g transform="translate(792 276) scale(0.14063)"><path fill="$onacc" d="M24 24H96V96H24ZM122 24H166A14 14 0 0 1 180 38V82A14 14 0 0 1 166 96H122A14 14 0 0 1 108 82V38A14 14 0 0 1 122 24ZM52 108H68A28 28 0 0 1 96 136V152A28 28 0 0 1 68 180H52A28 28 0 0 1 24 152V136A28 28 0 0 1 52 108Z"/><circle cx="170.5" cy="170.5" r="62.5" fill="$accent"/></g><text x="836" y="302" class="b" font-size="22" fill="$onacc">kothar</text><rect x="794" y="328" width="132" height="8" rx="4" fill="$alu"/>
+<g transform="translate(1070 256) scale(.39063)"><path class="a1" d="M24 24H96V96H24Z" fill="$mk"/><path class="a2" d="M122 24H166A14 14 0 0 1 180 38V82A14 14 0 0 1 166 96H122A14 14 0 0 1 108 82V38A14 14 0 0 1 122 24Z" fill="$mk"/><path class="a3" d="M52 108H68A28 28 0 0 1 96 136V152A28 28 0 0 1 68 180H52A28 28 0 0 1 24 152V136A28 28 0 0 1 52 108Z" fill="$mk"/><circle class="a4" cx="170.5" cy="170.5" r="62.5" fill="$accent"/></g>
+<rect class="lit0" opacity="0" x="516" y="60" width="232" height="168" rx="12" fill="none" stroke="$accent" stroke-width="3"/>
+<rect class="lit1" opacity="0" x="760" y="60" width="232" height="168" rx="12" fill="none" stroke="$accent" stroke-width="3"/>
+<rect class="lit2" opacity="0" x="1004" y="60" width="232" height="168" rx="12" fill="none" stroke="$accent" stroke-width="3"/>
+<rect class="lit3" opacity="0" x="516" y="240" width="232" height="168" rx="12" fill="none" stroke="$accent" stroke-width="3"/>
+<rect class="lit4" opacity="0" x="760" y="240" width="232" height="168" rx="12" fill="none" stroke="$accent" stroke-width="3"/>
+<rect class="lit5" opacity="0" x="1004" y="240" width="232" height="168" rx="12" fill="none" stroke="$accent" stroke-width="3"/>
+</g>
+</svg>

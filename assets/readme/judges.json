@@ -1,0 +1,74 @@
+{
+  "picture:how.src.svg": {
+    "sha": "a17587fe8251067f",
+    "pass": true,
+    "answer": "list of 8 ideas cut to three kept, drawn v1 to v3, checked at full size and tab size",
+    "why": "graded by a fresh agent from blind and reader answers (round 2)"
+  },
+  "section:How it works": {
+    "sha": "7de26b66d3fa2642",
+    "pass": true,
+    "answer": "agent writes many ideas, keeps the few that differ, redraws each until it works large and at tab size",
+    "why": "graded by a fresh agent from blind and reader answers (round 2)"
+  },
+  "picture:features.src.svg": {
+    "sha": "99da9f4360d4a6e6",
+    "pass": true,
+    "answer": "brand-book.html showing the pieces tile by tile",
+    "why": "graded by a fresh agent from blind and reader answers (round 2)"
+  },
+  "section:What you get": {
+    "sha": "f6cf1263c720062c",
+    "pass": true,
+    "answer": "lists the pieces, all in one HTML brand book",
+    "why": "graded by a fresh agent from blind and reader answers (round 2)"
+  },
+  "picture:install.src.svg": {
+    "sha": "7997f28854e3d729",
+    "pass": true,
+    "answer": "skills/kothar folder to Claude Code as plugin and Codex, Gemini, other agent with npx",
+    "why": "graded by a fresh agent from blind and reader answers (round 3)"
+  },
+  "section:Install": {
+    "sha": "8b2f7de08eff902a",
+    "pass": true,
+    "answer": "plugin commands for Claude Code, npx skills add elsewhere",
+    "why": "graded by a fresh agent from blind and reader answers (round 3)"
+  },
+  "icon:how.src.svg#1": {
+    "sha": "a1be1c25ed185095",
+    "pass": true,
+    "answer": "done, success",
+    "why": "graded by a fresh agent from blind and reader answers (round 2)"
+  },
+  "icon:install.src.svg#1": {
+    "sha": "fc3e6be8e9fe1a4e",
+    "pass": false,
+    "answer": "read as Claude Code from its label, sure: false",
+    "why": "graded by a fresh agent from blind and reader answers (round 3)"
+  },
+  "icon:install.src.svg#2": {
+    "sha": "5be6c052e9964191",
+    "pass": true,
+    "answer": "Codex, sure",
+    "why": "graded by a fresh agent from blind and reader answers (round 3)"
+  },
+  "icon:install.src.svg#3": {
+    "sha": "772e2cb132900b21",
+    "pass": false,
+    "answer": "read as Gemini from its label, sure: false",
+    "why": "graded by a fresh agent from blind and reader answers (round 3)"
+  },
+  "icon:install.src.svg#4": {
+    "sha": "571323a7a7eacf3a",
+    "pass": true,
+    "answer": "generic bot, sure",
+    "why": "graded by a fresh agent from blind and reader answers (round 3)"
+  },
+  "readme": {
+    "sha": "d214f4d7bbc059cb",
+    "pass": true,
+    "answer": "skill for people without a designer: name, logo, brand book via questions",
+    "why": "graded by a fresh agent from blind and reader answers (round 3)"
+  }
+}

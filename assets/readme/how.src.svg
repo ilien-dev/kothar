@@ -1,98 +1,87 @@
 <!--palette
-bg       #0A1420 #F7F9FB
-ink      #F3F6FA #0B1622
-body     #AEB9C6 #3E4C5C
-accent   #4DA8F0 #0B7FD0
-acctext  #4DA8F0 #0A6AB0
-panel    #101C2A #FFFFFF
-line     #2A3E55 #CBD5E1
-skel     #22344A #DCE3EC
-deco     #14273C #DFE6EE
-btn      #F3F6FA #0B1622
-btntx    #0B1622 #F3F6FA
-term     #050B12 #0A1420
-termtx   #F3F6FA #F3F6FA
-termmut  #9AA6B4 #9AA6B4
-termacc  #4DA8F0 #4DA8F0
+bg       #141619 #F2F3F5
+ink      #ECEEF0 #141619
+body     #B4BAC1 #3F454C
+muted    #959CA4 #5B6168
+accent   #F04E15 #F04E15
+acctext  #F26A36 #B83A0B
+panel    #1D2024 #FFFFFF
+line     #3A4047 #C9CED4
+skel     #33383E #DADDE1
+mk       #ECEEF0 #141619
+bubble   #262A2F #ECEEF0
+onacc    #141619 #141619
+alu      #C9CDD2 #C9CDD2
+tile     #2A2D31 #2A2D31
+light    #ECEEF0 #ECEEF0
 -->
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 448" role="img" aria-label="In the browser you pick the name Kothar and press Confirm; your choice travels to your agent, which draws nine options, measures them and has three blind reviewers look at them, while the page shows Creating logos; then the new options travel back and the page moves to step 02">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 448" role="img" aria-label="Your agent writes eight ideas in ideas.md and strikes out five; the first one kept travels to the drawing, which improves from v1 to v3, and a browser tab shows the same logo at tab size with a check when it passes">
 <style>
-/* 10 s  cursor  |rest|--go--|=press=|--home--|
-         page A  |==========shown==========|out            |in
-         page B                             |in|=====loading=====|out
-         choice                        |-- right --|
-         agent lines                          |l1| |l2| |l3|   |ready|
-         options                                                 |-- left --| */
-@keyframes rise{to{transform:translateY(-320px)}}
-@keyframes cur{0%,10%{transform:translate(770px,300px)}26%,40%{transform:translate(590px,290px)}52%,100%{transform:translate(770px,300px)}}
-@keyframes press{0%,33%{transform:scale(1)}35%{transform:scale(.92)}38%,100%{transform:scale(1)}}
-@keyframes pageA{0%,42%{opacity:1}46%,94%{opacity:0}100%{opacity:1}}
-@keyframes pageB{0%,42%{opacity:0}46%,94%{opacity:1}100%{opacity:0}}
-@keyframes hopR{0%,37%{transform:translateX(0);opacity:0}39%{opacity:1}47%{transform:translateX(110px);opacity:1}49%,100%{transform:translateX(110px);opacity:0}}
-@keyframes hopL{0%,83%{transform:translateX(0);opacity:0}85%{opacity:1}93%{transform:translateX(-110px);opacity:1}95%,100%{transform:translateX(-110px);opacity:0}}
-@keyframes l1{0%,48%{opacity:0}51%,95%{opacity:1}100%{opacity:0}}@keyframes l2{0%,58%{opacity:0}61%,95%{opacity:1}100%{opacity:0}}@keyframes l3{0%,68%{opacity:0}71%,95%{opacity:1}100%{opacity:0}}@keyframes l4{0%,81%{opacity:0}84%,95%{opacity:1}100%{opacity:0}}
-@keyframes spin{to{transform:rotate(360deg)}}
+/* 12 s  strikes     |s|s|s|s|s|=============================================|out
+         keep                   |in|=========================================|out
+         parcel                  |--go--|
+         v1 / v2 / v3                     |v1====|v2====|v3===================
+         check                                         |in|================== */
+@keyframes st0{0%,2%{opacity:0;transform:scaleX(.1)}5%,92%{opacity:1;transform:none}96%,100%{opacity:0;transform:none}}
+.st0{animation:st0 12s cubic-bezier(0,0,.2,1) infinite;transform-box:fill-box;transform-origin:0 50%}
+@keyframes st1{0%,6%{opacity:0;transform:scaleX(.1)}9%,92%{opacity:1;transform:none}96%,100%{opacity:0;transform:none}}
+.st1{animation:st1 12s cubic-bezier(0,0,.2,1) infinite;transform-box:fill-box;transform-origin:0 50%}
+@keyframes st2{0%,10%{opacity:0;transform:scaleX(.1)}13%,92%{opacity:1;transform:none}96%,100%{opacity:0;transform:none}}
+.st2{animation:st2 12s cubic-bezier(0,0,.2,1) infinite;transform-box:fill-box;transform-origin:0 50%}
+@keyframes st3{0%,14%{opacity:0;transform:scaleX(.1)}17%,92%{opacity:1;transform:none}96%,100%{opacity:0;transform:none}}
+.st3{animation:st3 12s cubic-bezier(0,0,.2,1) infinite;transform-box:fill-box;transform-origin:0 50%}
+@keyframes st4{0%,18%{opacity:0;transform:scaleX(.1)}21%,92%{opacity:1;transform:none}96%,100%{opacity:0;transform:none}}
+.st4{animation:st4 12s cubic-bezier(0,0,.2,1) infinite;transform-box:fill-box;transform-origin:0 50%}
+@keyframes keep{0%,22%{opacity:0}25%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes go{0%,25%{transform:translate(0,0);opacity:0}27%{opacity:1}34%{transform:translate(198px,104px);opacity:1}36%,100%{transform:translate(198px,104px);opacity:0}}
+@keyframes v1{0%,32%{opacity:0}35%,50%{opacity:1}53%,100%{opacity:0}}
+@keyframes v2{0%,50%{opacity:0}53%,68%{opacity:1}71%,100%{opacity:0}}
+@keyframes v3{0%,32%{opacity:1}35%,68%{opacity:0}71%,100%{opacity:1}}
+@keyframes ok{0%,32%{opacity:1;transform:none}35%,74%{opacity:0;transform:scale(.6)}77%,100%{opacity:1;transform:none}}
 @keyframes flow{to{stroke-dashoffset:-24}}
-.rise{animation:rise 40s linear infinite}
-.cur{animation:cur 10s cubic-bezier(.4,0,.2,1) infinite}
-.press{animation:press 10s ease-out infinite;transform-box:fill-box;transform-origin:center}
-.pageA{animation:pageA 10s ease-in-out infinite}
-.pageB{animation:pageB 10s ease-in-out infinite}
-.hopR{animation:hopR 10s cubic-bezier(.4,0,.2,1) infinite}
-.hopL{animation:hopL 10s cubic-bezier(.4,0,.2,1) infinite}
-.l1{animation:l1 10s ease-out infinite}.l2{animation:l2 10s ease-out infinite}.l3{animation:l3 10s ease-out infinite}.l4{animation:l4 10s ease-out infinite}
-.spin{animation:spin 1.6s linear infinite;transform-box:fill-box;transform-origin:center}
+.keep{animation:keep 12s ease-out infinite}
+.go{animation:go 12s cubic-bezier(.4,0,.2,1) infinite}
+.v1{animation:v1 12s ease-in-out infinite}.v2{animation:v2 12s ease-in-out infinite}.v3{animation:v3 12s ease-in-out infinite}
+.ok{animation:ok 12s cubic-bezier(0,0,.2,1) infinite;transform-box:fill-box;transform-origin:center}
 .flow{animation:flow 1.2s linear infinite}
 </style>
-<defs>
-<pattern id="sq" width="320" height="320" patternUnits="userSpaceOnUse">
-<path d="M30 40h44v12H42v32H30z" fill="none" stroke="$deco" stroke-width="2"/>
-<circle cx="230" cy="70" r="12" fill="none" stroke="$deco" stroke-width="2"/>
-<path d="M190 200h30v8h-22v22h-8z" fill="none" stroke="$deco" stroke-width="2"/>
-<circle cx="80" cy="250" r="7" fill="none" stroke="$deco" stroke-width="2"/>
-</pattern>
-</defs>
 <rect width="1280" height="448" fill="$bg"/>
-<g id="backdrop"><rect class="rise" x="0" y="0" width="1280" height="768" fill="url(#sq)"/></g>
-<rect x="40" y="60" width="430" height="230" fill="$bg" opacity=".92"/>
-<text id="eyebrow" class="m" x="56" y="96" font-size="14" fill="$acctext" letter-spacing="2">HOW IT WORKS</text>
-<text id="title" class="b" font-size="40" fill="$ink"><tspan x="56" y="152">You choose, your</tspan><tspan x="56" y="198">agent draws</tspan></text>
-<text id="sub" class="s" font-size="18" fill="$body"><tspan x="56" y="244">The page moves on by itself</tspan><tspan x="56" y="268">when the options are ready.</tspan></text>
+<g id="backdrop" data-backdrop="grid still"><defs><pattern id="bd-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M0 0H40M0 0V40" fill="none" stroke="$line" stroke-width="1"/></pattern></defs><rect x="-40" y="-40" width="1360" height="528" fill="url(#bd-grid)" opacity=".35"/></g>
+<text id="eyebrow" class="m" x="56" y="80" font-size="14" fill="$acctext" letter-spacing="2">HOW IT WORKS</text>
+<text id="title" class="b" font-size="40" fill="$ink"><tspan x="56" y="136">Many ideas, few logos,</tspan><tspan x="56" y="182">each one checked</tspan></text>
+<text id="sub" class="s" font-size="18" fill="$body"><tspan x="56" y="232">Drawn large and at the size of a tab,</tspan><tspan x="56" y="258">version after version.</tspan></text>
 <g id="stage">
-<!-- the page in the browser -->
-<rect x="500" y="50" width="360" height="340" rx="12" fill="$panel" stroke="$line" stroke-width="1.5"/>
-<path d="M500 86h360" stroke="$line" stroke-width="1.5"/>
-<circle cx="522" cy="68" r="5" fill="$skel"/><circle cx="540" cy="68" r="5" fill="$skel"/><circle cx="558" cy="68" r="5" fill="$skel"/>
-<text class="m" x="584" y="73" font-size="13" fill="$body">localhost</text>
-<g class="pageA" opacity="0">
-<text class="b" x="524" y="124" font-size="18" fill="$ink">01 · Name</text>
-<rect x="524" y="140" width="312" height="56" rx="8" fill="$panel" stroke="$accent" stroke-width="2.5"/>
-<text class="b" x="544" y="175" font-size="18" fill="$ink">Kothar</text>
-<path d="M806 168l6 6 11-12" fill="none" stroke="$acctext" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<rect x="524" y="208" width="312" height="44" rx="8" fill="none" stroke="$line"/><rect x="544" y="226" width="120" height="8" rx="4" fill="$skel"/>
-<g class="press"><rect x="524" y="268" width="132" height="44" rx="8" fill="$btn"/><text class="s" x="590" y="296" font-size="16" fill="$btntx" text-anchor="middle">Confirm</text></g>
-</g>
-<g class="pageB">
-<text class="b" x="524" y="124" font-size="18" fill="$ink">Creating logos</text>
-<circle class="spin" cx="680" cy="206" r="36" fill="none" stroke="$accent" stroke-width="6" stroke-dasharray="70 157" stroke-linecap="round"/>
-<text class="s" x="524" y="356" font-size="16" fill="$body">draw · measure · review</text>
-</g>
-<!-- the two ways between page and agent -->
-<text class="s" x="874" y="138" font-size="16" fill="$body">your choice</text>
-<path class="flow" d="M872 154H986" fill="none" stroke="$accent" stroke-width="2.5" stroke-dasharray="8 16"/>
-<path d="M984 146l10 8-10 8" fill="none" stroke="$accent" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<path class="flow" d="M994 300H880" fill="none" stroke="$accent" stroke-width="2.5" stroke-dasharray="8 16"/>
-<path d="M882 292l-10 8 10 8" fill="none" stroke="$accent" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-<text class="s" x="874" y="332" font-size="16" fill="$body">new options</text>
-<g transform="translate(872 141)"><rect class="hopR" opacity="0" width="26" height="26" rx="6" fill="$accent"/></g>
-<g transform="translate(968 287)"><rect class="hopL" opacity="0" width="26" height="26" rx="6" fill="$accent"/></g>
-<!-- the agent -->
-<rect x="1006" y="50" width="234" height="340" rx="12" fill="$term"/>
-<text class="m" x="1026" y="82" font-size="13" fill="$termmut">your agent</text>
-<text class="m l1" x="1026" y="134" font-size="16" fill="$termtx">› draws 9 options</text>
-<text class="m l2" x="1026" y="166" font-size="16" fill="$termtx">› measures them</text>
-<text class="m l3" x="1026" y="198" font-size="16" fill="$termtx">› 3 blind reviews</text>
-<text class="m l4" x="1026" y="352" font-size="16" fill="$termacc">ready → step 02</text>
-<g class="cur" data-kit="cursor" data-cursor="arrow"><path d="M0 0l0 35 10-8 6 16 6-3-6-14 13 0z" fill="$ink" stroke="$bg" stroke-width="2"/></g>
+<g data-kit="window"><rect x="540" y="32" width="224" height="384" rx="12" fill="$panel" stroke="$line" stroke-width="1.5"/><path d="M540 66H764" stroke="$line" stroke-width="1.5"/><text x="652" y="54" class="m" font-size="14" fill="$muted" text-anchor="middle">ideas.md</text></g>
+<text x="560" y="117" class="m" font-size="14" fill="$muted">01</text><rect x="592" y="108" width="120" height="10" rx="5" fill="$skel"/>
+<text x="560" y="151" class="m" font-size="14" fill="$muted">02</text><rect x="592" y="142" width="96" height="10" rx="5" fill="$skel"/>
+<text x="560" y="185" class="m" font-size="14" fill="$muted">03</text><rect x="592" y="176" width="132" height="10" rx="5" fill="$skel"/>
+<text x="560" y="219" class="m" font-size="14" fill="$muted">04</text><rect x="592" y="210" width="108" height="10" rx="5" fill="$skel"/>
+<text x="560" y="253" class="m" font-size="14" fill="$muted">05</text><rect x="592" y="244" width="124" height="10" rx="5" fill="$skel"/>
+<text x="560" y="287" class="m" font-size="14" fill="$muted">06</text><rect x="592" y="278" width="90" height="10" rx="5" fill="$skel"/>
+<text x="560" y="321" class="m" font-size="14" fill="$muted">07</text><rect x="592" y="312" width="116" height="10" rx="5" fill="$skel"/>
+<text x="560" y="355" class="m" font-size="14" fill="$muted">08</text><rect x="592" y="346" width="104" height="10" rx="5" fill="$skel"/>
+<rect class="st0" x="592" y="145" width="96" height="3" rx="1.5" fill="$muted"/>
+<rect class="st1" x="592" y="179" width="132" height="3" rx="1.5" fill="$muted"/>
+<rect class="st2" x="592" y="247" width="124" height="3" rx="1.5" fill="$muted"/>
+<rect class="st3" x="592" y="281" width="90" height="3" rx="1.5" fill="$muted"/>
+<rect class="st4" x="592" y="349" width="104" height="3" rx="1.5" fill="$muted"/>
+<rect class="keep" x="730" y="105" width="14" height="14" rx="3" fill="$accent"/>
+<rect class="keep" x="730" y="207" width="14" height="14" rx="3" fill="$accent"/>
+<rect class="keep" x="730" y="309" width="14" height="14" rx="3" fill="$accent"/>
+<g transform="translate(726 101)"><rect class="go" opacity="0" width="24" height="24" rx="5" fill="$accent"/></g>
+<path class="flow" d="M768 224H786" fill="none" stroke="$muted" stroke-width="2" stroke-dasharray="8 16"/><path d="M784 218l8 6-8 6" fill="none" stroke="$muted" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<g data-kit="window"><rect x="800" y="32" width="240" height="384" rx="12" fill="$panel" stroke="$line" stroke-width="1.5"/></g>
+<g data-kit="chip"><rect x="824" y="58" width="48" height="30" rx="15" fill="none" stroke="$line" stroke-width="1.5"/><text x="848" y="78" class="m" font-size="16" fill="$muted" text-anchor="middle">v1</text></g><g data-kit="chip"><rect x="896" y="58" width="48" height="30" rx="15" fill="none" stroke="$line" stroke-width="1.5"/><text x="920" y="78" class="m" font-size="16" fill="$muted" text-anchor="middle">v2</text></g><g data-kit="chip"><rect x="968" y="58" width="48" height="30" rx="15" fill="none" stroke="$line" stroke-width="1.5"/><text x="992" y="78" class="m" font-size="16" fill="$muted" text-anchor="middle">v3</text></g>
+<g class="v1" opacity="0"><rect x="824" y="58" width="48" height="30" rx="15" fill="$bg" stroke="$accent" stroke-width="2"/><text x="848" y="78" class="m" font-size="16" fill="$acctext" text-anchor="middle">v1</text></g><g class="v2" opacity="0"><rect x="896" y="58" width="48" height="30" rx="15" fill="$bg" stroke="$accent" stroke-width="2"/><text x="920" y="78" class="m" font-size="16" fill="$acctext" text-anchor="middle">v2</text></g><g class="v3"><rect x="968" y="58" width="48" height="30" rx="15" fill="$bg" stroke="$accent" stroke-width="2"/><text x="992" y="78" class="m" font-size="16" fill="$acctext" text-anchor="middle">v3</text></g>
+<g transform="translate(836 118) scale(0.65625)" class="v1" opacity="0"><rect width="256" height="256" fill="$panel"/><path fill="$mk" d="M38 164H92A14 14 0 0 1 106 178V218A14 14 0 0 1 92 232H38A14 14 0 0 1 24 218V178A14 14 0 0 1 38 164Z"/><path fill="$mk" d="M108 94H162A14 14 0 0 1 176 108V148A14 14 0 0 1 162 162H108A14 14 0 0 1 94 148V108A14 14 0 0 1 108 94Z"/><rect x="164" y="24" width="68" height="68" rx="14" fill="$accent"/></g><g transform="translate(836 118) scale(0.65625)" class="v2" opacity="0"><rect width="256" height="256" fill="$panel"/><path fill="$mk" d="M32 32H100V100H32Z"/><rect x="116" y="32" width="68" height="68" rx="20" fill="$mk"/><rect x="32" y="116" width="68" height="68" rx="20" fill="$mk"/><circle cx="172" cy="172" r="52" fill="$accent"/></g><g transform="translate(836 118) scale(0.65625)" class="v3"><rect width="256" height="256" fill="$panel"/><path fill="$mk" d="M24 24H96V96H24ZM122 24H166A14 14 0 0 1 180 38V82A14 14 0 0 1 166 96H122A14 14 0 0 1 108 82V38A14 14 0 0 1 122 24ZM52 108H68A28 28 0 0 1 96 136V152A28 28 0 0 1 68 180H52A28 28 0 0 1 24 152V136A28 28 0 0 1 52 108Z"/><circle cx="170.5" cy="170.5" r="62.5" fill="$accent"/></g>
+<text x="920" y="380" class="s" font-size="16" fill="$body" text-anchor="middle">full size</text>
+<path class="flow" d="M1044 224H1062" fill="none" stroke="$muted" stroke-width="2" stroke-dasharray="8 16"/><path d="M1060 218l8 6-8 6" fill="none" stroke="$muted" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+<g data-kit="window"><rect x="1076" y="32" width="164" height="384" rx="12" fill="$panel" stroke="$line" stroke-width="1.5"/></g>
+<rect x="1092" y="60" width="132" height="52" rx="10" fill="$bubble"/>
+<g transform="translate(1100 70) scale(0.12500)" class="v1" opacity="0"><rect x="-16" y="-16" width="288" height="288" fill="$bubble"/><path fill="$mk" d="M38 164H92A14 14 0 0 1 106 178V218A14 14 0 0 1 92 232H38A14 14 0 0 1 24 218V178A14 14 0 0 1 38 164Z"/><path fill="$mk" d="M108 94H162A14 14 0 0 1 176 108V148A14 14 0 0 1 162 162H108A14 14 0 0 1 94 148V108A14 14 0 0 1 108 94Z"/><rect x="164" y="24" width="68" height="68" rx="14" fill="$accent"/></g><g transform="translate(1100 70) scale(0.12500)" class="v2" opacity="0"><rect x="-16" y="-16" width="288" height="288" fill="$bubble"/><path fill="$mk" d="M32 32H100V100H32Z"/><rect x="116" y="32" width="68" height="68" rx="20" fill="$mk"/><rect x="32" y="116" width="68" height="68" rx="20" fill="$mk"/><circle cx="172" cy="172" r="52" fill="$accent"/></g><g transform="translate(1100 70) scale(0.12500)" class="v3"><rect x="-16" y="-16" width="288" height="288" fill="$bubble"/><path fill="$mk" d="M24 24H96V96H24ZM122 24H166A14 14 0 0 1 180 38V82A14 14 0 0 1 166 96H122A14 14 0 0 1 108 82V38A14 14 0 0 1 122 24ZM52 108H68A28 28 0 0 1 96 136V152A28 28 0 0 1 68 180H52A28 28 0 0 1 24 152V136A28 28 0 0 1 52 108Z"/><circle cx="170.5" cy="170.5" r="62.5" fill="$accent"/></g>
+<text x="1142" y="92" class="s" font-size="16" fill="$ink">kothar</text>
+<rect x="1092" y="128" width="132" height="8" rx="4" fill="$skel"/><rect x="1092" y="146" width="96" height="8" rx="4" fill="$skel"/>
+<g class="ok"><g data-asset="ph:check-circle-fill" data-icon="checked, it passes" data-size="56" transform="translate(1130 220) scale(0.21875)" fill="$accent"><path fill="$accent" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32"/></g></g>
+<text x="1158" y="380" class="s" font-size="16" fill="$body" text-anchor="middle">tab size</text>
 </g>
 </svg>
