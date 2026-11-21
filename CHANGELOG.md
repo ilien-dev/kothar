@@ -1,5 +1,16 @@
 # Changelog
 
+## [0.6.0](https://github.com/ilien-dev/kothar/compare/v0.5.0...v0.6.0) (2026-11-21)
+
+
+### ⚠ BREAKING CHANGES
+
+* drop naming and keep kothar to logos and brand ([#12](https://github.com/ilien-dev/kothar/issues/12))
+
+### Features
+
+* drop naming and keep kothar to logos and brand ([#12](https://github.com/ilien-dev/kothar/issues/12)) ([e5fae95](https://github.com/ilien-dev/kothar/commit/e5fae95b11b8618f1a65687206f907d5f86e06f8))
+
 ## [0.5.0](https://github.com/ilien-dev/kothar/compare/v0.4.0...v0.5.0) (2026-11-20)
 
 
