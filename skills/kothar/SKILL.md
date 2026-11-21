@@ -1,11 +1,11 @@
 ---
 name: kothar
-description: Use when the user wants a name, a logo or a brand identity for a product, repository, app, library, company or side project - naming it, logo or icon ideas, a logotype or wordmark, a favicon or app icon, brand colours or fonts, a brand book or style guide, profile images and banners for GitHub, X, LinkedIn, Instagram, TikTok, YouTube, Discord or other networks, letterhead, a contract template, business cards or an email signature - even if they only ask for one of those pieces and never say "brand".
+description: Use when the user wants a logo or a brand identity for a product, repository, app, library, company or side project - logo or icon ideas, a logotype or wordmark, a favicon or app icon, brand colours or fonts, a brand book or style guide, profile images and banners for GitHub, X, LinkedIn, Instagram, TikTok, YouTube, Discord or other networks, letterhead, a contract template, business cards or an email signature - even if they only ask for one of those pieces and never say "brand".
 ---
 
 # kothar
 
-Kothar-wa-Khasis forged the weapons of the gods and gave each one its name. This skill does the same for a product: it names it, forges its logo, and builds the brand around it. A studio would deliver that as a brand book. Here the brand book is a single HTML file that the user opens in their browser.
+Kothar-wa-Khasis forged the weapons of the gods. This skill does the same for a product: it forges its logo and builds the brand around it. A studio would deliver that as a brand book. Here the brand book is a single HTML file that the user opens in their browser.
 
 Everything happens through questions in the conversation. There is no server and nothing to install. You draw in SVG, render what you draw with a browser already on the machine, look at the pictures, and write the files into the user's project.
 
@@ -24,7 +24,7 @@ Use the harness's question tool with selectable options when it has one, a few q
 ```
 1  What it is for                   (questions)
 2  References                       (questions; images preferred)
-3  Name                             (questions; candidates in the chat)
+3  Name                             (question)
 4  How many logos, which colours, which pieces   (questions)
 5  Draw the proposals               (work: craft, render, refine)
 6  Report language                  (question)
@@ -63,8 +63,7 @@ Stage, stakes and category are read from the evidence. They tilt several drawing
 
 ### 3 · Name
 
-- **They have a name:** use it as given. If you know of an established product with that name in the same field, say so once, then carry on.
-- **They want one:** follow `references/naming.md`. Ask where names should come from (free answer, or "I don't know", and then you choose from the product), the length, and whose tongue it has to be easy for. Ask whether you may check availability online. Present at least ten candidates in the chat, each with what it refers to and why that represents the product, and let them pick or ask for more.
+The name comes from the user; kothar does not propose names. Inside a repository, take it from the manifest or the README and confirm it in one question; otherwise ask for it. Use it as given. If you know of an established product with that name in the same field, say so once, then carry on. If they have no name yet, say that the logo is drawn around the name and ask them to settle it first.
 
 ### 4 · How many logos, colours, pieces
 

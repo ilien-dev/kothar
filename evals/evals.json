@@ -3,8 +3,8 @@
   "evals": [
     {
       "id": 1,
-      "prompt": "Este repo todavía no tiene nombre ni logo. Ayúdame a elegirlos: siempre saco los nombres de la mitología de cualquier cultura.",
-      "expected_output": "Lee el repo, pide varias referencias (imágenes primero) antes de proponer nada, propone al menos 10 nombres con a quién representa y por qué, sin repetir nombres que el usuario ya usa; pregunta cuántos logotipos, qué colores y qué piezas; escribe .kothar/brief.md; no arranca ningún servidor ni menciona localhost.",
+      "prompt": "Este repo todavía no tiene logo. Ayúdame a crearlo; el nombre lo tengo, pero aún no lo he puesto en el README.",
+      "expected_output": "Lee el repo, pregunta el nombre en vez de proponer nombres, pide varias referencias (imágenes primero) antes de proponer nada; pregunta cuántos logotipos, qué colores y qué piezas; escribe .kothar/brief.md; no arranca ningún servidor ni menciona localhost.",
       "files": []
     },
     {

@@ -17,10 +17,10 @@ bubble   #262A2F #ECEEF0
 onacc    #141619 #141619
 -->
 <!--brief
-sentence: someone shipping a project without a designer tells their AI agent what they like, and leaves with a name, a logo of their own and a brand book they can send anyone.
+sentence: someone shipping a project without a designer tells their AI agent what they like, and leaves with a logo of their own and a brand book they can send anyone.
 input: the references the user hands the agent (this repository's own run: five product renders in grey with one orange accent, .kothar/brief.md).
 output: the proposals report with three concepts (.kothar/proposals.html; concepts a-tongs, b-steps, c-dial in .kothar/concepts/), the chosen one (b-steps) and its brand book (assets/brand/brand-book.html, assets/brand/logo/, assets/brand/web/).
-features: names with their story (skills/kothar/references/naming.md); logos drawn from your references (SKILL.md step 2, references/craft.md); checked at the size of a tab (references/craft.md step 5, rendering.md); one brand book to send anyone (references/report.md).
+features: many ideas before any drawing (references/craft.md steps 1-2); logos drawn from your references (SKILL.md step 2, references/craft.md); checked at the size of a tab (references/craft.md step 5, rendering.md); one brand book to send anyone (references/report.md).
 strip: none, the picture runs to the bottom edge.
 left out as unfinished: nothing is marked unfinished.
 -->
@@ -80,10 +80,10 @@ left out as unfinished: nothing is marked unfinished.
 <!-- text block -->
 <g id="logo" transform="translate(56 80) scale(.21875)"><path fill="$mk" d="M24 24H96V96H24ZM122 24H166A14 14 0 0 1 180 38V82A14 14 0 0 1 166 96H122A14 14 0 0 1 108 82V38A14 14 0 0 1 122 24ZM52 108H68A28 28 0 0 1 96 136V152A28 28 0 0 1 68 180H52A28 28 0 0 1 24 152V136A28 28 0 0 1 52 108Z"/><circle cx="170.5" cy="170.5" r="62.5" fill="$accent"/></g>
 <text id="name" class="b" x="124" y="122" font-size="40" fill="$ink">kothar</text>
-<text id="tagline" class="b" font-size="50" fill="$ink"><tspan x="56" y="236">A name and a brand</tspan><tspan x="56" y="294" fill="$acctext">for your project.</tspan></text>
+<text id="tagline" class="b" font-size="50" fill="$ink"><tspan x="56" y="236">A logo and a brand</tspan><tspan x="56" y="294" fill="$acctext">for your project.</tspan></text>
 <text id="about" class="s" font-size="20" fill="$body"><tspan x="56" y="356">A skill for your AI agent. It asks what you like,</tspan><tspan x="56" y="386">draws your logo and builds its brand book.</tspan></text>
 <g id="facts" clip-path="url(#feat)">
-<g class="turn" opacity="0" style="animation-delay:-9s"><rect x="56" y="468" width="14" height="14" rx="3" fill="$accent"/><text x="84" y="483" class="s" font-size="20" fill="$ink">Names with their story</text></g>
+<g class="turn" opacity="0" style="animation-delay:-9s"><rect x="56" y="468" width="14" height="14" rx="3" fill="$accent"/><text x="84" y="483" class="s" font-size="20" fill="$ink">Many ideas before any drawing</text></g>
 <g class="turn" opacity="0" style="animation-delay:-6s"><rect x="56" y="468" width="14" height="14" rx="3" fill="$accent"/><text x="84" y="483" class="s" font-size="20" fill="$ink">Logos drawn from your references</text></g>
 <g class="turn" opacity="0" style="animation-delay:-3s"><rect x="56" y="468" width="14" height="14" rx="3" fill="$accent"/><text x="84" y="483" class="s" font-size="20" fill="$ink">Checked at the size of a tab</text></g>
 <g class="turn" style="animation-delay:0s"><rect x="56" y="468" width="14" height="14" rx="3" fill="$accent"/><text x="84" y="483" class="s" font-size="20" fill="$ink">One brand book to send anyone</text></g>
