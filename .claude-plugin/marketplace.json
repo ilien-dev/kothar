@@ -11,11 +11,10 @@
     {
       "name": "kothar",
       "source": "./",
-      "description": "Names a product and builds its brand identity, from the logo to a brand book, through questions in the conversation.",
+      "description": "Builds a product's brand identity, from the logo to a brand book, through questions in the conversation.",
       "category": "design",
       "tags": [
         "logo",
-        "naming",
         "branding",
         "brand-book"
       ]

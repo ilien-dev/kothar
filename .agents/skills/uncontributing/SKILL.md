@@ -11,7 +11,7 @@ out the difference. The check script decides, not this text: run it.
 
 ## 1. In scope, and new?
 
-- kothar names a product and builds its brand identity through questions in the conversation: name candidates with their meaning, logo proposals drawn from the user's references, colour, free fonts, the pieces the user selects (social profiles, stationery, an animated logo) and a brand book in HTML. If the change does not serve that, say so and stop: it will be rejected.
+- kothar builds a product's brand identity through questions in the conversation: logo proposals drawn from the user's references, colour, free fonts, the pieces the user selects (social profiles, stationery, an animated logo) and a brand book in HTML. If the change does not serve that, say so and stop: it will be rejected.
 - Search before writing anything:
   ```
   gh pr list --repo ilien-dev/kothar --state all --search "<keywords>"

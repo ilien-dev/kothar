@@ -3,7 +3,7 @@
 Thanks for wanting to help. A contribution does not have to be a pull request: a clear issue
 that reports a bug or proposes an improvement is a contribution too.
 
-kothar names a product and builds its brand identity through questions in the conversation: name candidates with their meaning, logo proposals drawn from the user's references, colour, free fonts, the pieces the user selects (social profiles, stationery, an animated logo) and a brand book in HTML. **A contribution that drifts away from that purpose will be rejected**,
+kothar builds a product's brand identity through questions in the conversation: logo proposals drawn from the user's references, colour, free fonts, the pieces the user selects (social profiles, stationery, an animated logo) and a brand book in HTML. **A contribution that drifts away from that purpose will be rejected**,
 however well it is made.
 
 <!-- This file is generated from .github/repo-rules.json by Nabu (https://github.com/ilien-dev/nabu).

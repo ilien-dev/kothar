@@ -1,7 +1,7 @@
 {
   "name": "kothar",
   "version": "0.5.0",
-  "description": "Names a product and builds its brand identity through questions: name candidates with their meaning, logo proposals drawn from your references, colour, free fonts, social profiles, stationery and a brand book in HTML.",
+  "description": "Builds a product's brand identity through questions: logo proposals drawn from your references, colour, free fonts, social profiles, stationery and a brand book in HTML.",
   "author": {
     "name": "jjimenezc",
     "url": "https://github.com/ilien-dev/kothar"
@@ -11,7 +11,6 @@
   "license": "MIT",
   "keywords": [
     "logo",
-    "naming",
     "branding",
     "brand-identity",
     "brand-book",

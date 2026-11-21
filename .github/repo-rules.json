@@ -2,7 +2,7 @@
   "name": "kothar",
   "repo": "ilien-dev/kothar",
   "defaultBranch": "main",
-  "purpose": "names a product and builds its brand identity through questions in the conversation: name candidates with their meaning, logo proposals drawn from the user's references, colour, free fonts, the pieces the user selects (social profiles, stationery, an animated logo) and a brand book in HTML.",
+  "purpose": "builds a product's brand identity through questions in the conversation: logo proposals drawn from the user's references, colour, free fonts, the pieces the user selects (social profiles, stationery, an animated logo) and a brand book in HTML.",
   "shipped": [
     "skills/**",
     ".claude-plugin/**",

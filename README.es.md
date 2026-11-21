@@ -7,9 +7,9 @@
 
 <p align="center"><a href="README.md">English</a> · <b>Español</b></p>
 
-<h1 align="center">Kothar: un nombre y una marca para tu proyecto</h1>
+<h1 align="center">Kothar: un logo y una marca para tu proyecto</h1>
 
-<p align="center"><b>Nombres con su historia, logos que parten de tus referencias y un brand book que puedes enviar a quien quieras.</b></p>
+<p align="center"><b>Logos que parten de tus referencias, probados al tamaño de una pestaña, y un brand book que puedes enviar a quien quieras.</b></p>
 
 <p align="center">
   <img alt="Plugin de Claude Code" src="https://img.shields.io/badge/Claude%20Code-plugin-F04E15">
@@ -19,7 +19,7 @@
 
 ---
 
-**Kothar es una skill para tu agente de IA que le pone nombre a tu proyecto y construye su marca.** Es para quien saca un proyecto sin diseñador. Te pregunta qué te gusta, propone nombres con su origen y dibuja varias propuestas de logo, cada una con su propia idea. Cuando eliges una, construye lo demás: colores, tipografías, las piezas que necesitas y un brand book que muestra tu logo en todos los lugares donde va a aparecer.
+**Kothar es una skill para tu agente de IA que dibuja el logo de tu proyecto y construye su marca.** Es para quien saca un proyecto sin diseñador. Te pregunta qué te gusta y dibuja varias propuestas de logo, cada una con su propia idea. Cuando eliges una, construye lo demás: colores, tipografías, las piezas que necesitas y un brand book que muestra tu logo en todos los lugares donde va a aparecer.
 
 ## Cómo funciona
 
@@ -32,9 +32,8 @@ Todo ocurre en el chat, con preguntas y opciones para elegir. La imagen muestra 
 
 1. **Para qué es.** Tu agente lee tu repositorio, o te pregunta qué es el producto.
 2. **Tus referencias.** Imágenes de logos, webs o cualquier cosa con el aspecto que buscas, o una descripción de marcas que admiras. Son lo que más guía el diseño.
-3. **El nombre.** Conserva el tuyo, o elige entre diez o más candidatos, cada uno con lo que significa.
-4. **Las propuestas.** Se abre un informe en tu navegador con cada logo, su idea, sus colores y algunas maquetas. Eliges en el chat.
-5. **El brand book.** Tu agente lo construye todo en `assets/brand/` y abre el brand book. Pides cambios en el chat.
+3. **Las propuestas.** Se abre un informe en tu navegador con cada logo, su idea, sus colores y algunas maquetas. Eliges en el chat.
+4. **El brand book.** Tu agente lo construye todo en `assets/brand/` y abre el brand book. Pides cambios en el chat.
 
 Antes de cada informe te pregunta si lo quieres en tu idioma o en inglés.
 
@@ -65,7 +64,7 @@ Antes de cada informe te pregunta si lo quieres en tu idioma o en inglés.
 /plugin install kothar@kothar
 ```
 
-Después pídele a tu agente un nombre o un logo, o escribe `/kothar:kothar`.
+Después pídele a tu agente un logo, o escribe `/kothar:kothar`.
 
 <details><summary><b>Codex, Gemini y otros agentes</b></summary>
 
