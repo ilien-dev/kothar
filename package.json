@@ -1,6 +1,6 @@
 {
   "name": "kothar",
-  "version": "0.6.1",
+  "version": "0.6.2",
   "description": "Claude Code plugin and agent skill: build a product's brand identity, from the logo to a brand book.",
   "type": "module",
   "license": "MIT",

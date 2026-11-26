@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.2](https://github.com/ilien-dev/kothar/compare/v0.6.1...v0.6.2) (2026-11-26)
+
+
+### Bug Fixes
+
+* drop naming from the codex short description ([#19](https://github.com/ilien-dev/kothar/issues/19)) ([6c49df0](https://github.com/ilien-dev/kothar/commit/6c49df061bf38a5a53c9875ddc32a4aa253b1d61))
+
 ## [0.6.1](https://github.com/ilien-dev/kothar/compare/v0.6.0...v0.6.1) (2026-11-26)
 
 
