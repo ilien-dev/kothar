@@ -75,3 +75,11 @@ test('plugin manifests agree with package.json', () => {
     assert.equal(m.version, pkg.version, `${p} version`);
   }
 });
+
+test('no description offers to name the product', () => {
+  const texts = [read(join(skill, 'SKILL.md')).match(/^description: (.+)$/m)[1]];
+  for (const p of ['.claude-plugin/plugin.json', '.claude-plugin/marketplace.json', '.codex-plugin/plugin.json', 'package.json']) {
+    texts.push(JSON.stringify(JSON.parse(read(join(root, p))), (k, v) => (k === 'name' ? undefined : v)));
+  }
+  for (const t of texts) assert.doesNotMatch(t, /\bnam(?:e|es|ing)\b/i);
+});
