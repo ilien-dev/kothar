@@ -2,3 +2,6 @@ node_modules/
 .kothar*/
 *.tmp*
 kothar-workspace/
+
+# Personal research notes, kept out of the repository
+research_notes/
