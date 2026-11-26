@@ -16,4 +16,8 @@ To see the template, open `skills/kothar/assets/report.html` in a browser. To tr
 
 A product's work in progress lives in `.kothar/` inside that product's folder, and what the user keeps goes to its `assets/brand/`.
 
+## The website
+
+`site/` is a submodule: [ilien-dev/kothar-site](https://github.com/ilien-dev/kothar-site), the page at https://kothar.ilien.dev. It has its own pull requests, and a push to its `main` deploys it. Here, `git submodule update --init` fetches it; after a site release, `git submodule update --remote site` moves the pointer, committed in a `chore:` pull request.
+
 Before opening a branch or a pull request, read [CONTRIBUTING.md](../CONTRIBUTING.md).
