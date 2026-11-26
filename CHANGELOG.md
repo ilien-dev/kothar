@@ -1,5 +1,12 @@
 # Changelog
 
+## [0.6.1](https://github.com/ilien-dev/kothar/compare/v0.6.0...v0.6.1) (2026-11-26)
+
+
+### Bug Fixes
+
+* drop naming from the report colophon ([#14](https://github.com/ilien-dev/kothar/issues/14)) ([a58d912](https://github.com/ilien-dev/kothar/commit/a58d912c7e89a63a738b5b76df62f644a50fc779))
+
 ## [0.6.0](https://github.com/ilien-dev/kothar/compare/v0.5.0...v0.6.0) (2026-11-21)
 
 
