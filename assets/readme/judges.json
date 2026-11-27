@@ -6,10 +6,10 @@
     "why": "graded by a fresh agent from blind and reader answers (round 2)"
   },
   "section:How it works": {
-    "sha": "7de26b66d3fa2642",
+    "sha": "b10540261d8a80df",
     "pass": true,
-    "answer": "agent writes many ideas, keeps the few that differ, redraws each until it works large and at tab size",
-    "why": "graded by a fresh agent from blind and reader answers (round 2)"
+    "answer": "a hidden step: many ideas, a few kept, each redrawn until it holds up large and at tab size",
+    "why": "graded by a fresh agent from blind and reader answers (round 4)"
   },
   "picture:features.src.svg": {
     "sha": "99da9f4360d4a6e6",
@@ -30,10 +30,10 @@
     "why": "graded by a fresh agent from blind and reader answers (round 3)"
   },
   "section:Install": {
-    "sha": "8b2f7de08eff902a",
+    "sha": "4381efbf4a45ad65",
     "pass": true,
-    "answer": "plugin commands for Claude Code, npx skills add elsewhere",
-    "why": "graded by a fresh agent from blind and reader answers (round 3)"
+    "answer": "Claude Code plugin commands, npx skills add for Codex, Gemini and other agents",
+    "why": "graded by a fresh agent from blind and reader answers (round 4)"
   },
   "icon:how.src.svg#1": {
     "sha": "a1be1c25ed185095",
@@ -66,9 +66,45 @@
     "why": "graded by a fresh agent from blind and reader answers (round 3)"
   },
   "readme": {
-    "sha": "d214f4d7bbc059cb",
+    "sha": "5f9a853146f4d9fd",
     "pass": true,
-    "answer": "skill for people without a designer: name, logo, brand book via questions",
-    "why": "graded by a fresh agent from blind and reader answers (round 3)"
+    "answer": "asks what you like, proposes logos, builds a brand kit and an HTML brand book, for people shipping without a designer",
+    "why": "graded by a fresh agent from blind and reader answers (round 4)"
+  },
+  "picture:compare.src.svg": {
+    "sha": "8c265bd83e8e9de0",
+    "pass": true,
+    "answer": "the lone agent's logo blurs at 16 px and becomes a black square in one colour; Kothar's stays legible and keeps its shape",
+    "why": "graded by a fresh agent from blind and reader answers (round 4)"
+  },
+  "section:With and without Kothar": {
+    "sha": "0c61ade9e971ee9f",
+    "pass": true,
+    "answer": "same agent and brief; alone the logo blurs at 16 px and becomes a black square in one colour, with Kothar it holds up at both",
+    "why": "graded by a fresh agent from blind and reader answers (round 4)"
+  },
+  "icon:compare.src.svg#1": {
+    "sha": "6ef85309d6678f90",
+    "pass": true,
+    "answer": "failed / rejected",
+    "why": "graded by a fresh agent from blind and reader answers (round 4)"
+  },
+  "icon:compare.src.svg#2": {
+    "sha": "17f1503536f29623",
+    "pass": true,
+    "answer": "failed / rejected",
+    "why": "graded by a fresh agent from blind and reader answers (round 4)"
+  },
+  "icon:compare.src.svg#3": {
+    "sha": "251966a5bc554db0",
+    "pass": true,
+    "answer": "passed / OK",
+    "why": "graded by a fresh agent from blind and reader answers (round 4)"
+  },
+  "icon:compare.src.svg#4": {
+    "sha": "e1a24f834203cc94",
+    "pass": true,
+    "answer": "passed / OK",
+    "why": "graded by a fresh agent from blind and reader answers (round 4)"
   }
 }

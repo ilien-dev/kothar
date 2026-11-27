@@ -67,6 +67,23 @@
       }
     },
     {
+      "heading": "With and without Kothar",
+      "role": "compare",
+      "docs": null,
+      "picture": {
+        "file": "assets/readme/compare.src.svg",
+        "type": "drawn",
+        "claim": "Given the same brief, an agent alone draws a logo that blurs at 16 px and becomes a black square in one colour, while the one drawn with Kothar stays sharp and keeps its shape.",
+        "shows": [
+          "two lanes, the agent alone and with Kothar",
+          "the two real logos for Stow",
+          "each logo at 16 px, enlarged",
+          "each logo in one colour",
+          "an orange frame that moves across the tests, with a cross or a tick"
+        ]
+      }
+    },
+    {
       "heading": "Install",
       "role": "install",
       "docs": null,

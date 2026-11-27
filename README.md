@@ -50,6 +50,20 @@ Before each report it asks whether you want it in your language or in English.
 - **An animated logo**, if you want one.
 - **The brand book:** one HTML file with the idea, the logo at every size, colours and fonts, how to use it and how not to, and mockups. It prints to PDF.
 
+## With and without Kothar
+
+<p align="center"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/readme/compare-dark.svg">
+  <img src="assets/readme/compare-light.svg" alt="The same brief for a logo named Stow, run once by an agent alone and once with Kothar; an orange frame checks both logos at 16 px and in one colour: the first blurs and turns into a black square, the Kothar one stays sharp and keeps its shape" width="100%">
+</picture></p>
+
+The same agent got the same brief twice: a logo for a tool called Stow that syncs dotfiles, in the style of Linear and Raycast. The first time it had only the prompt. The second time it had Kothar.
+
+- **Alone,** it drew one logo and never looked at it. The S is a gradient on a glowing tile, so at 16 px its dots melt into it, and in one colour the logo is a black square.
+- **With Kothar,** it drew four concepts and looked at them in four rounds of renders. The one it recommended has its own cut for 16 px and was drawn in one colour first.
+
+This is one run of each, not a benchmark.
+
 ## Install
 
 <p align="center"><picture>

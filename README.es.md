@@ -50,6 +50,20 @@ Antes de cada informe te pregunta si lo quieres en tu idioma o en inglés.
 - **Un logo animado**, si quieres uno.
 - **El brand book:** un único archivo HTML con la idea, el logo en todos los tamaños, colores y tipografías, cómo usarlo y cómo no, y maquetas. Se imprime en PDF.
 
+## Con y sin Kothar
+
+<p align="center"><picture>
+  <source media="(prefers-color-scheme: dark)" srcset="assets/es/readme/compare-dark.svg">
+  <img src="assets/es/readme/compare-light.svg" alt="El mismo encargo para un logo llamado Stow, hecho una vez por un agente solo y otra con Kothar; un marco naranja revisa los dos logos a 16 px y a un color: el primero se emborrona y queda en un cuadrado negro, el de Kothar sigue nítido y conserva su forma" width="100%">
+</picture></p>
+
+El mismo agente recibió dos veces el mismo encargo: un logo para Stow, una herramienta que sincroniza dotfiles, con el estilo de Linear y Raycast. La primera vez solo tenía el prompt. La segunda tenía Kothar.
+
+- **Solo,** dibujó un logo y nunca lo miró. La S es un degradado sobre un fondo con brillo, así que a 16 px sus puntos se funden con ella, y a un color el logo queda en un cuadrado negro.
+- **Con Kothar,** dibujó cuatro conceptos y los revisó en cuatro rondas de renders. El que recomendó tiene su propia versión para 16 px y se dibujó primero a una sola tinta.
+
+Es un intento de cada lado, no una medición.
+
 ## Instalación
 
 <p align="center"><picture>
