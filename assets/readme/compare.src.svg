@@ -1,0 +1,75 @@
+<!--palette
+bg       #141619 #F2F3F5
+ink      #ECEEF0 #141619
+body     #B4BAC1 #3F454C
+muted    #959CA4 #5B6168
+accent   #F04E15 #F04E15
+acctext  #F26A36 #B83A0B
+panel    #1D2024 #FFFFFF
+line     #3A4047 #C9CED4
+skel     #33383E #DADDE1
+mk       #ECEEF0 #141619
+bubble   #262A2F #ECEEF0
+onacc    #141619 #141619
+alu      #C9CDD2 #C9CDD2
+tile     #2A2D31 #2A2D31
+light    #ECEEF0 #ECEEF0
+-->
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 448" role="img" aria-label="The same brief for a logo named Stow, run once by an agent alone and once with Kothar; an orange frame checks both logos at 16 px and in one colour: the first blurs and turns into a black square, the Kothar one stays sharp and keeps its shape">
+<style>
+/* 12 s  lens      |in|logo=====|go|16 px=============|go|one colour==================|out|
+         16 px                       |in|=================================================|out
+         verdict16                       |pop|=============================================|out
+         one colour                                      |in|============================|out
+         verdict1c                                           |pop|========================|out */
+@keyframes lens{0%{opacity:0;transform:translateX(-384px)}4%{opacity:1;transform:translateX(-384px)}20%{transform:translateX(-384px)}26%{transform:translateX(-192px)}52%{transform:translateX(-192px)}58%{transform:translateX(0)}92%{opacity:1;transform:translateX(0)}96%,100%{opacity:0;transform:translateX(0)}}
+@keyframes c2{0%,26%{opacity:0}30%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes c3{0%,58%{opacity:0}62%,92%{opacity:1}96%,100%{opacity:0}}
+@keyframes p2{0%,32%{opacity:0;transform:scale(.6)}36%,92%{opacity:1;transform:none}96%,100%{opacity:0;transform:none}}
+@keyframes p3{0%,64%{opacity:0;transform:scale(.6)}68%,92%{opacity:1;transform:none}96%,100%{opacity:0;transform:none}}
+.lens{animation:lens 12s cubic-bezier(.4,0,.2,1) infinite}
+.c2{animation:c2 12s cubic-bezier(0,0,.2,1) infinite}
+.c3{animation:c3 12s cubic-bezier(0,0,.2,1) infinite}
+.p2{animation:p2 12s cubic-bezier(0,0,.2,1) infinite;transform-box:fill-box;transform-origin:center}
+.p3{animation:p3 12s cubic-bezier(0,0,.2,1) infinite;transform-box:fill-box;transform-origin:center}
+</style>
+<defs>
+<linearGradient id="wbg" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#22232F"/><stop offset="1" stop-color="#0D0E14"/></linearGradient>
+<linearGradient id="wmark" x1="180" y1="136" x2="332" y2="376" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#C7D2FE"/><stop offset=".55" stop-color="#8B7CFF"/><stop offset="1" stop-color="#6D4AFF"/></linearGradient>
+<radialGradient id="wglow" cx="256" cy="256" r="200" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#7C6CFF" stop-opacity=".28"/><stop offset="1" stop-color="#7C6CFF" stop-opacity="0"/></radialGradient>
+</defs>
+<rect width="1280" height="448" fill="$bg"/>
+<g id="backdrop" data-backdrop="grid still"><defs><pattern id="bd-grid" width="40" height="40" patternUnits="userSpaceOnUse"><path d="M0 0H40M0 0V40" fill="none" stroke="$line" stroke-width="1"/></pattern></defs><rect x="-40" y="-40" width="1360" height="528" fill="url(#bd-grid)" opacity=".35"/></g>
+<text id="eyebrow" class="m" x="56" y="80" font-size="14" fill="$acctext" letter-spacing="2">WITH AND WITHOUT</text>
+<text id="title" class="b" font-size="40" fill="$ink"><tspan x="56" y="136">Same brief. Only one</tspan><tspan x="56" y="182">holds up small</tspan></text>
+<text id="sub" class="s" font-size="18" fill="$body"><tspan x="56" y="232">One agent, two runs: once on its own,</tspan><tspan x="56" y="258">once with Kothar.</tspan></text>
+<g id="stage">
+<text x="732" y="52" class="m" font-size="14" fill="$muted" text-anchor="middle">logo</text>
+<text x="924" y="52" class="m" font-size="14" fill="$muted" text-anchor="middle">16 px</text>
+<text x="1116" y="52" class="m" font-size="14" fill="$muted" text-anchor="middle">one colour</text>
+
+<!-- lane: agent alone -->
+<g data-kit="window"><rect x="520" y="64" width="720" height="168" rx="12" fill="$panel" stroke="$line" stroke-width="1.5"/></g>
+<text x="544" y="112" class="b" font-size="20" fill="$ink">Alone</text>
+<text x="544" y="138" class="m" font-size="16" fill="$muted">prompt only</text>
+<g transform="translate(672 88) scale(0.234375)"><rect width="512" height="512" rx="116" fill="url(#wbg)"/><circle cx="256" cy="256" r="200" fill="url(#wglow)"/><path d="M294.57 150.04 A60 60 0 1 0 256 256 A60 60 0 1 1 217.43 361.96" fill="none" stroke="url(#wmark)" stroke-width="36" stroke-linecap="round"/><circle cx="315.77" cy="190.77" r="18" fill="url(#wmark)"/><circle cx="196.23" cy="321.23" r="18" fill="url(#wmark)"/></g>
+<g class="c2"><image x="864" y="88" width="120" height="120" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAIAAABMXPacAAAACXBIWXMAAAAAAAAAAQCEeRdzAAAEf0lEQVR4nO2duYpUQRiFq+pWL+OCDsrggoi4ZCriAgoqhj6BgakIxiKCsSYmJj6C4AOMsUtmoCgugeICigq2rQbOODN9F1/gnKBAPTNwvvB09e3b/U0Nf3X/dW/cOLM5IIbD1TDv96ZgHmMVSogR513HxuMndOQJf298W3ScxcU5nC/NwzzD1Pw3LECMBYixADEWIMYCxFiAmDwYrIIP9Hs4b1tSqIea5KTgD+w4K3v8YLCGHAYfxzNAjAWIsQAxFiDGAsRYgBgLEJNzNYAPNE3zT79/T4n9IIDzVPXwcLIuiRHndTMh40Ph+8Xj6xofv5f7MPcMEGMBYixAjAWIsQAxFiDGAsRk1ofD+mEYrF6uSP2eIq6LY8L9Rbv27IP5j/EI5uPxF5jnCv/NNe0SzEPAdX1b9vHQ8Z4BYixAjAWIsQAxFiDGAsRYgJjM+9/ZU/ADuSJ1fcDrgF7G+wwuXrkJ82F/Gp9OO4Txk0cPYD575wY+T/IF/2TCPh/WB8U+uARTzwAxFiDGAsRYgBgLEGMBYixATGbf4/N+mFTkskp4fbB3/3GYD3szML9+9VwoYfeuozCfXrcN5t9/foB5Sngd05L+n46uA/B6wjNAjAWIsQAxFiDGAsRYgBgLEJPb0gYXsm+Wrw9wn8+wvx7mo88/8FES3sfAti03E3ye/YxfN8VPMK+7svfbkP0HbD+EZ4AYCxBjAWIsQIwFiLEAMRawfH8PwOuDivTXs+VElXC9/OL5Q5gf3HcW5ieOnYf519FHmL95j/uC5n/j/QRdYb3P1h/scyPbrj0D1PhfkBgLEGMBYixAjAWIsQAxuWnqon75tmEFPy6M2xYXwAsLv2B+6/YlmO/cfgrmWzYehvmOmdMwn31wAeYhzBVdN4ltoOD7q/17wLLE/4LEWIAYCxBjAWIsQIwFiMns+pesXyhVuC5m64kU8fipKbzvd+3qLTB/8WoW5i9f4/zk/msw3zR9BOZvP9+BeQj4/GvyftnvK2zd4BkgxgLEWIAYCxBjAWIsQIwFiMns+256/ZwaX18zkv20db2AX5j0+w/zBvK6+H68/Qrf93gQtsJ8bh7vP2g73Ndfk/fbkfFs/cT6izwDxFiAGAsQYwFiLECMBYixgOUqoHT/8GTyG+Yd3iYcvoyewXzP1jMw33kA57HF9z3+Nn4H80/f78O8JuuMplnEOel34uDxngFiLECMBYixADEWIMYCxFjAStsfwNte8PfmLdlQ2yPX37/7+DLMN60/BPNJjev08a+nMGfvtwtLRfcH5vcfDkXjPQPEWIAYCxBjAWIsQIwFiLGAlbY/gMHvO4br9LbBdXdKuI/ow+gezCPZf9t2TdH9v2hfP6FwOF1XeQaIsQAxFiDGAsRYgBgLEGMBYjIpo0P5/cXIgch9tTpWvzeLRdfb4ffvjf/0/EvPJ0bcIOUZIMYCxFiAGAsQYwFiLECMBYjJ5PL+oWM5uc4+6/+h5TWtr0Nh/R4K6/G/c/wYy9YT7DZrngFiLECMBYixADEWIMYCxFhA0PIHzJpf0/FFkLMAAAAASUVORK5CYII="/></g>
+<g class="p2"><g data-asset="ph:x-circle-fill" data-icon="fails the test" data-size="28" transform="translate(1004 134) scale(0.1094)" fill="$muted"><path fill="$muted" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m37.66 130.34a8 8 0 0 1-11.32 11.32L128 139.31l-26.34 26.35a8 8 0 0 1-11.32-11.32L116.69 128l-26.35-26.34a8 8 0 0 1 11.32-11.32L128 116.69l26.34-26.35a8 8 0 0 1 11.32 11.32L139.31 128Z"/></g></g>
+<g class="c3"><rect x="1056" y="88" width="120" height="120" rx="12" fill="#FFFFFF" stroke="$line" stroke-width="1.5"/><rect x="1072" y="104" width="88" height="88" rx="20" fill="#000000"/></g>
+<g class="p3"><g data-asset="ph:x-circle-fill" data-icon="fails the test" data-size="28" transform="translate(1198 134) scale(0.1094)" fill="$muted"><path fill="$muted" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m37.66 130.34a8 8 0 0 1-11.32 11.32L128 139.31l-26.34 26.35a8 8 0 0 1-11.32-11.32L116.69 128l-26.35-26.34a8 8 0 0 1 11.32-11.32L128 116.69l26.34-26.35a8 8 0 0 1 11.32 11.32L139.31 128Z"/></g></g>
+
+<!-- lane: with Kothar -->
+<g data-kit="window"><rect x="520" y="248" width="720" height="168" rx="12" fill="$panel" stroke="$line" stroke-width="1.5"/></g>
+<text x="544" y="296" class="b" font-size="20" fill="$acctext">Kothar</text>
+<text x="544" y="322" class="m" font-size="16" fill="$muted">same prompt</text>
+<rect x="672" y="272" width="120" height="120" rx="26" fill="#0E0F12"/>
+<g transform="translate(684 284) scale(0.375)"><path fill="#F4F4F1" d="M186.5 40.5H73.5A51.5 51.5 0 0 0 73.5 143.5H182.5A14.5 16.5 0 0 1 182.5 176.5H111.5A17.5 17.5 0 0 0 111.5 211.5H182.5A51.5 51.5 0 0 0 182.5 108.5H73.5A14.5 16.5 0 0 1 73.5 75.5H186.5A17.5 17.5 0 0 0 186.5 40.5Z"/><path fill="#FFB224" d="M22 194A19.5 19.5 0 1 0 61 194A19.5 19.5 0 1 0 22 194Z"/></g>
+<g class="c2"><image x="864" y="272" width="120" height="120" image-rendering="pixelated" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAIAAAACACAIAAABMXPacAAAACXBIWXMAAAAAAAAAAQCEeRdzAAACaElEQVR4nO3cMUpcURSA4Wd0ihQWyovgDlxAJOrgBoJBTKOIkDpCFAULLSwsHCHLMBDdhTpxRHEfFhFSBJxKxw2cW1xQ/rnO/5VnhveKf05zeW+G6onJSpwR8N4yAM8NgBkAZgCYAWAGgBkAZgCYAWAGgBkAZgCYAWAGgBkAZgCYAWAGgBkAZgCYAWAGKC3Ah7oO57u7O+F8fr6ZdR1Kt9sN59/XN8L52Xn7Re7rBsAMADMAzAAwA8AMADNAaQH29/fC+ZeFz9Vb1Ov1XvX6bgDMADADwAwAMwDMADADlBagOTeb9f3llbVwfn1zm3vrN8kNgBkAZgCYAWAGgBkAZoDSArzy8fjAcQNgBoAZAGYAmAFgBoAZoLQAnaurrOeCTk9+VSX4e38fztvty3Deav3Muk6KGwAzAMwAMAPADAAzAMwApQU4ODgM50+Pj+G82YzfE67r8aqfpN5b/rq0GM4bjUY4/7GxnXVfNwBmAJgBYAaAGQBmAJgBSguQOu/e3Ir/L6gUM5+mw/nJ7+NwPjeb955EihsAMwDMADADwAwAMwDMAKUFmBwbyvr+3b8yXih4N8z8Ft0AmAFgBoAZAGYAmAFgBujXAKPv4/ntYeKDhKnth3D+P/67/ip1/p46r6dcdjovch03AGYAmAFgBoAZAGYAmAFg/Reg94TcNvW808XFn3DeOorfEy4/wIAxAMwAMAPADAAzAMwA/RogdV7/cS/xQeZ1UlZWv1WDxA2AGQBmAJgBYAaAGQBmgNIClPK8fyncAJgBYAaAGQBmAJgBYAaAGQBmAJgBYAaAGQBmAJgBYAaoWM8JgFNxHxe58AAAAABJRU5ErkJggg=="/></g>
+<g class="p2"><g data-asset="ph:check-circle-fill" data-icon="passes the test" data-size="28" transform="translate(1004 318) scale(0.1094)" fill="$acctext"><path fill="$acctext" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32"/></g></g>
+<g class="c3"><rect x="1056" y="272" width="120" height="120" rx="12" fill="#FFFFFF" stroke="$line" stroke-width="1.5"/><g transform="translate(1072 288) scale(0.34375)"><path fill="#000000" d="M186.5 40.5H73.5A51.5 51.5 0 0 0 73.5 143.5H182.5A14.5 16.5 0 0 1 182.5 176.5H111.5A17.5 17.5 0 0 0 111.5 211.5H182.5A51.5 51.5 0 0 0 182.5 108.5H73.5A14.5 16.5 0 0 1 73.5 75.5H186.5A17.5 17.5 0 0 0 186.5 40.5Z"/><path fill="#000000" d="M22 194A19.5 19.5 0 1 0 61 194A19.5 19.5 0 1 0 22 194Z"/></g></g>
+<g class="p3"><g data-asset="ph:check-circle-fill" data-icon="passes the test" data-size="28" transform="translate(1198 318) scale(0.1094)" fill="$acctext"><path fill="$acctext" d="M128 24a104 104 0 1 0 104 104A104.11 104.11 0 0 0 128 24m45.66 85.66l-56 56a8 8 0 0 1-11.32 0l-24-24a8 8 0 0 1 11.32-11.32L112 148.69l50.34-50.35a8 8 0 0 1 11.32 11.32"/></g></g>
+
+<!-- the test: an orange frame that moves across both lanes -->
+<g transform="translate(1048 80)" data-rest="shown"><rect class="lens" x="0" y="0" width="136" height="320" rx="16" fill="none" stroke="$accent" stroke-width="3"/></g>
+</g>
+</svg>
